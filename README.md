@@ -1,3 +1,3 @@
-# acai-js-docs
+# acai-python-docs
 
-Docs repo for the acai-js project
+Docs repo for the acai-python project

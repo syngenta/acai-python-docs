@@ -1,16 +1,18 @@
 ---
 title: Install
-description: Install Node Acai
+description: Install Acai Python
 ---
 
 ## Requirements
 
-* Node 10.10 or higher; [download and install Node.js](https://nodejs.org/en/download/)
-* Access to public [npm registry](https://www.npmjs.com/)
+* Python 3.8 or higher; [download and install Python](https://www.python.org/downloads/)
+* Access to public [python registry](https://pypi.org/)
 
 
 ## Installation
 === "Shell"
 ```bash
-$ npm install acai-js
+$ pip install acai
+# pipenv install acai
+# poetry add acai
 ```
