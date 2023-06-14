@@ -4,8 +4,6 @@ site_author: Paul Cruse III
 site_dir: ../docs
 nav:
     - Home: index.md
-    - Tutorials:
-        - demo.md
     - install.md
     - Event Handlers:
         - APIGateway:
@@ -32,9 +30,9 @@ nav:
             - sqs/record.md
     - common/logger.md
     - changes.md
-    - NPM Registry: https://www.npmjs.com/package/@syngenta-digital/alc
-    - Github Repository: https://github.com/syngenta/acai-js
-    - Issues: https://github.com/syngenta/acai-js/issues
+    - PyPi Registry: https://www.npmjs.com/package/acai
+    - Github Repository: https://github.com/syngenta/acai-python
+    - Issues: https://github.com/syngenta/acai-python/issues
 theme:
     name: material
     logo: https://avatars.githubusercontent.com/u/65528694?s=200&v=4
