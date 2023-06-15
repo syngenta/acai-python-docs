@@ -8,7 +8,7 @@ description: How to use the built-in validation & custom middleware
 In order to encourage "Happy Path Programming" and make it easier for developers to validate request fully, the Acai comes with a host of built-in validations as well as the ability to extend with custom validations and middleware. See the full validation list here:
 
 ???+ examples
-    Don't like reading documentation? Then look at [our examples,](https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway) which can run locally! :nerd:
+    Don't like reading documentation? Then look at [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! :nerd:
 
 ### Validation Configurations
 
