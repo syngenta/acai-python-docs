@@ -9,34 +9,16 @@ The Acai logger is automatically logs in a formatted JSON string for easy readin
 
 ### Basic Usage
 
-```javascript
-// if you use globalLogger: true, in any config the logger is available globally
-global.logger.info('testing info');
+```python
+from acai.common import logger
 
-global.logger.debug('testing debug');
+logger.log(level='INFO', log='some log') # level=INFO|DEBUG|WARN|ERROR
 
-global.logger.warn('testing warn');
-
-global.logger.error('testing warn');
-
-// standard output
+# exammple output
+"""
 {
 	level: '$LEVEL', 
     log: '$MESSGE'
 }
-```
-
-### Advance Usage
-
-```javascript
-// if you use globalLogger: true, in any config the logger is available globally
-global.logger.log({level:'INFO', log: {someKey: 'testing info'}});
-
-// standard output
-{
-    level: 'INFO',
-    log: {
-        someKey: 'testing info'
-    }
-}
+"""
 ```
