@@ -5,7 +5,7 @@ description: Acai Request Object
 
 # Request Object
 
-By default, every endpoint function will receive an instance of the `RequestClient` class (aka `request`) as the first argument of their function. This `request` has a lot of properties which will do common things automatically, but still allows the developer to override those operations if they deem necessary. Below is a list and examples of all the properties of the `request`:
+By default, every endpoint function will receive an instance of the `Request` class (aka `request`) as the first argument of their function. This `request` has a lot of properties which will do common things automatically, but still allows the developer to override those operations if they deem necessary. Below is a list and examples of all the properties of the `request`:
 
 ???+ example
     Don't like reading documentation? Then look at [our examples](https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway) which can run locally! :nerd:
