@@ -19,7 +19,7 @@
     
     
       
-        <title>Request - Acai Python</title>
+        <title>Request - Acai (Python)</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Acai Python" class="md-header__button md-logo" aria-label="Acai Python" data-md-component="logo">
+    <a href="../.." title="Acai (Python)" class="md-header__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
       
   <img src="https://avatars.githubusercontent.com/u/65528694?s=200&v=4" alt="logo">
 
@@ -98,7 +98,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Acai Python
+            Acai (Python)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,12 +180,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Acai Python" class="md-nav__button md-logo" aria-label="Acai Python" data-md-component="logo">
+    <a href="../.." title="Acai (Python)" class="md-nav__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
       
   <img src="https://avatars.githubusercontent.com/u/65528694?s=200&v=4" alt="logo">
 
     </a>
-    Acai Python
+    Acai (Python)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -492,6 +492,48 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#requestcookies" class="md-nav__link">
+    request.cookies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestprotocol" class="md-nav__link">
+    request.protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestcontent_type" class="md-nav__link">
+    request.content_type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesthost_url" class="md-nav__link">
+    request.host_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestdomain" class="md-nav__link">
+    request.domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requeststage" class="md-nav__link">
+    request.stage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requestmethod" class="md-nav__link">
     request.method
   </a>
@@ -527,15 +569,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#requestqueryparams" class="md-nav__link">
-    request.queryParams
+  <a href="#requestquery_params" class="md-nav__link">
+    request.query_params
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#requestpathparams" class="md-nav__link">
-    request.pathParams
+  <a href="#requestpath_params" class="md-nav__link">
+    request.path_params
   </a>
   
 </li>
@@ -991,6 +1033,48 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#requestcookies" class="md-nav__link">
+    request.cookies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestprotocol" class="md-nav__link">
+    request.protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestcontent_type" class="md-nav__link">
+    request.content_type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesthost_url" class="md-nav__link">
+    request.host_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requestdomain" class="md-nav__link">
+    request.domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requeststage" class="md-nav__link">
+    request.stage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requestmethod" class="md-nav__link">
     request.method
   </a>
@@ -1026,15 +1110,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#requestqueryparams" class="md-nav__link">
-    request.queryParams
+  <a href="#requestquery_params" class="md-nav__link">
+    request.query_params
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#requestpathparams" class="md-nav__link">
-    request.pathParams
+  <a href="#requestpath_params" class="md-nav__link">
+    request.path_params
   </a>
   
 </li>
@@ -1122,137 +1206,227 @@
 
 
 <h1 id="request-object">Request Object<a class="headerlink" href="#request-object" title="Permanent link">&para;</a></h1>
-<p>By default, every endpoint function will receive an instance of the <code>RequestClient</code> class (aka <code>request</code>) as the first argument of their function. This <code>request</code> has a lot of properties which will do common things automatically, but still allows the developer to override those operations if they deem necessary. Below is a list and examples of all the properties of the <code>request</code>:</p>
+<p>By default, every endpoint function will receive an instance of the <code>Request</code> class (aka <code>request</code>) as the first argument of their function. This <code>request</code> has a lot of properties which will do common things automatically, but still allows the developer to override those operations if they deem necessary. Below is a list and examples of all the properties of the <code>request</code>:</p>
 <details class="example" open="open">
 <summary>Example</summary>
-<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway">our examples</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
+<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway">our examples,</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 </details>
 <h3 id="request-properties">Request Properties<a class="headerlink" href="#request-properties" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>property</th>
-<th>type</th>
-<th>mutable</th>
-<th>description</th>
+<th align="left">property</th>
+<th align="center">type</th>
+<th align="center">mutable</th>
+<th align="left">description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestmethod"><code>method</code></a></td>
-<td>str</td>
-<td>no</td>
-<td>the http method of the request</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestmethod"><code>method</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the http method of the request</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestresource"><code>resource</code></a></td>
-<td>str</td>
-<td>no</td>
-<td>the AWS resource being invoked</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestcookies"><code>cookies</code></a></td>
+<td align="center">list</td>
+<td align="center">no</td>
+<td align="left">the cookies of the request</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestauthorizer"><code>authorizer</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>if using a customized authorizer, the authorizer object</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestprotocol"><code>protocol</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the protocol of the request</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestheaders"><code>headers</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>the headers of the request</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestcontent_type"><code>content_type</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the content_type of the request body</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestparams"><code>params</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>combination of query string and path params in one object</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requesthost_url"><code>host_url</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the host_url of the request was sent to</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestqueryparams"><code>queryParams</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>query string parameters from the request</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestdomain"><code>domain</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the domain of the request was sent to</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestpathparams"><code>pathParams</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>the path parameters of the request</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requeststage"><code>stage</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the stage the lambda was deployed to</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestroute"><code>route</code></a></td>
-<td>str</td>
-<td>no</td>
-<td>the requested route with placeholders of params</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestresource"><code>resource</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the AWS resource being invoked</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestpath"><code>path</code></a></td>
-<td>str</td>
-<td>no</td>
-<td>the raw requested path with actual param values</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestauthorizer"><code>authorizer</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">if using a customized authorizer, the authorizer object</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestjson"><code>json</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>the body of the request, converted from json string in object</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestheaders"><code>headers</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">the headers of the request</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestxml"><code>xml</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>the body of the request, converted from xml string in object</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestparams"><code>params</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">combination of query string and path params in one object</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestgraphql"><code>graphql</code></a></td>
-<td>str</td>
-<td>no</td>
-<td>the body of the graphql request as a string</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestquery_params"><code>query_params</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">query string parameters from the request</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestbody"><code>body</code></a></td>
-<td>any</td>
-<td>no</td>
-<td>the body of the request, converted to based on data type</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestpath_params"><code>path_params</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">the path parameters of the request</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestraw"><code>raw</code></a></td>
-<td>any</td>
-<td>no</td>
-<td>the raw body of the request no conversion</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestroute"><code>route</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the requested route with placeholders of params</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestcontext"><code>context</code></a></td>
-<td>object</td>
-<td>yes</td>
-<td>mutable request context to assigned and pass around</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestpath"><code>path</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the raw requested path with actual param values</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestevent"><code>event</code></a></td>
-<td>object</td>
-<td>no</td>
-<td>the full event originally coming from the lambda</td>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestjson"><code>json</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">the body of the request, converted from json string in object</td>
+</tr>
+<tr>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestxml"><code>xml</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">the body of the request, converted from xml string in object</td>
+</tr>
+<tr>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestgraphql"><code>graphql</code></a></td>
+<td align="center">str</td>
+<td align="center">no</td>
+<td align="left">the body of the graphql request as a string</td>
+</tr>
+<tr>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestbody"><code>body</code></a></td>
+<td align="center">any</td>
+<td align="center">no</td>
+<td align="left">the body of the request, converted to based on data type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestraw"><code>raw</code></a></td>
+<td align="center">any</td>
+<td align="center">no</td>
+<td align="left">the raw body of the request no conversion</td>
+</tr>
+<tr>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestcontext"><code>context</code></a></td>
+<td align="center">object</td>
+<td align="center">yes</td>
+<td align="left">mutable request context to assigned and pass around</td>
+</tr>
+<tr>
+<td align="left"><a href="https://syngenta.github.io/acai-js-docs/apigateway/request/#requestevent"><code>event</code></a></td>
+<td align="center">object</td>
+<td align="center">no</td>
+<td align="left">the full event originally coming from the lambda</td>
 </tr>
 </tbody>
 </table>
+<h4 id="requestcookies"><code>request.cookies</code><a class="headerlink" href="#requestcookies" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="p">)</span>
+
+<span class="c1"># output: </span>
+<span class="p">[</span><span class="s1">&#39;some-cookie&#39;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="requestprotocol"><code>request.protocol</code><a class="headerlink" href="#requestprotocol" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="p">)</span>
+
+<span class="c1"># output: </span>
+<span class="s1">&#39;https&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="requestcontent_type"><code>request.content_type</code><a class="headerlink" href="#requestcontent_type" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">content_type</span><span class="p">)</span>
+
+<span class="c1"># output: </span>
+<span class="s1">&#39;application/json&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="requesthost_url"><code>request.host_url</code><a class="headerlink" href="#requesthost_url" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">host_url</span><span class="p">)</span>
+
+<span class="c1"># output: </span>
+<span class="s1">&#39;https://api.are-great.com&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="requestdomain"><code>request.domain</code><a class="headerlink" href="#requestdomain" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">domain</span><span class="p">)</span>
+
+<span class="c1"># output: </span>
+<span class="s1">&#39;api.are-great.com&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="requeststage"><code>request.stage</code><a class="headerlink" href="#requeststage" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">stage</span><span class="p">)</span>
+
+<span class="c1"># output: </span>
+<span class="s1">&#39;prod&#39;</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="requestmethod"><code>request.method</code><a class="headerlink" href="#requestmethod" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;get&#39;</span><span class="w"></span>
+<span class="c1"># output: </span>
+<span class="s1">&#39;get&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestresource"><code>request.resource</code><a class="headerlink" href="#requestresource" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">resource</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">resource</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;/{proxy+}&#39;</span><span class="w"></span>
+<span class="c1"># output: </span>
+<span class="s1">&#39;/{proxy+}&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestauthorizer"><code>request.authorizer</code><a class="headerlink" href="#requestauthorizer" title="Permanent link">&para;</a></h4>
 <details class="tip" open="open">
@@ -1268,16 +1442,16 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">authorizer</span><span class="p">);</span><span class="w"></span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">authorizer</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;SOME KEY&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">userId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;x-1-3-4&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">correlationId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;abc12312&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">principalId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;9de3f415a97e410386dbef146e88744e&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">integrationLatency</span><span class="o">:</span><span class="w"> </span><span class="mf">572</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">apiKey</span><span class="p">:</span> <span class="s1">&#39;SOME KEY&#39;</span><span class="p">,</span>
+    <span class="n">userId</span><span class="p">:</span> <span class="s1">&#39;x-1-3-4&#39;</span><span class="p">,</span>
+    <span class="n">correlationId</span><span class="p">:</span> <span class="s1">&#39;abc12312&#39;</span><span class="p">,</span>
+    <span class="n">principalId</span><span class="p">:</span> <span class="s1">&#39;9de3f415a97e410386dbef146e88744e&#39;</span><span class="p">,</span>
+    <span class="n">integrationLatency</span><span class="p">:</span> <span class="mi">572</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestheaders"><code>request.headers</code><a class="headerlink" href="#requestheaders" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1286,13 +1460,13 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">);</span><span class="w"></span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="s1">&#39;x-api-key&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;SOME-KEY&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s1">&#39;content-type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="s1">&#39;x-api-key&#39;</span><span class="p">:</span> <span class="s1">&#39;SOME-KEY&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestparams"><code>request.params</code><a class="headerlink" href="#requestparams" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
@@ -1309,43 +1483,43 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">params</span><span class="p">);</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;me&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">query</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;me&#39;</span>
+    <span class="p">},</span>
+    <span class="n">path</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nb">id</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="requestqueryparams"><code>request.queryParams</code><a class="headerlink" href="#requestqueryparams" title="Permanent link">&para;</a></h4>
+<h4 id="requestquery_params"><code>request.query_params</code><a class="headerlink" href="#requestquery_params" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">queryParams</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">     </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;me&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+     <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;me&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="requestpathparams"><code>request.pathParams</code><a class="headerlink" href="#requestpathparams" title="Permanent link">&para;</a></h4>
+<h4 id="requestpath_params"><code>request.path_params</code><a class="headerlink" href="#requestpath_params" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">pathParams</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path_params</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">     </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+     <span class="nb">id</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestroute"><code>request.route</code><a class="headerlink" href="#requestroute" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
@@ -1355,10 +1529,10 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">route</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">route</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;grower/{id}&#39;</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="s1">&#39;grower/</span><span class="si">{id}</span><span class="s1">&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestpath"><code>request.path</code><a class="headerlink" href="#requestpath" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
@@ -1368,10 +1542,10 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">path</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;grower/1&#39;</span><span class="w"></span>
+<span class="c1"># example output: </span>
+<span class="s1">&#39;grower/1&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestjson"><code>request.json</code><a class="headerlink" href="#requestjson" title="Permanent link">&para;</a></h4>
 <details class="warning" open="open">
@@ -1383,12 +1557,24 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">json</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">someJsonKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;someJsonValue&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">some_json_key</span><span class="p">:</span> <span class="s1">&#39;some_json_value&#39;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">);</span>
+
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">some_form_key</span><span class="p">:</span> <span class="s1">&#39;some_form_value&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestxml"><code>request.xml</code><a class="headerlink" href="#requestxml" title="Permanent link">&para;</a></h4>
 <details class="warning" open="open">
@@ -1400,12 +1586,12 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">xml</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">python</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">xml</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">someXMLKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;someXMLValue&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">some_xml_key</span><span class="p">:</span> <span class="s1">&#39;some_xml_value&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestgraphql"><code>request.graphql</code><a class="headerlink" href="#requestgraphql" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
@@ -1419,14 +1605,14 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">graphql</span><span class="p">);</span><span class="w"></span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">python</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">graphql</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
+<span class="c1"># output:</span>
 <span class="s1">&#39;{</span>
-<span class="s1">    players {</span>
-<span class="s1">        name</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span><span class="w"></span>
+    <span class="n">players</span> <span class="p">{</span>
+        <span class="n">name</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="s1">&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestbody"><code>request.body</code><a class="headerlink" href="#requestbody" title="Permanent link">&para;</a></h4>
 <details class="tip" open="open">
@@ -1438,24 +1624,26 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">someXMLKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;someXMLValue&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">some_key</span><span class="p">:</span> <span class="s1">&#39;some_value&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestraw"><code>request.raw</code><a class="headerlink" href="#requestraw" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">raw</span><span class="p">);</span><span class="w"></span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
 
-<span class="c1">// example output: whatever the raw data of the body is; string, json string, xml, binary, etc</span><span class="w"></span>
+<span class="c1"># output: </span>
+<span class="c1"># whatever the raw data of the body is; string, json string, xml, binary, etc</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestcontext"><code>request.context</code><a class="headerlink" href="#requestcontext" title="Permanent link">&para;</a></h4>
 <details class="tip" open="open">
 <summary>Tip</summary>
-<p>This is the only mutable property of the request, to be used by any of the <code>before</code> or <code>beforeAll</code> middleware options</p>
+<p>This is the only mutable property of the request, to be used by any of the <code>before</code> or <code>before_all</code> middleware options</p>
 </details>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1463,13 +1651,13 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">request</span><span class="p">.</span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">application_assignable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w"></span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">context</span><span class="p">);</span><span class="w"></span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">request</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;application_assignable&#39;</span><span class="p">:</span> <span class="n">true</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">application_assignable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">application_assignable</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestevent"><code>request.event</code><a class="headerlink" href="#requestevent" title="Permanent link">&para;</a></h4>
 <details class="warning" open="open">
@@ -1547,78 +1735,78 @@
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">event</span><span class="p">);</span><span class="w"></span>
+<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">event</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;routeKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$default&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;rawPath&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/my/path&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;rawQueryString&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;parameter1=value1&amp;parameter1=value2&amp;parameter2=value&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;cookies&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;cookie1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;cookie2&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;headers&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;header1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;header2&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value1,value2&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;queryStringParameters&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;parameter1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value1,value2&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;parameter2&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;requestContext&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;accountId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;123456789012&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;apiId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;api-id&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;authentication&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;clientCert&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;clientCertPem&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CERT_CONTENT&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;subjectDN&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;www.example.com&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;issuerDN&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Example issuer&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;serialNumber&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;validity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;notBefore&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;May 28 12:30:02 2019 GMT&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;notAfter&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Aug  5 09:36:04 2021 GMT&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;authorizer&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;jwt&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;claims&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;claim1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;claim2&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value2&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;scopes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;scope1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="s2">&quot;scope2&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">]</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;domainName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;id.execute-api.us-east-1.amazonaws.com&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;domainPrefix&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;http&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;method&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;path&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/my/path&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;protocol&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;HTTP/1.1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;sourceIp&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;IP&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;userAgent&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;agent&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;requestId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;routeKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$default&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;stage&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$default&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;time&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12/Mar/2020:19:03:58 +0000&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;timeEpoch&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1583348638390</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;body&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello from Lambda&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;pathParameters&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;parameter1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;isBase64Encoded&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;stageVariables&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;stageVariable1&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;stageVariable2&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value2&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;routeKey&quot;</span><span class="p">:</span> <span class="s2">&quot;$default&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rawPath&quot;</span><span class="p">:</span> <span class="s2">&quot;/my/path&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rawQueryString&quot;</span><span class="p">:</span> <span class="s2">&quot;parameter1=value1&amp;parameter1=value2&amp;parameter2=value&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cookies&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;cookie1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cookie2&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;header1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;header2&quot;</span><span class="p">:</span> <span class="s2">&quot;value1,value2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;queryStringParameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1,value2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameter2&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;requestContext&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;accountId&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789012&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apiId&quot;</span><span class="p">:</span> <span class="s2">&quot;api-id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;authentication&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;clientCert&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;clientCertPem&quot;</span><span class="p">:</span> <span class="s2">&quot;CERT_CONTENT&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;subjectDN&quot;</span><span class="p">:</span> <span class="s2">&quot;www.example.com&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;issuerDN&quot;</span><span class="p">:</span> <span class="s2">&quot;Example issuer&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;serialNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;validity&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;notBefore&quot;</span><span class="p">:</span> <span class="s2">&quot;May 28 12:30:02 2019 GMT&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;notAfter&quot;</span><span class="p">:</span> <span class="s2">&quot;Aug  5 09:36:04 2021 GMT&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;authorizer&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;jwt&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;claims&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;claim1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;claim2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;scopes&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;scope1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;scope2&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;domainName&quot;</span><span class="p">:</span> <span class="s2">&quot;id.execute-api.us-east-1.amazonaws.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;domainPrefix&quot;</span><span class="p">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/my/path&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;protocol&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP/1.1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sourceIp&quot;</span><span class="p">:</span> <span class="s2">&quot;IP&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;userAgent&quot;</span><span class="p">:</span> <span class="s2">&quot;agent&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;requestId&quot;</span><span class="p">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;routeKey&quot;</span><span class="p">:</span> <span class="s2">&quot;$default&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stage&quot;</span><span class="p">:</span> <span class="s2">&quot;$default&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;12/Mar/2020:19:03:58 +0000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeEpoch&quot;</span><span class="p">:</span> <span class="mi">1583348638390</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello from Lambda&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pathParameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;isBase64Encoded&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;stageVariables&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;stageVariable1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stageVariable2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
               

@@ -8,47 +8,105 @@ description: Acai Request Object
 By default, every endpoint function will receive an instance of the `Request` class (aka `request`) as the first argument of their function. This `request` has a lot of properties which will do common things automatically, but still allows the developer to override those operations if they deem necessary. Below is a list and examples of all the properties of the `request`:
 
 ???+ example
-    Don't like reading documentation? Then look at [our examples](https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway) which can run locally! :nerd:
+    Don't like reading documentation? Then look at [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! :nerd:
 
 ### Request Properties
 
-| property                                                            | type   | mutable | description                                                   |
-|---------------------------------------------------------------------|--------|---------|---------------------------------------------------------------|
-| [`method`]({{web.url}}/apigateway/request/#requestmethod)           | str    | no      | the http method of the request                                |
-| [`resource`]({{web.url}}/apigateway/request/#requestresource)       | str    | no      | the AWS resource being invoked                                |
-| [`authorizer`]({{web.url}}/apigateway/request/#requestauthorizer)   | object | no      | if using a customized authorizer, the authorizer object       |
-| [`headers`]({{web.url}}/apigateway/request/#requestheaders)         | object | no      | the headers of the request                                    |
-| [`params`]({{web.url}}/apigateway/request/#requestparams)           | object | no      | combination of query string and path params in one object     |
-| [`queryParams`]({{web.url}}/apigateway/request/#requestqueryparams) | object | no      | query string parameters from the request                      |
-| [`pathParams`]({{web.url}}/apigateway/request/#requestpathparams)   | object | no      | the path parameters of the request                            |
-| [`route`]({{web.url}}/apigateway/request/#requestroute)             | str    | no      | the requested route with placeholders of params               |
-| [`path`]({{web.url}}/apigateway/request/#requestpath)               | str    | no      | the raw requested path with actual param values               |
-| [`json`]({{web.url}}/apigateway/request/#requestjson)               | object | no      | the body of the request, converted from json string in object |
-| [`xml`]({{web.url}}/apigateway/request/#requestxml)                 | object | no      | the body of the request, converted from xml string in object  |
-| [`graphql`]({{web.url}}/apigateway/request/#requestgraphql)         | str    | no      | the body of the graphql request as a string                   |
-| [`body`]({{web.url}}/apigateway/request/#requestbody)               | any    | no      | the body of the request, converted to based on data type      |
-| [`raw`]({{web.url}}/apigateway/request/#requestraw)                 | any    | no      | the raw body of the request no conversion                     |
-| [`context`]({{web.url}}/apigateway/request/#requestcontext)         | object | yes     | mutable request context to assigned and pass around           |
-| [`event`]({{web.url}}/apigateway/request/#requestevent)             | object | no      | the full event originally coming from the lambda              |
+| property                                                              |  type  | mutable | description                                                   |
+|:----------------------------------------------------------------------|:------:|:-------:|:--------------------------------------------------------------|
+| [`method`]({{web.url}}/apigateway/request/#requestmethod)             |  str   |   no    | the http method of the request                                |
+| [`cookies`]({{web.url}}/apigateway/request/#requestcookies)           |  list  |   no    | the cookies of the request                                    |
+| [`protocol`]({{web.url}}/apigateway/request/#requestprotocol)         |  str   |   no    | the protocol of the request                                   |
+| [`content_type`]({{web.url}}/apigateway/request/#requestcontent_type) |  str   |   no    | the content_type of the request body                          |
+| [`host_url`]({{web.url}}/apigateway/request/#requesthost_url)         |  str   |   no    | the host_url of the request was sent to                       |
+| [`domain`]({{web.url}}/apigateway/request/#requestdomain)             |  str   |   no    | the domain of the request was sent to                         |
+| [`stage`]({{web.url}}/apigateway/request/#requeststage)               |  str   |   no    | the stage the lambda was deployed to                          |
+| [`resource`]({{web.url}}/apigateway/request/#requestresource)         |  str   |   no    | the AWS resource being invoked                                |
+| [`authorizer`]({{web.url}}/apigateway/request/#requestauthorizer)     | object |   no    | if using a customized authorizer, the authorizer object       |
+| [`headers`]({{web.url}}/apigateway/request/#requestheaders)           | object |   no    | the headers of the request                                    |
+| [`params`]({{web.url}}/apigateway/request/#requestparams)             | object |   no    | combination of query string and path params in one object     |
+| [`query_params`]({{web.url}}/apigateway/request/#requestquery_params) | object |   no    | query string parameters from the request                      |
+| [`path_params`]({{web.url}}/apigateway/request/#requestpath_params)   | object |   no    | the path parameters of the request                            |
+| [`route`]({{web.url}}/apigateway/request/#requestroute)               |  str   |   no    | the requested route with placeholders of params               |
+| [`path`]({{web.url}}/apigateway/request/#requestpath)                 |  str   |   no    | the raw requested path with actual param values               |
+| [`json`]({{web.url}}/apigateway/request/#requestjson)                 | object |   no    | the body of the request, converted from json string in object |
+| [`xml`]({{web.url}}/apigateway/request/#requestxml)                   | object |   no    | the body of the request, converted from xml string in object  |
+| [`graphql`]({{web.url}}/apigateway/request/#requestgraphql)           |  str   |   no    | the body of the graphql request as a string                   |
+| [`body`]({{web.url}}/apigateway/request/#requestbody)                 |  any   |   no    | the body of the request, converted to based on data type      |
+| [`raw`]({{web.url}}/apigateway/request/#requestraw)                   |  any   |   no    | the raw body of the request no conversion                     |
+| [`context`]({{web.url}}/apigateway/request/#requestcontext)           | object |   yes   | mutable request context to assigned and pass around           |
+| [`event`]({{web.url}}/apigateway/request/#requestevent)               | object |   no    | the full event originally coming from the lambda              |
+
+#### `request.cookies`
+
+```python
+print(request.cookies)
+
+# output: 
+['some-cookie']
+```
+
+#### `request.protocol`
+
+```python
+print(request.cookies)
+
+# output: 
+'https'
+```
+
+#### `request.content_type`
+
+```python
+print(request.content_type)
+
+# output: 
+'application/json'
+```
+
+#### `request.host_url`
+
+```python
+print(request.host_url)
+
+# output: 
+'https://api.are-great.com'
+```
+
+#### `request.domain`
+
+```python
+print(request.domain)
+
+# output: 
+'api.are-great.com'
+```
+
+#### `request.stage`
+
+```python
+print(request.stage)
+
+# output: 
+'prod'
+```
 
 #### `request.method`
 
-```javascript
-console.log(request.method);
+```python
+print(request.method)
 
-// example output:
+# output: 
 'get'
 ```
 
 #### `request.resource`
 
-```js
+```python
+print(request.resource)
 
-console.log(request.resource);
-
-// example output:
+# output: 
 '/{proxy+}'
-
 ```
 
 #### `request.authorizer`
@@ -56,11 +114,10 @@ console.log(request.resource);
 ???+ tip
     This is only useful if you are using an external authorizer with your lambda.
 
-```js
+```python
+print(request.authorizer)
 
-console.log(request.authorizer);
-
-// example output:
+# output:
 {
     apiKey: 'SOME KEY',
     userId: 'x-1-3-4',
@@ -68,16 +125,14 @@ console.log(request.authorizer);
     principalId: '9de3f415a97e410386dbef146e88744e',
     integrationLatency: 572
 }
-
 ```
 
 #### `request.headers`
 
-```js
+```python
+print(request.headers)
 
-console.log(request.headers);
-
-// example output:
+# output:
 {
     'x-api-key': 'SOME-KEY',
     'content-type': 'application/json'
@@ -89,11 +144,10 @@ console.log(request.headers);
 ???+ info
     This combines both path parameters and query string parameters, nested in one object.
 
-```js
+```python
+print(request.params)
 
-console.log(request.params);
-
-// example output:
+# output:
 {
     query: {
         name: 'me'
@@ -104,25 +158,24 @@ console.log(request.params);
 }
 ```
 
-#### `request.queryParams`
+#### `request.query_params`
 
-```js
+```python
+print(request.query_params)
 
-console.log(request.queryParams);
-
-// example output:
+# output:
 {
      name: 'me'
 }
 ```
 
-#### `request.pathParams`
+#### `request.path_params`
 
-```js
+```python
 
-console.log(request.pathParams);
+print(request.path_params)
 
-// example output:
+# output:
 {
      id: 1
 }
@@ -133,11 +186,11 @@ console.log(request.pathParams);
 ???+ info
     This will provide the route with the path param variables included
 
-```js
+```python
 
-console.log(request.route);
+print(request.route)
 
-// example output:
+# output:
 'grower/{id}'
 ```
 
@@ -146,11 +199,10 @@ console.log(request.route);
 ???+ info
     This will provide the route with the path param values replacing the variables
 
-```js
+```python
+print(request.path)
 
-console.log(request.path);
-
-// example output:
+# example output: 
 'grower/1'
 ```
 
@@ -159,13 +211,23 @@ console.log(request.path);
 ???+ warning
     This will raise an unhandled exception if the body is not json compatible
 
-```js
+```python
 
-console.log(request.json);
+print(request.json);
 
-// example output:
+# output:
 {
-    someJsonKey: 'someJsonValue'
+    some_json_key: 'some_json_value'
+}
+```
+
+```python
+
+print(request.form);
+
+# output:
+{
+    some_form_key: 'some_form_value'
 }
 ```
 
@@ -174,13 +236,12 @@ console.log(request.json);
 ???+ warning
     This will raise an unhandled exception if the body is not xml compatible
 
-```js
+```python
+python(request.xml);
 
-console.log(request.xml);
-
-// example output:
+# output:
 {
-    someXMLKey: 'someXMLValue'
+    some_xml_key: 'some_xml_value'
 }
 ```
 
@@ -190,11 +251,11 @@ console.log(request.xml);
 ???+ info
     This is graphql string since there is no object equivalent; you can pass this directly to your graphql resolver
 
-```js
+```python
 
-console.log(request.graphql);
+python(request.graphql);
 
-// example output:
+# output:
 '{
     players {
         name
@@ -207,38 +268,39 @@ console.log(request.graphql);
 ???+ tip
     This is the safest way to get the body of the request. It will use the `content-type` header to determine the data sent and convert it; if the data can't be converted for whatever reason it will catch the error and return the raw body provided unconverted.
 
-```js
+```python
 
-console.log(request.body);
+print(request.body)
 
-// example output:
+# output:
 {
-    someXMLKey: 'someXMLValue'
+    some_key: 'some_value'
 }
 ```
 
 
 #### `request.raw`
 
-```js
+```python
 
-console.log(request.raw);
+print(request.raw)
 
-// example output: whatever the raw data of the body is; string, json string, xml, binary, etc
+# output: 
+# whatever the raw data of the body is; string, json string, xml, binary, etc
 ```
 
 
 #### `request.context`
 
 ???+ tip
-    This is the only mutable property of the request, to be used by any of the `before` or `beforeAll` middleware options
+    This is the only mutable property of the request, to be used by any of the `before` or `before_all` middleware options
 
-```js
+```python
 
-request.context = {application_assignable: true}
-console.log(request.context);
+request.context = {'application_assignable': true}
+print(request.context)
 
-// example output:
+# output:
 {
     application_assignable: true
 }
@@ -249,11 +311,11 @@ console.log(request.context);
 ???+ warning
     This is the original full request. Not advisable to use this as defeats the purpose of the entire Acai :smile:. In addition, you don't want to mutate this object and potentially mess up the entire router.
 
-```js
+```python
 
-console.log(request.event);
+print(request.event)
 
-// example output:
+# output:
 {
     "version": "2.0",
     "routeKey": "$default",

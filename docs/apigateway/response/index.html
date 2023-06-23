@@ -19,7 +19,7 @@
     
     
       
-        <title>Response - Acai Python</title>
+        <title>Response - Acai (Python)</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Acai Python" class="md-header__button md-logo" aria-label="Acai Python" data-md-component="logo">
+    <a href="../.." title="Acai (Python)" class="md-header__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
       
   <img src="https://avatars.githubusercontent.com/u/65528694?s=200&v=4" alt="logo">
 
@@ -98,7 +98,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Acai Python
+            Acai (Python)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,12 +180,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Acai Python" class="md-nav__button md-logo" aria-label="Acai Python" data-md-component="logo">
+    <a href="../.." title="Acai (Python)" class="md-nav__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
       
   <img src="https://avatars.githubusercontent.com/u/65528694?s=200&v=4" alt="logo">
 
     </a>
-    Acai Python
+    Acai (Python)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -527,8 +527,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#responserawbody" class="md-nav__link">
-    response.rawBody
+  <a href="#responseraw" class="md-nav__link">
+    response.raw
   </a>
   
 </li>
@@ -541,15 +541,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#responseseterrorkey-value" class="md-nav__link">
-    response.setError(key, value)
+  <a href="#responseset_errorkey-value" class="md-nav__link">
+    response.set_error(key, value)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#responsehaserror" class="md-nav__link">
-    response.hasError
+  <a href="#responsehas_error" class="md-nav__link">
+    response.has_error
   </a>
   
 </li>
@@ -949,8 +949,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#responserawbody" class="md-nav__link">
-    response.rawBody
+  <a href="#responseraw" class="md-nav__link">
+    response.raw
   </a>
   
 </li>
@@ -963,15 +963,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#responseseterrorkey-value" class="md-nav__link">
-    response.setError(key, value)
+  <a href="#responseset_errorkey-value" class="md-nav__link">
+    response.set_error(key, value)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#responsehaserror" class="md-nav__link">
-    response.hasError
+  <a href="#responsehas_error" class="md-nav__link">
+    response.has_error
   </a>
   
 </li>
@@ -996,10 +996,11 @@
 
 
 <h1 id="response-object">Response Object<a class="headerlink" href="#response-object" title="Permanent link">&para;</a></h1>
-<p>By default, every endpoint function will receive an instance of the <code>ResponseClient</code> class (aka <code>response</code>) as the second argument of their function. This response object is meant to provide consistency to HTTP response codes and error signatures. Below is a list and examples of all the properties of the <code>response</code>:</p>
+<p>By default, every endpoint function will receive an instance of the <code>Response</code> class (aka <code>response</code>) as the second argument of their function. 
+This response object is meant to provide consistency to HTTP response codes and error signatures. Below is a list and examples of all the properties of the <code>response</code>:</p>
 <details class="example" open="open">
 <summary>Example</summary>
-<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway">our examples</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
+<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway">our examples,</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 </details>
 <h3 id="response-properties">Response Properties<a class="headerlink" href="#response-properties" title="Permanent link">&para;</a></h3>
 <table>
@@ -1013,8 +1014,8 @@
 <tbody>
 <tr>
 <td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responseheaders"><code>headers</code></a></td>
-<td>object</td>
-<td>provide headers in key/value pairs to add new headers</td>
+<td>tuple</td>
+<td>provide headers in tuple pairs to add new headers</td>
 </tr>
 <tr>
 <td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responsecode"><code>code</code></a></td>
@@ -1027,7 +1028,7 @@
 <td>body of the response automatically converted to JSON string</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responserawbody"><code>rawBody</code></a></td>
+<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responserawbody"><code>raw</code></a></td>
 <td>any</td>
 <td>body of the response not converted to JSON string</td>
 </tr>
@@ -1037,12 +1038,12 @@
 <td>will compress the body if set to true and add proper headers</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responseseterror"><code>setError</code></a></td>
+<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responseseterror"><code>set_error</code></a></td>
 <td>func</td>
 <td>function to set an error with a key and value</td>
 </tr>
 <tr>
-<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responsehaserror"><code>hasError</code></a></td>
+<td><a href="https://syngenta.github.io/acai-js-docs/apigateway/response/#responsehaserror"><code>has_error</code></a></td>
 <td>boolean</td>
 <td>simple property to check if response already has errors in it</td>
 </tr>
@@ -1058,16 +1059,16 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ok&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;response_id&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;some-guid&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">response</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;response_id&#39;</span><span class="p">,</span> <span class="s1">&#39;some-guid&#39;</span><span class="p">)</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">);</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ok&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;some-guid&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="n">status</span><span class="p">:</span> <span class="s1">&#39;ok&#39;</span><span class="p">,</span>
+    <span class="n">response_id</span><span class="p">:</span> <span class="s1">&#39;some-guid&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="responsecode"><code>response.code</code><a class="headerlink" href="#responsecode" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1075,12 +1076,12 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">response</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">418</span><span class="p">;</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">response</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="mi">418</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">code</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="mf">418</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="mi">418</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="responsebody"><code>response.body</code><a class="headerlink" href="#responsebody" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
@@ -1092,17 +1093,17 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">someKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;someValue&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;some_key&#39;</span><span class="p">:</span> <span class="s1">&#39;some_value&#39;</span><span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;{&quot;someKey&quot;:&quot;someValue&quot;}&#39;</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="s1">&#39;{&quot;someKey&quot;:&quot;someValue&quot;}&#39;</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="responserawbody"><code>response.rawBody</code><a class="headerlink" href="#responserawbody" title="Permanent link">&para;</a></h4>
+<h4 id="responseraw"><code>response.raw</code><a class="headerlink" href="#responseraw" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>This will NOT automatically convert the body to json if possible when called. This is great when working with an <code>afterAll</code> method that wants to mutate the body of the response before returning to the user.</p>
+<p>This will NOT automatically convert the body to json if possible when called. This is great when working with an <code>after_all</code> method that wants to mutate the body of the response before returning to the user.</p>
 </details>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1111,14 +1112,14 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">response</span><span class="p">.</span><span class="nx">rawBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">someKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;someValue&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">response</span><span class="o">.</span><span class="n">raw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;some_key&#39;</span><span class="p">:</span> <span class="s1">&#39;some_value&#39;</span><span class="p">};</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">rawBody</span><span class="p">);</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">someKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;someValue&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="s1">&#39;some_key&#39;</span><span class="p">:</span> <span class="s1">&#39;some_value&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="responsecompress"><code>response.compress</code><a class="headerlink" href="#responsecompress" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
@@ -1128,12 +1129,12 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">response</span><span class="p">.</span><span class="nx">compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">response</span><span class="o">.</span><span class="n">compress</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span><span class="w"></span>
-<span class="c1">// example output: this will gzip and compress the body.</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+<span class="c1"># output: this will gzip and compress the body.</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="responseseterrorkey-value"><code>response.setError(key, value)</code><a class="headerlink" href="#responseseterrorkey-value" title="Permanent link">&para;</a></h4>
+<h4 id="responseset_errorkey-value"><code>response.set_error(key, value)</code><a class="headerlink" href="#responseset_errorkey-value" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1153,28 +1154,28 @@
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">someKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc123&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="nx">response</span><span class="p">.</span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;someKey&#39;</span><span class="p">,</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">someKey</span><span class="si">}</span><span class="sb"> is not a valid key to use with this service; try again with a different key`</span><span class="p">);</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">anotherKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;def456&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="nx">response</span><span class="p">.</span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;anotherKey&#39;</span><span class="p">,</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">anotherKey</span><span class="si">}</span><span class="sb"> is not the correct type to operate on`</span><span class="p">);</span><span class="w"></span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">some_key</span> <span class="o">=</span> <span class="s1">&#39;abc123&#39;</span>
+<span class="n">response</span><span class="o">.</span><span class="n">set_error</span><span class="p">(</span><span class="s1">&#39;someKey&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">some_key</span><span class="si">}</span><span class="s1"> is not a valid key to use with this service; try again with a different key&#39;</span><span class="p">)</span>
+<span class="n">another_key</span> <span class="o">=</span> <span class="s1">&#39;def456&#39;</span>
+<span class="n">response</span><span class="o">.</span><span class="n">set_error</span><span class="p">(</span><span class="s1">&#39;anotherKey&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">another_key</span><span class="si">}</span><span class="s1"> is not the correct type to operate on&#39;</span><span class="p">)</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">rawBody</span><span class="p">);</span><span class="w"></span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">errors</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">key_path</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;someKey&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;abc123 is not a valid key to use with this service; try again with a different key&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">key_path</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;anotherKey&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;def456 is not the correct type to operate on&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="p">{</span>
+    <span class="s1">&#39;errors&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;key_path&#39;</span><span class="p">:</span> <span class="s1">&#39;someKey&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;abc123 is not a valid key to use with this service; try again with a different key&#39;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;key_path&#39;</span><span class="p">:</span> <span class="s1">&#39;anotherKey&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;def456 is not the correct type to operate on&#39;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="responsehaserror"><code>response.hasError</code><a class="headerlink" href="#responsehaserror" title="Permanent link">&para;</a></h4>
+<h4 id="responsehas_error"><code>response.has_error</code><a class="headerlink" href="#responsehas_error" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1186,18 +1187,18 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">response</span><span class="p">.</span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="sb">`your access is denied`</span><span class="p">);</span><span class="w"></span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">hasError</span><span class="p">);</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">response</span><span class="o">.</span><span class="n">setError</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;your access is denied&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">has_error</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="kc">true</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="kc">True</span>
 
 
-<span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;you have been granted access&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">hasError</span><span class="p">);</span><span class="w"></span>
+<span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;you have been granted access&#39;</span><span class="p">};</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">has_error</span><span class="p">)</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="kc">false</span><span class="w"></span>
+<span class="c1"># output:</span>
+<span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
 
               
