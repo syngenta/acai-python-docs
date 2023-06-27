@@ -6,7 +6,8 @@ description: How to use the Acai Router
 # Router Set Up
 
 ???+ example
-    Don't like reading documentation? Then look at [our examples](https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway) which can run locally! :nerd:
+    Don't like reading documentation? Then look at 
+[our examples](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! :nerd:
 
 
 ### 1. Configure the Lambda
@@ -28,12 +29,15 @@ functions:
 
 ### 2. Configure the Router
 
-There are three routing modes: `directory`, `pattern` and `list`; `directory` and `pattern` routing mode requires your project files to be placed in a particular way; `list` does not require any structure, as you define every route and it's corresponding file. Below are the three ways configure your router:
+There are three ways to organize your routes: `directory`, `pattern` and `mapping`; `directory` and `pattern` routing 
+mode requires your project files to be placed in a particular way; `mapping` does not require any structure, as you 
+define every route and it's corresponding file. Below are the three ways configure your router:
 
 #### Routing Mode: Directory
 
 ???+ tip
-    If you are using route params, you will need use dynamic file names which follow this pattern: `{some-variable-name}.js`.
+    If you are using route params, you will need use dynamic file names which follow this pattern: 
+`_some_variable_name.py`.
 
 === "file structure"
 
@@ -42,33 +46,34 @@ There are three routing modes: `directory`, `pattern` and `list`; `directory` an
     ===================================================================
     📦api/                              |          
     │---📂handler                       |           
-        │---📜router.js                 |
-        │---📜org.js                    | /org    
+        │---📜router.py                 |
+        │---📜org.py                    | /org    
         │---📂grower                    |
-            │---📜index.js              | /grower
-            │---📜{growerId}.js         | /grower/{growerId}
+            │---📜__init__.py           | /grower
+            │---📜_grower_id.py         | /grower/{grower_id}
         │---📂farm                      |
-            │---📜index.js              | /farm
-            │---📂{farmId}              |
-                │---📜index.js          | /farm/{farmId}
+            │---📜__init__.py           | /farm
+            │---📂_farm_id              |
+                │---📜__init__.py       | /farm/{farm_id}
                 │---📂field             |
-                    │---📜index.js      | /farm/{farmId}/field
-                    │---📜{fieldId}.js  | /farm/{farmId}/field/{fieldId}
+                    │---📜__init__.py   | /farm/{farm_id}/field
+                    │---📜_field_id.py  | /farm/{farm_id}/field/{field_id}
     ```
 
-=== "router.js"
+=== "router.py"
 
-    ```js
-    const {Router} = require('@syngenta-digital/Acai').apigateway;
-
-    exports.route = async (event) => {
-        const router = new Router({
-            routingMode: 'directory',
-            basePath: 'api', // for use with custom apigateway domain
-            handlerPath: 'api/handler'
-        });
-        return router.route(event);
-    };
+    ```py
+    from acai.apigateway.router import Router
+    
+    router = Router(
+        base_path='your-service/v1',
+        handlers='api/handlers',
+        schema='api/openapi.yml'
+    )
+    router.auto_load()
+    
+    def handle(event, context):
+        return router.route(event, context)
     ```
 
 #### Routing Mode: Pattern
@@ -76,11 +81,11 @@ There are three routing modes: `directory`, `pattern` and `list`; `directory` an
 ???+ tip
     You can use any [glob](https://en.wikipedia.org/wiki/Glob_(programming)) pattern you like; common patterns are:
 
-    * `/**/*.controller.js`
+    * `/**/*_handler.py`
 
-    * `/**/handler.*.js`
+    * `/**/handler_*.py`
 
-    * `/**/endpoint.js`
+    * `/**/handler.py`
 
 === "file structure"
 
@@ -88,44 +93,45 @@ There are three routing modes: `directory`, `pattern` and `list`; `directory` an
     ~~ Pattern ~~                               ~~ Route ~~
     ================================================================================
     📦api/                                      |
-    │---📜router.js                             |
+    │---📜router.py                             |
     │---📂org                                   |
-        │---📜org.controller.js                 | /org
-        │---📜org.model.js                      |
-        │---📜org.factory.js                    |
-        │---📜org.logic.js                      |
+        │---📜org_handler.py                    | /org
+        │---📜org_model.py                      |
+        │---📜org_factory.py                    |
+        │---📜org_logic.py                      |
     │---📂grower                                |
-        │---📜grower.controller.js              | /grower
-        │---📜{growerId}.controller.js          | /grower/{growerId}
-        │---📜grower.model.js                   |
-        │---📜grower.factory.js                 |
-        │---📜grower.logic.js                   |
+        │---📜grower_handler.py                 | /grower
+        │---📜_grower_id_handler.py             | /grower/{grower_id}
+        │---📜grower_model.py                   |
+        │---📜grower_factory.py                 |
+        │---📜grower_logic.py                   |
     │---📂farm                                  |
-        │---📜farm.controller.js                | /farm
-        │---📜farm.logic.js                     |
-        │---📜farm.model.js                     |
-        │---📂{farmId}                          |
-            │---📜{farmId}.controller.js        | /farm/{farmId}
+        │---📜farm_handler.py                   | /farm
+        │---📜farm_logic.py                     |
+        │---📜farm_model.py                     |
+        │---📂_farm_id                          |
+            │---📜_farm_id_handler.py           | /farm/{farm_id}
             │---📂field                         |
-                │---📜field.controller.js       | /farm/{farmId}/field
-                │---📜{fieldId}.controller.js   | /farm/{farmId}/field/{fieldId}
-                │---📜field.logic.js            |
-                │---📜field.model.js            |
+                │---📜field_handler.py          | /farm/{farm_id}/field
+                │---📜_field_id_controller.py   | /farm/{farm_id}/field/{field_id}
+                │---📜field_logic.py            |
+                │---📜field_model.py            |
     ```
 
-=== "router.js"
+=== "router.jy"
 
-    ```js
-    const {Router} = require('@syngenta-digital/Acai').apigateway;
-
-    exports.route = async (event) => {
-        const router = new Router({
-            routingMode: 'pattern',
-            basePath: 'api', // for use with custom apigateway domain
-            handlerPattern: 'api/**/*.controller.js'
-        });
-        return router.route(event);
-    };
+    ```py
+    from acai.apigateway.router import Router
+    
+    router = Router(
+        base_path='your-service/v1',
+        handlers='api/*_handler.py',
+        schema='api/openapi.yml'
+    )
+    router.auto_load()
+    
+    def handle(event, context):
+        return router.route(event, context)
     ```
 
 #### Routing Mode: List
@@ -145,62 +151,80 @@ There are three routing modes: `directory`, `pattern` and `list`; `directory` an
     File structure doesn't matter
     ======================================================
     📦api/
-    │---📜router.js
+    │---📜router.py
     ```
 
-=== "router.js"
+=== "router.py"
 
-    ```js
-    const {Router} = require('@syngenta-digital/Acai').apigateway;
-
-    exports.route = async (event) => {
-        const router = new Router({
-            routingMode: 'list',
-            basePath: 'api', // for use with custom apigateway domain
-            handlerList: {
-                'GET::grower': 'api/routes/grower.js',
-                'POST::farm': 'api/routes/farm.js',
-                'PUT:farm/{farmId}/field/{fieldId}': 'api/routes/farm-field.js'
-            }
-        });
-        return router.route(event);
-    };
+    ```py
+    from acai.apigateway.router import Router
+    
+    router = Router(
+        base_path='your-service/v1',
+        schema='api/openapi.yml'
+        handlers={
+            'grower': 'api/routes/grower.py',
+            'farm': 'api/routes/farm.py',
+            'farm/{farm_id}/field/{field_id}': 'api/routes/farm_field.py'
+        }
+    )
+    router.auto_load()
+    
+    def handle(event, context):
+        return router.route(event, context)
     ```
 
 
 ### 3. Configure the Endpoint File
 
-Every endpoint file should contain a function which matches an [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) in lower case. Most common are `post`, `get`, `put`, `patch`, `delete`, but this library does support custom methods, if you so choose. As long as the method of the request matches the function name, it will work.
+Every endpoint file should contain a function which matches an 
+[HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) in lower case. 
+Most common are `post`, `get`, `put`, `patch`, `delete`, but this library does support custom methods, 
+if you so choose. As long as the method of the request matches the function name, it will work.
 
-```js
-exports.post = async (request, response) => {
-    response.body = {post: true};
-    return response;
-};
+```python
+# example for endpoint file: api/grower.py
+from acai.apigateway.requirements import requirements
 
-exports.get = async (request, response) => {
-    response.body = {get: true};
-    return response;
-};
+from service.logic.grower import Grower
+from service.logic.middlware import log_grower, filter_grower
 
-exports.patch = async (request, response) => {
-    response.body = {patch: true};
-    return response;
-};
 
-exports.put = async (request, response) => {
-    response.body = {put: true};
-    return response;
-};
+@requirements(
+    required_body='v1-grower-post-request',
+    before=log_grower,
+    auth_required=True
+)
+def post(request, response):
+    response.body = {'message': 'POST called', 'request_body': request.body}
+    return response
 
-exports.delete = async (request, response) => {
-    response.body = {delete: true};
-    return response;
-};
 
-// this is a non-compliant, custom http method; this will work.
-exports.query = async (request, response) => {
-    response.body = [{query: true}];
-    return response;
-};
+@requirements(
+    required_query=['requester_id'],
+    available_query=['grower_id', 'grower_email'],
+    data_class=Grower,
+    before=filter_grower,
+    auth_required=True
+)
+def get(grower, response):
+    response.body = {'message': 'GET called', 'grower': grower.to_dict()}
+    return response
+
+@requirements(
+    required_header=['x-grower-id'],
+    data_class=Grower,
+    auth_required=True
+)
+def patch(grower, response):
+    response.body = {'message': 'PATCH called', 'grower': grower.to_dict()}
+    return response
+
+@requirements(
+    required_path='grower/{grower_id}',
+    auth_required=True
+)
+def delete(request, response):
+    response.body = {'message': 'DELETE called', 'request': request.path_params['grower_id']}
+    return response
 ```

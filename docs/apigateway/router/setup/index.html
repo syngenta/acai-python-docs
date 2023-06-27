@@ -972,8 +972,9 @@
 <h1 id="router-set-up">Router Set Up<a class="headerlink" href="#router-set-up" title="Permanent link">&para;</a></h1>
 <details class="example" open="open">
 <summary>Example</summary>
-<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway">our examples</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
+<p>Don't like reading documentation? Then look at </p>
 </details>
+<p><a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway">our examples</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 <h3 id="1-configure-the-lambda">1. Configure the Lambda<a class="headerlink" href="#1-configure-the-lambda" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Serverless Framework</label></div>
 <div class="tabbed-content">
@@ -1001,13 +1002,16 @@
 <span class="w">                </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ANY</span><span class="w">    </span>
 </code></pre></div></td></tr></table></div>
 <h3 id="2-configure-the-router">2. Configure the Router<a class="headerlink" href="#2-configure-the-router" title="Permanent link">&para;</a></h3>
-<p>There are three routing modes: <code>directory</code>, <code>pattern</code> and <code>list</code>; <code>directory</code> and <code>pattern</code> routing mode requires your project files to be placed in a particular way; <code>list</code> does not require any structure, as you define every route and it's corresponding file. Below are the three ways configure your router:</p>
+<p>There are three ways to organize your routes: <code>directory</code>, <code>pattern</code> and <code>mapping</code>; <code>directory</code> and <code>pattern</code> routing 
+mode requires your project files to be placed in a particular way; <code>mapping</code> does not require any structure, as you 
+define every route and it's corresponding file. Below are the three ways configure your router:</p>
 <h4 id="routing-mode-directory">Routing Mode: Directory<a class="headerlink" href="#routing-mode-directory" title="Permanent link">&para;</a></h4>
 <details class="tip" open="open">
 <summary>Tip</summary>
-<p>If you are using route params, you will need use dynamic file names which follow this pattern: <code>{some-variable-name}.js</code>.</p>
+<p>If you are using route params, you will need use dynamic file names which follow this pattern: </p>
 </details>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">file structure</label><label for="__tabbed_2_2">router.js</label></div>
+<p><code>_some_variable_name.py</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">file structure</label><label for="__tabbed_2_2">router.py</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1029,18 +1033,18 @@
 ===================================================================
 📦api/                              |          
 │---📂handler                       |           
-    │---📜router.js                 |
-    │---📜org.js                    | /org    
+    │---📜router.py                 |
+    │---📜org.py                    | /org    
     │---📂grower                    |
-        │---📜index.js              | /grower
-        │---📜{growerId}.js         | /grower/{growerId}
+        │---📜__init__.py           | /grower
+        │---📜_grower_id.py         | /grower/{grower_id}
     │---📂farm                      |
-        │---📜index.js              | /farm
-        │---📂{farmId}              |
-            │---📜index.js          | /farm/{farmId}
+        │---📜__init__.py           | /farm
+        │---📂_farm_id              |
+            │---📜__init__.py       | /farm/{farm_id}
             │---📂field             |
-                │---📜index.js      | /farm/{farmId}/field
-                │---📜{fieldId}.js  | /farm/{farmId}/field/{fieldId}
+                │---📜__init__.py   | /farm/{farm_id}/field
+                │---📜_field_id.py  | /farm/{farm_id}/field/{field_id}
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1053,16 +1057,18 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">Router</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@syngenta-digital/Acai&#39;</span><span class="p">).</span><span class="nx">apigateway</span><span class="p">;</span><span class="w"></span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.apigateway.router</span> <span class="kn">import</span> <span class="n">Router</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Router</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">routingMode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;directory&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">basePath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// for use with custom apigateway domain</span><span class="w"></span>
-<span class="w">        </span><span class="nx">handlerPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api/handler&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">router</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="n">router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">(</span>
+    <span class="n">base_path</span><span class="o">=</span><span class="s1">&#39;your-service/v1&#39;</span><span class="p">,</span>
+    <span class="n">handlers</span><span class="o">=</span><span class="s1">&#39;api/handlers&#39;</span><span class="p">,</span>
+    <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;api/openapi.yml&#39;</span>
+<span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">auto_load</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">router</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1073,17 +1079,17 @@
 <p>You can use any <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob</a> pattern you like; common patterns are:</p>
 <ul>
 <li>
-<p><code>/**/*.controller.js</code></p>
+<p><code>/**/*_handler.py</code></p>
 </li>
 <li>
-<p><code>/**/handler.*.js</code></p>
+<p><code>/**/handler_*.py</code></p>
 </li>
 <li>
-<p><code>/**/endpoint.js</code></p>
+<p><code>/**/handler.py</code></p>
 </li>
 </ul>
 </details>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">file structure</label><label for="__tabbed_3_2">router.js</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">file structure</label><label for="__tabbed_3_2">router.jy</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1114,29 +1120,29 @@
 <span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code>~~ Pattern ~~                               ~~ Route ~~
 ================================================================================
 📦api/                                      |
-│---📜router.js                             |
+│---📜router.py                             |
 │---📂org                                   |
-    │---📜org.controller.js                 | /org
-    │---📜org.model.js                      |
-    │---📜org.factory.js                    |
-    │---📜org.logic.js                      |
+    │---📜org_handler.py                    | /org
+    │---📜org_model.py                      |
+    │---📜org_factory.py                    |
+    │---📜org_logic.py                      |
 │---📂grower                                |
-    │---📜grower.controller.js              | /grower
-    │---📜{growerId}.controller.js          | /grower/{growerId}
-    │---📜grower.model.js                   |
-    │---📜grower.factory.js                 |
-    │---📜grower.logic.js                   |
+    │---📜grower_handler.py                 | /grower
+    │---📜_grower_id_handler.py             | /grower/{grower_id}
+    │---📜grower_model.py                   |
+    │---📜grower_factory.py                 |
+    │---📜grower_logic.py                   |
 │---📂farm                                  |
-    │---📜farm.controller.js                | /farm
-    │---📜farm.logic.js                     |
-    │---📜farm.model.js                     |
-    │---📂{farmId}                          |
-        │---📜{farmId}.controller.js        | /farm/{farmId}
+    │---📜farm_handler.py                   | /farm
+    │---📜farm_logic.py                     |
+    │---📜farm_model.py                     |
+    │---📂_farm_id                          |
+        │---📜_farm_id_handler.py           | /farm/{farm_id}
         │---📂field                         |
-            │---📜field.controller.js       | /farm/{farmId}/field
-            │---📜{fieldId}.controller.js   | /farm/{farmId}/field/{fieldId}
-            │---📜field.logic.js            |
-            │---📜field.model.js            |
+            │---📜field_handler.py          | /farm/{farm_id}/field
+            │---📜_field_id_controller.py   | /farm/{farm_id}/field/{field_id}
+            │---📜field_logic.py            |
+            │---📜field_model.py            |
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1149,16 +1155,18 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">Router</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@syngenta-digital/Acai&#39;</span><span class="p">).</span><span class="nx">apigateway</span><span class="p">;</span><span class="w"></span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.apigateway.router</span> <span class="kn">import</span> <span class="n">Router</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Router</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">routingMode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pattern&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">basePath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// for use with custom apigateway domain</span><span class="w"></span>
-<span class="w">        </span><span class="nx">handlerPattern</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api/**/*.controller.js&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">router</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="n">router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">(</span>
+    <span class="n">base_path</span><span class="o">=</span><span class="s1">&#39;your-service/v1&#39;</span><span class="p">,</span>
+    <span class="n">handlers</span><span class="o">=</span><span class="s1">&#39;api/*_handler.py&#39;</span><span class="p">,</span>
+    <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;api/openapi.yml&#39;</span>
+<span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">auto_load</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">router</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1176,7 +1184,7 @@
 <summary>Danger</summary>
 <p>This is not the preferred routing mode to use; this can lead to a sloppy, unpredictable project architecture which will be hard to maintain and extend. This is <em>NOT RECOMMENDED</em>.</p>
 </details>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">file structure</label><label for="__tabbed_4_2">router.js</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">file structure</label><label for="__tabbed_4_2">router.py</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1185,7 +1193,7 @@
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>File structure doesn&#39;t matter
 ======================================================
 📦api/
-│---📜router.js
+│---📜router.py
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1202,26 +1210,31 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">Router</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@syngenta-digital/Acai&#39;</span><span class="p">).</span><span class="nx">apigateway</span><span class="p">;</span><span class="w"></span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.apigateway.router</span> <span class="kn">import</span> <span class="n">Router</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Router</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">routingMode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;list&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">basePath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// for use with custom apigateway domain</span><span class="w"></span>
-<span class="w">        </span><span class="nx">handlerList</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="s1">&#39;GET::grower&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api/routes/grower.js&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s1">&#39;POST::farm&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api/routes/farm.js&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s1">&#39;PUT:farm/{farmId}/field/{fieldId}&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api/routes/farm-field.js&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">router</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="n">router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">(</span>
+    <span class="n">base_path</span><span class="o">=</span><span class="s1">&#39;your-service/v1&#39;</span><span class="p">,</span>
+    <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;api/openapi.yml&#39;</span>
+    <span class="n">handlers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;grower&#39;</span><span class="p">:</span> <span class="s1">&#39;api/routes/grower.py&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;farm&#39;</span><span class="p">:</span> <span class="s1">&#39;api/routes/farm.py&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;farm/</span><span class="si">{farm_id}</span><span class="s1">/field/</span><span class="si">{field_id}</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;api/routes/farm_field.py&#39;</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">auto_load</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">router</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 <h3 id="3-configure-the-endpoint-file">3. Configure the Endpoint File<a class="headerlink" href="#3-configure-the-endpoint-file" title="Permanent link">&para;</a></h3>
-<p>Every endpoint file should contain a function which matches an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP method</a> in lower case. Most common are <code>post</code>, <code>get</code>, <code>put</code>, <code>patch</code>, <code>delete</code>, but this library does support custom methods, if you so choose. As long as the method of the request matches the function name, it will work.</p>
+<p>Every endpoint file should contain a function which matches an 
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP method</a> in lower case. 
+Most common are <code>post</code>, <code>get</code>, <code>put</code>, <code>patch</code>, <code>delete</code>, but this library does support custom methods, 
+if you so choose. As long as the method of the request matches the function name, it will work.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1251,36 +1264,64 @@
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">exports</span><span class="p">.</span><span class="nx">post</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">post</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># example for endpoint file: api/grower.py</span>
+<span class="kn">from</span> <span class="nn">acai.apigateway.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">get</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="kn">from</span> <span class="nn">service.logic.grower</span> <span class="kn">import</span> <span class="n">Grower</span>
+<span class="kn">from</span> <span class="nn">service.logic.middlware</span> <span class="kn">import</span> <span class="n">log_grower</span><span class="p">,</span> <span class="n">filter_grower</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">patch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">patch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">put</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">put</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_body</span><span class="o">=</span><span class="s1">&#39;v1-grower-post-request&#39;</span><span class="p">,</span>
+    <span class="n">before</span><span class="o">=</span><span class="n">log_grower</span><span class="p">,</span>
+    <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;POST called&#39;</span><span class="p">,</span> <span class="s1">&#39;request_body&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="ow">delete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="ow">delete</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
 
-<span class="c1">// this is a non-compliant, custom http method; this will work.</span><span class="w"></span>
-<span class="nx">exports</span><span class="p">.</span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}];</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_query</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;requester_id&#39;</span><span class="p">],</span>
+    <span class="n">available_query</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;grower_id&#39;</span><span class="p">,</span> <span class="s1">&#39;grower_email&#39;</span><span class="p">],</span>
+    <span class="n">data_class</span><span class="o">=</span><span class="n">Grower</span><span class="p">,</span>
+    <span class="n">before</span><span class="o">=</span><span class="n">filter_grower</span><span class="p">,</span>
+    <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">grower</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;GET called&#39;</span><span class="p">,</span> <span class="s1">&#39;grower&#39;</span><span class="p">:</span> <span class="n">grower</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()}</span>
+    <span class="k">return</span> <span class="n">response</span>
+
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_header</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x-grower-id&#39;</span><span class="p">],</span>
+    <span class="n">data_class</span><span class="o">=</span><span class="n">Grower</span><span class="p">,</span>
+    <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="n">grower</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;PATCH called&#39;</span><span class="p">,</span> <span class="s1">&#39;grower&#39;</span><span class="p">:</span> <span class="n">grower</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()}</span>
+    <span class="k">return</span> <span class="n">response</span>
+
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_path</span><span class="o">=</span><span class="s1">&#39;grower/</span><span class="si">{grower_id}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;DELETE called&#39;</span><span class="p">,</span> <span class="s1">&#39;request&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;grower_id&#39;</span><span class="p">]}</span>
+    <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></td></tr></table></div>
 
               
