@@ -34,8 +34,8 @@ print(response.headers)
 
 # output:
 {
-    status: 'ok',
-    response_id: 'some-guid',
+    'status': 'ok',
+    'response_id': 'some-guid',
 }
 ```
 

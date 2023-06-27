@@ -49,7 +49,7 @@ print(request.cookies)
 #### `request.protocol`
 
 ```python
-print(request.cookies)
+print(request.protocol)
 
 # output: 
 'https'
@@ -119,11 +119,11 @@ print(request.authorizer)
 
 # output:
 {
-    apiKey: 'SOME KEY',
-    userId: 'x-1-3-4',
-    correlationId: 'abc12312',
-    principalId: '9de3f415a97e410386dbef146e88744e',
-    integrationLatency: 572
+    'apiKey': 'SOME KEY',
+    'userId': 'x-1-3-4',
+    'correlationId': 'abc12312',
+    'principalId': '9de3f415a97e410386dbef146e88744e',
+    'integrationLatency': 572
 }
 ```
 
@@ -149,11 +149,11 @@ print(request.params)
 
 # output:
 {
-    query: {
-        name: 'me'
+    'query': {
+        'name': 'me'
     },
-    path: {
-        id: 1
+    'path': {
+        'id': 1
     }
 }
 ```
@@ -165,7 +165,7 @@ print(request.query_params)
 
 # output:
 {
-     name: 'me'
+     'name': 'me'
 }
 ```
 
@@ -177,7 +177,7 @@ print(request.path_params)
 
 # output:
 {
-     id: 1
+     'id': 1
 }
 ```
 
@@ -217,7 +217,7 @@ print(request.json);
 
 # output:
 {
-    some_json_key: 'some_json_value'
+    'some_json_key': 'some_json_value'
 }
 ```
 
@@ -227,7 +227,7 @@ print(request.form);
 
 # output:
 {
-    some_form_key: 'some_form_value'
+    'some_form_key': 'some_form_value'
 }
 ```
 
@@ -241,7 +241,7 @@ python(request.xml);
 
 # output:
 {
-    some_xml_key: 'some_xml_value'
+    'some_xml_key': 'some_xml_value'
 }
 ```
 
@@ -274,7 +274,7 @@ print(request.body)
 
 # output:
 {
-    some_key: 'some_value'
+    'some_key': 'some_value'
 }
 ```
 
@@ -302,7 +302,7 @@ print(request.context)
 
 # output:
 {
-    application_assignable: true
+    'application_assignable': true
 }
 ```
 
@@ -379,7 +379,7 @@ print(request.event)
     "pathParameters": {
         "parameter1": "value1"
     },
-    "isBase64Encoded": false,
+    "isBase64Encoded": False,
     "stageVariables": {
         "stageVariable1": "value1",
         "stageVariable2": "value2"
