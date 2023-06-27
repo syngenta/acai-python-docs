@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to set up an endpoint for the Acai">
+        <meta name="description" content="How to set up an endpoint with Acai">
       
       
         <meta name="author" content="Paul Cruse III">
@@ -902,90 +902,51 @@
 
 
 <h1 id="endpoint-set-up">Endpoint Set Up<a class="headerlink" href="#endpoint-set-up" title="Permanent link">&para;</a></h1>
-<p>Each endpoint is meant to be treated as a separate module within the API. These endpoints are not meant to be extended or commingled and thus should approach individually. If resources are meant to be shared across endpoints, then those resources should be packaged as shared classes or utilities.</p>
-<p>Each endpoint should read as a procedural list of steps to be completed. To help keep this list clean and easy to read, the Acai follows its philosophy of "Happy Path Programming." To achieve this, the Acai comes with a plethora of validation configurations with the ability to extend with even more customized validation options. This ensures the request sent to your endpoint will be correct with little need for exception handling or complex conditionals.</p>
+<p>Each endpoint is meant to be treated as a separate module within the API. These endpoints are not meant to be extended 
+or commingled and thus should approach individually. If resources are meant to be shared across endpoints, then 
+those resources should be packaged as shared classes or utilities.</p>
+<p>Each endpoint should read as a procedural list of steps to be completed. To help keep this list clean and easy to read, 
+the Acai follows the philosophy of "Happy Path Programming." To achieve this, Acai comes with a plethora of 
+validation configurations with the ability to extend with even more customized validation options. This ensures 
+the request sent to your endpoint will be correct with little need for exception handling or complex conditionals.</p>
 <details class="examples" open="open">
 <summary>Examples</summary>
-<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway">our examples,</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
+<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway">our examples,</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 </details>
 <h3 id="1-match-function-to-http-method">1. Match Function to HTTP Method<a class="headerlink" href="#1-match-function-to-http-method" title="Permanent link">&para;</a></h3>
-<p>Each endpoint must have stateless functions which match the name of the HTTP method. If endpoint is called the a <code>POST</code> HTTP method, then the <code>post</code> endpoint function is invoked.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// example for endpoint file: api/grower.js</span><span class="w"></span>
-
-<span class="nx">exports</span><span class="p">.</span><span class="nx">requirements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"> </span><span class="c1">// discussed in next section below</span><span class="w"></span>
-
-<span class="nx">exports</span><span class="p">.</span><span class="nx">post</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[POST] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="nx">exports</span><span class="p">.</span><span class="nx">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[GET] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="nx">exports</span><span class="p">.</span><span class="nx">patch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[PATCH] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="nx">exports</span><span class="p">.</span><span class="nx">put</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[PUT] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="nx">exports</span><span class="p">.</span><span class="ow">delete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[DELETE] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="nx">exports</span><span class="p">.</span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[QUERY] /grower, a custom http method, was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<p>Each endpoint must have stateless functions which match the name of the HTTP method. 
+If endpoint is called the a <code>POST</code> HTTP method, then the <code>post</code> endpoint function is invoked.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># example for endpoint file: api/grower.py</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="s1">&#39;user_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;grower&#39;</span><span class="p">:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;welcome grower!&#39;</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;welcome other type of user&#39;</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="2-configure-the-requirements-optional">2. Configure the Requirements (optional)<a class="headerlink" href="#2-configure-the-requirements-optional" title="Permanent link">&para;</a></h3>
-<p>Each method within the endpoint file can have individual validation requirements. These requirements allow you to test all structural points of the request, with the ability to use JSONSchema and custom middleware to further extend the validation options. Below is an example of a full requirements object:</p>
+<p>Each method within the endpoint file can have individual validation requirements. These requirements allow you to test 
+all structural points of the request, with the ability to use JSONSchema and custom middleware to further extend the 
+validation options. Below is an example of a full requirements object:</p>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>See the full configuration list, explanation and example of each setting in our <a href="https://syngenta.github.io/acai-js-docs/node/apigateway/endpoint/configurations/">Configurations Section</a>.</p>
+<p>See the full configuration list, explanation and example of each setting in our </p>
 </details>
+<p><a href="https://syngenta.github.io/acai-js-docs/apigateway/endpoint/configurations/">Configurations Section</a>.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
-<p>If you are already using an <code>openapi.yml</code>, none of these requirements below are necessary. Ensure your <code>router</code> has enabled <a href="https://syngenta.github.io/acai-js-docs/node/apigateway/router/configurations/#example-router-config-with-directory-routing"><code>autoValidate</code></a> with proper <code>schemaPath</code> configured and the below requirements are not necessary for any basic structural validation (headers, body, query, params will be checked via openapi.yml). You can still use <code>before</code>, <code>after</code> &amp; <code>dataClass</code> with other custom validations for more advanced use cases.</p>
+<p>If you are already using an <code>openapi.yml</code>, none of these requirements below are necessary. Ensure your <code>router</code> has </p>
 </details>
+<p>enabled <a href="https://syngenta.github.io/acai-js-docs/apigateway/router/configurations/#example-router-config-with-directory-routing"><code>auto_validate</code></a> 
+with proper <code>schema</code> configured and the below requirements are not necessary for any basic structural validation 
+(headers, body, query, params will be checked via openapi.yml). You can still use <code>before</code>, <code>after</code> &amp; <code>data_class</code> with 
+other custom validations for more advanced use cases.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1047,96 +1008,68 @@
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// example for endpoint file: api/grower.js</span><span class="w"></span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># example for endpoint file: api/grower.py</span>
+<span class="kn">from</span> <span class="nn">acai.apigateway.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">Grower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;api/logic/grower&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="kn">from</span> <span class="nn">service.logic.grower</span> <span class="kn">import</span> <span class="n">Grower</span>
+<span class="kn">from</span> <span class="nn">service.logic.middlware</span> <span class="kn">import</span> <span class="n">log_grower</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">requirements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">post</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredHeaders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;x-onbehalf-of&#39;</span><span class="p">],</span><span class="w"></span>
-<span class="w">        </span><span class="nx">availableHeaders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;x-requester-id&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;x-test-id&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">//not advisable to use; too strict</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredBody</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;post-grower-request&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nx">get</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredQuery</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;requester_id&#39;</span><span class="p">],</span><span class="w"></span>
-<span class="w">        </span><span class="nx">availableQuery</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;grower_email&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;grower_phone&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;grower_first&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;grower_last&#39;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nx">put</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;grower/{id}&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredAuth</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredBody</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;put-grower-request&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">dataClass</span><span class="o">:</span><span class="w"> </span><span class="nx">Grower</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nx">patch</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;grower/{id}&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredAuth</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredBody</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;patch-grower-request&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">before</span><span class="o">:</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">,</span><span class="w"> </span><span class="nx">requirements</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// might be cleaner to put this in a separate file and call in context.</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">db</span><span class="p">.</span><span class="nx">checkGrowerIdExists</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">pathParams</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">result</span><span class="p">){</span><span class="w"></span>
-<span class="w">                </span><span class="nx">response</span><span class="p">.</span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;grower/{id}&#39;</span><span class="p">,</span><span class="w"> </span><span class="sb">`grower with id: </span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> does not exist.`</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="ow">delete</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;grower/{id}&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">after</span><span class="o">:</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">,</span><span class="w"> </span><span class="nx">requirements</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// might be cleaner to put this in a separate file and call in context.</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">relations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">db</span><span class="p">.</span><span class="nx">getRequesterRelations</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-requester-id&#39;</span><span class="p">]);</span><span class="w"></span>
-<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">grower</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">rawBody</span><span class="p">){</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">relations</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">grower</span><span class="p">.</span><span class="nx">id</span><span class="p">)){</span><span class="w"></span>
-<span class="w">                    </span><span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">grower</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">post</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[POST] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="c1"># example after function</span>
+<span class="c1"># def filter_grower(request, response, requirements):</span>
+<span class="c1">#     if &#39;GET&#39; in response.raw[&#39;message&#39;]:</span>
+<span class="c1">#       print(response.raw)</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[GET] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_query</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;requester_id&#39;</span><span class="p">],</span>
+    <span class="n">available_query</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;grower_id&#39;</span><span class="p">,</span> <span class="s1">&#39;grower_email&#39;</span><span class="p">],</span>
+    <span class="n">data_class</span><span class="o">=</span><span class="n">Grower</span><span class="p">,</span>
+    <span class="n">after</span><span class="o">=</span><span class="n">filter_grower</span><span class="p">,</span>
+    <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;GET called&#39;</span><span class="p">,</span> <span class="s1">&#39;request_query_params&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">patch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[PATCH] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">put</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">grower</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[PUT] /grower was called; got instance of grower instead of request&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="c1"># example before function</span>
+<span class="c1"># def log_grower(request, response, requirements):</span>
+<span class="c1">#     print(request.body[&#39;grower_id&#39;])</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="ow">delete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[DELETE] /grower was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_body</span><span class="o">=</span><span class="s1">&#39;v1-grower-post-request&#39;</span><span class="p">,</span>
+    <span class="n">before</span><span class="o">=</span><span class="n">log_grower</span><span class="p">,</span>
+    <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;POST called&#39;</span><span class="p">,</span> <span class="s1">&#39;request_body&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;[QUERY] /grower, a custom http method, was called&#39;</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_headers</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x-api-key&#39;</span><span class="p">,</span> <span class="s1">&#39;x-correlation-id&#39;</span><span class="p">]</span>
+    <span class="n">required_path</span><span class="o">=</span><span class="s1">&#39;grower/</span><span class="si">{grower_id}</span><span class="s1">&#39;</span>
+    <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">required_body</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;grower_id&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;additionalProperties&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;grower_id&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;dict&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;boolean&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;PATCH called&#39;</span><span class="p">,</span> <span class="s1">&#39;request_body&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></td></tr></table></div>
 
               

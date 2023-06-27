@@ -1369,7 +1369,7 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="p">)</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">protocol</span><span class="p">)</span>
 
 <span class="c1"># output: </span>
 <span class="s1">&#39;https&#39;</span>
@@ -1446,11 +1446,11 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-    <span class="n">apiKey</span><span class="p">:</span> <span class="s1">&#39;SOME KEY&#39;</span><span class="p">,</span>
-    <span class="n">userId</span><span class="p">:</span> <span class="s1">&#39;x-1-3-4&#39;</span><span class="p">,</span>
-    <span class="n">correlationId</span><span class="p">:</span> <span class="s1">&#39;abc12312&#39;</span><span class="p">,</span>
-    <span class="n">principalId</span><span class="p">:</span> <span class="s1">&#39;9de3f415a97e410386dbef146e88744e&#39;</span><span class="p">,</span>
-    <span class="n">integrationLatency</span><span class="p">:</span> <span class="mi">572</span>
+    <span class="s1">&#39;apiKey&#39;</span><span class="p">:</span> <span class="s1">&#39;SOME KEY&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;userId&#39;</span><span class="p">:</span> <span class="s1">&#39;x-1-3-4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;correlationId&#39;</span><span class="p">:</span> <span class="s1">&#39;abc12312&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;principalId&#39;</span><span class="p">:</span> <span class="s1">&#39;9de3f415a97e410386dbef146e88744e&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;integrationLatency&#39;</span><span class="p">:</span> <span class="mi">572</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestheaders"><code>request.headers</code><a class="headerlink" href="#requestheaders" title="Permanent link">&para;</a></h4>
@@ -1487,11 +1487,11 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-    <span class="n">query</span><span class="p">:</span> <span class="p">{</span>
-        <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;me&#39;</span>
+    <span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;me&#39;</span>
     <span class="p">},</span>
-    <span class="n">path</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nb">id</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
@@ -1505,7 +1505,7 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-     <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;me&#39;</span>
+     <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;me&#39;</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestpath_params"><code>request.path_params</code><a class="headerlink" href="#requestpath_params" title="Permanent link">&para;</a></h4>
@@ -1518,7 +1518,7 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-     <span class="nb">id</span><span class="p">:</span> <span class="mi">1</span>
+     <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestroute"><code>request.route</code><a class="headerlink" href="#requestroute" title="Permanent link">&para;</a></h4>
@@ -1561,7 +1561,7 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-    <span class="n">some_json_key</span><span class="p">:</span> <span class="s1">&#39;some_json_value&#39;</span>
+    <span class="s1">&#39;some_json_key&#39;</span><span class="p">:</span> <span class="s1">&#39;some_json_value&#39;</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1573,7 +1573,7 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-    <span class="n">some_form_key</span><span class="p">:</span> <span class="s1">&#39;some_form_value&#39;</span>
+    <span class="s1">&#39;some_form_key&#39;</span><span class="p">:</span> <span class="s1">&#39;some_form_value&#39;</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestxml"><code>request.xml</code><a class="headerlink" href="#requestxml" title="Permanent link">&para;</a></h4>
@@ -1590,7 +1590,7 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-    <span class="n">some_xml_key</span><span class="p">:</span> <span class="s1">&#39;some_xml_value&#39;</span>
+    <span class="s1">&#39;some_xml_key&#39;</span><span class="p">:</span> <span class="s1">&#39;some_xml_value&#39;</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestgraphql"><code>request.graphql</code><a class="headerlink" href="#requestgraphql" title="Permanent link">&para;</a></h4>
@@ -1628,7 +1628,7 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-    <span class="n">some_key</span><span class="p">:</span> <span class="s1">&#39;some_value&#39;</span>
+    <span class="s1">&#39;some_key&#39;</span><span class="p">:</span> <span class="s1">&#39;some_value&#39;</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestraw"><code>request.raw</code><a class="headerlink" href="#requestraw" title="Permanent link">&para;</a></h4>
@@ -1656,7 +1656,7 @@
 
 <span class="c1"># output:</span>
 <span class="p">{</span>
-    <span class="n">application_assignable</span><span class="p">:</span> <span class="n">true</span>
+    <span class="s1">&#39;application_assignable&#39;</span><span class="p">:</span> <span class="n">true</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="requestevent"><code>request.event</code><a class="headerlink" href="#requestevent" title="Permanent link">&para;</a></h4>
@@ -1801,7 +1801,7 @@
     <span class="s2">&quot;pathParameters&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;parameter1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span>
     <span class="p">},</span>
-    <span class="s2">&quot;isBase64Encoded&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;isBase64Encoded&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s2">&quot;stageVariables&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;stageVariable1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
         <span class="s2">&quot;stageVariable2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
