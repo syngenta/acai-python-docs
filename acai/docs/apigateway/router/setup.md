@@ -5,10 +5,15 @@ description: How to use the Acai Router
 
 # Router Set Up
 
-???+ example
-    Don't like reading documentation? Then look at 
-[our examples](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! :nerd:
+The router is the core of the apigateway event handler and will automatically route based on the way your project is 
+configured. Most of the time there is no need for managing lists of routes matched to files or exports; all that is
+required is that you create a file in the location or pattern configured to hold your endpoints and the router will
+automatically find it.
 
+???+ examples
+    Don't like reading documentation? Then look at 
+    [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! 
+    :nerd:
 
 ### 1. Configure the Lambda
 

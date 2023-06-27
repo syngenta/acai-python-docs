@@ -447,7 +447,7 @@
   
     <li class="md-nav__item">
       <a href="../configurations/" class="md-nav__link">
-        Configurations
+        Configuration Options
       </a>
     </li>
   
@@ -514,7 +514,7 @@
   
     <li class="md-nav__item">
       <a href="../../endpoint/configurations/" class="md-nav__link">
-        Configurations
+        Configuration Options
       </a>
     </li>
   
@@ -970,11 +970,16 @@
 
 
 <h1 id="router-set-up">Router Set Up<a class="headerlink" href="#router-set-up" title="Permanent link">&para;</a></h1>
-<details class="example" open="open">
-<summary>Example</summary>
-<p>Don't like reading documentation? Then look at </p>
+<p>The router is the core of the apigateway event handler and will automatically route based on the way your project is 
+configured. Most of the time there is no need for managing lists of routes matched to files or exports; all that is
+required is that you create a file in the location or pattern configured to hold your endpoints and the router will
+automatically find it.</p>
+<details class="examples" open="open">
+<summary>Examples</summary>
+<p>Don't like reading documentation? Then look at 
+<a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway">our examples,</a> which can run locally! 
+<img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 </details>
-<p><a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway">our examples</a> which can run locally! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 <h3 id="1-configure-the-lambda">1. Configure the Lambda<a class="headerlink" href="#1-configure-the-lambda" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Serverless Framework</label></div>
 <div class="tabbed-content">
@@ -1359,13 +1364,13 @@ if you so choose. As long as the method of the request matches the function name
       
       
         
-        <a href="../configurations/" class="md-footer__link md-footer__link--next" aria-label="Next: Configurations" rel="next">
+        <a href="../configurations/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration Options" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configurations
+              Configuration Options
             </div>
           </div>
           <div class="md-footer__button md-icon">

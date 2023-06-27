@@ -15,7 +15,9 @@ validation configurations with the ability to extend with even more customized v
 the request sent to your endpoint will be correct with little need for exception handling or complex conditionals.
 
 ???+ examples
-    Don't like reading documentation? Then look at [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! :nerd:
+    Don't like reading documentation? Then look at 
+    [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! 
+    :nerd:
 
 ### 1. Match Function to HTTP Method
 

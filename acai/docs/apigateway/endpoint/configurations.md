@@ -1,5 +1,5 @@
 ---
-title: Configurations
+title: Configuration Options
 description: How to use the built-in validation & custom middleware
 ---
 
@@ -11,8 +11,8 @@ See the full validation list here:
 
 ???+ examples
     Don't like reading documentation? Then look at 
-[our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! 
-:nerd:
+    [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! 
+    :nerd:
 
 ### Validation Configurations
 

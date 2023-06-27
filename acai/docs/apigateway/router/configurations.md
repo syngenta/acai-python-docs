@@ -1,5 +1,5 @@
 ---
-title: Configurations
+title: Configuration Options
 description: The different options available to configure the router
 ---
 
@@ -7,8 +7,10 @@ description: The different options available to configure the router
 
 As mentioned previously, the router is highly configurable to each project needs and desires. The point of the router is to enforce predictable thus making the API more extensible. Below is a table of all the configuration options available:
 
-???+ example
-    Don't like reading documentation? Then look at [our examples](https://github.com/syngenta/acai-js-docs/blob/main/examples/apigateway) which can run locally! :nerd:
+???+ examples
+    Don't like reading documentation? Then look at 
+    [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/apigateway) which can run locally! 
+    :nerd:
 
 ### Configuration Options
 
