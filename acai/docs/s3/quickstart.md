@@ -1,7 +1,9 @@
 ---
-title: S3
+title: Quickstart
 description: Use Acai with S3 Events
 ---
+
+# S3 Quickstart
 
 Event handler for Amazon S3 Bucket Events.
 

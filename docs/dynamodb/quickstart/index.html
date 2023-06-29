@@ -12,21 +12,21 @@
         <meta name="author" content="Paul Cruse III">
       
       
-        <link rel="canonical" href="https://syngenta.github.io/acai-python-docs/dynamodb/">
+        <link rel="canonical" href="https://syngenta.github.io/acai-python-docs/dynamodb/quickstart/">
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>DynamoDB - Acai (Python)</title>
+        <title>Quickstart - Acai (Python)</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#features" class="md-skip">
+        <a href="#dynamodb-quickstart" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Acai (Python)" class="md-header__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
+    <a href="../.." title="Acai (Python)" class="md-header__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
       
   <img src="https://avatars.githubusercontent.com/u/65528694?s=200&v=4" alt="logo">
 
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DynamoDB
+              Quickstart
             
           </span>
         </div>
@@ -180,7 +180,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Acai (Python)" class="md-nav__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
+    <a href="../.." title="Acai (Python)" class="md-nav__button md-logo" aria-label="Acai (Python)" data-md-component="logo">
       
   <img src="https://avatars.githubusercontent.com/u/65528694?s=200&v=4" alt="logo">
 
@@ -198,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -213,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install/" class="md-nav__link">
+      <a href="../../install/" class="md-nav__link">
         Install
       </a>
     </li>
@@ -260,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../apigateway/quickstart/" class="md-nav__link">
+      <a href="../../apigateway/quickstart/" class="md-nav__link">
         Quickstart
       </a>
     </li>
@@ -274,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../apigateway/configuration-details/" class="md-nav__link">
+      <a href="../../apigateway/configuration-details/" class="md-nav__link">
         Configuration Details
       </a>
     </li>
@@ -307,25 +307,15 @@
       
         
           
-            
-          
-        
-          
         
           
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">DynamoDB</a>
-          
-            <label for="__nav_4">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_4">
+          DynamoDB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" aria-label="DynamoDB" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
@@ -335,16 +325,69 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-          
-            
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="configurations/" class="md-nav__link">
-        Configurations
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quickstart
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Quickstart
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-setup" class="md-nav__link">
+    Minimal Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -356,8 +399,8 @@
   
   
     <li class="md-nav__item">
-      <a href="record/" class="md-nav__link">
-        Record
+      <a href="../configuration-details/" class="md-nav__link">
+        Configurations Details
       </a>
     </li>
   
@@ -387,25 +430,15 @@
       
         
           
-            
-          
-        
-          
         
           
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../s3/">S3</a>
-          
-            <label for="__nav_5">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_5">
+          S3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" aria-label="S3" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
@@ -415,15 +448,13 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-          
-            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../s3/configurations/" class="md-nav__link">
-        Configurations
+      <a href="../../s3/quickstart/" class="md-nav__link">
+        Quickstart
       </a>
     </li>
   
@@ -436,8 +467,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../s3/record/" class="md-nav__link">
-        Record
+      <a href="../../s3/configuration-details/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -467,34 +498,22 @@
       
         
           
-            
-          
-        
-          
         
           
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../sqs/">SNS/SQS</a>
-          
-            <label for="__nav_6">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_6">
+          SQS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-      <nav class="md-nav" aria-label="SNS/SQS" data-md-level="1">
+      <nav class="md-nav" aria-label="SQS" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          SNS/SQS
+          SQS
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
           
             
               
@@ -502,8 +521,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqs/configurations/" class="md-nav__link">
-        Configurations
+      <a href="../../sqs/quickstart/" class="md-nav__link">
+        Quickstart
       </a>
     </li>
   
@@ -516,8 +535,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../sqs/record/" class="md-nav__link">
-        Record
+      <a href="../../sqs/configuration-details/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -538,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common/logger/" class="md-nav__link">
+      <a href="../../common/logger/" class="md-nav__link">
         Logger
       </a>
     </li>
@@ -553,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changes/" class="md-nav__link">
+      <a href="../../changes/" class="md-nav__link">
         2.0 Breaking Changes
       </a>
     </li>
@@ -622,6 +641,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -632,6 +653,20 @@
         <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-setup" class="md-nav__link">
+    Minimal Setup
   </a>
   
 </li>
@@ -650,16 +685,73 @@
                 
 
 
-  <h1>DynamoDB</h1>
-
+<h1 id="dynamodb-quickstart">DynamoDB Quickstart<a class="headerlink" href="#dynamodb-quickstart" title="Permanent link">&para;</a></h1>
 <p>Event handler for Amazon DynamoDB Stream Events.</p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Automatically convert DynamoDB JSON to standard JSON</li>
-<li>Only run on certain DynamoDB operations, like on when items are created, updated or deleted</li>
+<li>Automatically convert DynamoDB JSON dict to standard JSON dict</li>
+<li>Only run on certain DynamoDB operations; i.e. when items are created, updated or deleted</li>
 <li>Able to validate DynamoDB record against a JSON Schema</li>
-<li>Assign Data Classes to records instead of getting raw DynamoDB JSON objects</li>
+<li>Assign Data Classes to records instead of getting DynamoDB JSON dicts</li>
 </ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Shell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$ pip install acai
+<span class="c1"># pipenv install acai</span>
+<span class="c1"># poetry add acai</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="minimal-setup">Minimal Setup<a class="headerlink" href="#minimal-setup" title="Permanent link">&para;</a></h2>
+<p>After installation, create a handler file and configure the AWS lambda to use that file as its handler.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">dynamodb.py</label><label for="__tabbed_2_2">serverless.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.dynamodb.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
+
+<span class="n">requirements</span><span class="p">(</span>
+    <span class="n">operations</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;deleted&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ddb-handler</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service/handlers/dynamodb.handle</span><span class="w"></span>
+<span class="w">        </span><span class="nt">memorySize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"></span>
+<span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w"></span>
+<span class="w">        </span><span class="nt">events</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">stream</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dynamodb</span><span class="w"></span>
+<span class="w">                </span><span class="nt">arn</span><span class="p">:</span><span class="w"></span>
+<span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">Fn::GetAtt</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">SomeDDBTable</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">StreamArn</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 
               
             </article>
@@ -680,7 +772,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../apigateway/configuration-details/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration Details" rel="prev">
+        <a href="../../apigateway/configuration-details/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration Details" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -696,13 +788,13 @@
       
       
         
-        <a href="configurations/" class="md-footer__link md-footer__link--next" aria-label="Next: Configurations" rel="next">
+        <a href="../configuration-details/" class="md-footer__link md-footer__link--next" aria-label="Next: Configurations Details" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configurations
+              Configurations Details
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -732,10 +824,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.indexes", "navigation.tracking", "content.code.annotate"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.indexes", "navigation.tracking", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>

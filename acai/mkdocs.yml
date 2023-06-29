@@ -9,17 +9,14 @@ nav:
         - apigateway/quickstart.md
         - apigateway/configuration-details.md
     - DynamoDB:
-        - dynamodb/index.md
-        - dynamodb/configurations.md
-        - dynamodb/record.md
+        - dynamodb/quickstart.md
+        - dynamodb/configuration-details.md
     - S3:
-        - s3/index.md
-        - s3/configurations.md
-        - s3/record.md
-    - SNS/SQS:
-        - sqs/index.md
-        - sqs/configurations.md
-        - sqs/record.md
+        - s3/quickstart.md
+        - s3/configuration-details.md
+    - SQS:
+        - sqs/quickstart.md
+        - sqs/configuration-details.md
     - common/logger.md
     - changes.md
     - PyPi Registry: https://www.npmjs.com/package/acai

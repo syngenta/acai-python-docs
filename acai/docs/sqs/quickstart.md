@@ -1,9 +1,11 @@
 ---
-title: SNS/SQS
+title: Quickstart
 description: Use Acai with SNS/SQS Events
 ---
 
-Event handler for Amazon SNS/SQS Events.
+# SQS Quickstart
+
+Event handler for Amazon SQS Events.
 
 ## Features
 

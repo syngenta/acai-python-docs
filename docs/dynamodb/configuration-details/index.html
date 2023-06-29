@@ -6,20 +6,20 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Review DynamoDB Record Structure">
+        <meta name="description" content="Configure DynamoDB Acai Events">
       
       
         <meta name="author" content="Paul Cruse III">
       
       
-        <link rel="canonical" href="https://syngenta.github.io/acai-python-docs/dynamodb/record/">
+        <link rel="canonical" href="https://syngenta.github.io/acai-python-docs/dynamodb/configuration-details/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Record - Acai (Python)</title>
+        <title>Configurations Details - Acai (Python)</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynamodb-record-object" class="md-skip">
+        <a href="#dynamodb-configurations-details" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Record
+              Configurations Details
             
           </span>
         </div>
@@ -307,25 +307,15 @@
       
         
           
-            
-          
-        
-          
         
           
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../">DynamoDB</a>
-          
-            <label for="__nav_4">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_4">
+          DynamoDB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" aria-label="DynamoDB" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
@@ -335,15 +325,13 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-          
-            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../configurations/" class="md-nav__link">
-        Configurations
+      <a href="../quickstart/" class="md-nav__link">
+        Quickstart
       </a>
     </li>
   
@@ -366,12 +354,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Record
+          Configurations Details
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Record
+        Configurations Details
       </a>
       
         
@@ -390,11 +378,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#record-properties" class="md-nav__link">
-    Record Properties
+  <a href="#lambda-configuration" class="md-nav__link">
+    Lambda Configuration
   </a>
   
-    <nav class="md-nav" aria-label="Record Properties">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-configuration-options" class="md-nav__link">
+    Requirements Configuration Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamodb-record-properties" class="md-nav__link">
+    DynamoDB Record Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="DynamoDB Record Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -433,15 +435,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordoldimage" class="md-nav__link">
-    record.oldImage
+  <a href="#recordold_image" class="md-nav__link">
+    record.old_image
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordnewimage" class="md-nav__link">
-    record.newImage
+  <a href="#recordnew_image" class="md-nav__link">
+    record.new_image
   </a>
   
 </li>
@@ -461,8 +463,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordsourcearn" class="md-nav__link">
-    record.sourceARN
+  <a href="#recordsource_arn" class="md-nav__link">
+    record.source_arn
   </a>
   
 </li>
@@ -475,8 +477,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordstreamtype" class="md-nav__link">
-    record.streamType
+  <a href="#recordstream_type" class="md-nav__link">
+    record.stream_type
   </a>
   
 </li>
@@ -546,25 +548,15 @@
       
         
           
-            
-          
-        
-          
         
           
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../s3/">S3</a>
-          
-            <label for="__nav_5">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_5">
+          S3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" aria-label="S3" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
@@ -574,15 +566,13 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-          
-            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../../s3/configurations/" class="md-nav__link">
-        Configurations
+      <a href="../../s3/quickstart/" class="md-nav__link">
+        Quickstart
       </a>
     </li>
   
@@ -595,8 +585,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../s3/record/" class="md-nav__link">
-        Record
+      <a href="../../s3/configuration-details/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -626,34 +616,22 @@
       
         
           
-            
-          
-        
-          
         
           
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../sqs/">SNS/SQS</a>
-          
-            <label for="__nav_6">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_6">
+          SQS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-      <nav class="md-nav" aria-label="SNS/SQS" data-md-level="1">
+      <nav class="md-nav" aria-label="SQS" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          SNS/SQS
+          SQS
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
           
             
               
@@ -661,8 +639,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sqs/configurations/" class="md-nav__link">
-        Configurations
+      <a href="../../sqs/quickstart/" class="md-nav__link">
+        Quickstart
       </a>
     </li>
   
@@ -675,8 +653,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sqs/record/" class="md-nav__link">
-        Record
+      <a href="../../sqs/configuration-details/" class="md-nav__link">
+        Configurations
       </a>
     </li>
   
@@ -791,11 +769,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#record-properties" class="md-nav__link">
-    Record Properties
+  <a href="#lambda-configuration" class="md-nav__link">
+    Lambda Configuration
   </a>
   
-    <nav class="md-nav" aria-label="Record Properties">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-configuration-options" class="md-nav__link">
+    Requirements Configuration Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamodb-record-properties" class="md-nav__link">
+    DynamoDB Record Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="DynamoDB Record Properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -834,15 +826,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordoldimage" class="md-nav__link">
-    record.oldImage
+  <a href="#recordold_image" class="md-nav__link">
+    record.old_image
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordnewimage" class="md-nav__link">
-    record.newImage
+  <a href="#recordnew_image" class="md-nav__link">
+    record.new_image
   </a>
   
 </li>
@@ -862,8 +854,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordsourcearn" class="md-nav__link">
-    record.sourceARN
+  <a href="#recordsource_arn" class="md-nav__link">
+    record.source_arn
   </a>
   
 </li>
@@ -876,8 +868,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordstreamtype" class="md-nav__link">
-    record.streamType
+  <a href="#recordstream_type" class="md-nav__link">
+    record.stream_type
   </a>
   
 </li>
@@ -929,13 +921,166 @@
                 
 
 
-<h1 id="dynamodb-record-object">DynamoDB Record Object<a class="headerlink" href="#dynamodb-record-object" title="Permanent link">&para;</a></h1>
-<p>The DynamoDB event will by default provide instances of <code>record</code> classes which will be easier to work with then a standard lambda event record object. This is the same object which will be passed down to the <code>dataClass</code>, if you provide on in your configuration. Below is a list of all the properties and example outputs for the DynamoDB event record:</p>
+<h1 id="dynamodb-configurations-details">DynamoDB Configurations Details<a class="headerlink" href="#dynamodb-configurations-details" title="Permanent link">&para;</a></h1>
+<p>The Dynamodb event will automatically handle many common things done when eventing off a DynamoDB stream. 
+Developers then have the ability to further extend that functionality with custom middleware. 
+Below is a full list of all the configurations available and examples of their use.</p>
 <details class="examples" open="open">
 <summary>Examples</summary>
-<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-js-docs/blob/main/examples/dynamodb">our examples,</a> which can be deployed in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
+<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/dynamodb">our examples,</a> which can be deployed in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 </details>
-<h3 id="record-properties">Record Properties<a class="headerlink" href="#record-properties" title="Permanent link">&para;</a></h3>
+<h2 id="lambda-configuration">Lambda Configuration<a class="headerlink" href="#lambda-configuration" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">serverless.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ddb-handler</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service/handlers/dynamodb.handle</span><span class="w"></span>
+<span class="w">        </span><span class="nt">memorySize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"></span>
+<span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w"></span>
+<span class="w">        </span><span class="nt">events</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">stream</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dynamodb</span><span class="w"></span>
+<span class="w">                </span><span class="nt">arn</span><span class="p">:</span><span class="w"></span>
+<span class="w">                  </span><span class="l l-Scalar l-Scalar-Plain">Fn::GetAtt</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">SomeDDBTable</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">StreamArn</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="requirements-configuration-options">Requirements Configuration Options<a class="headerlink" href="#requirements-configuration-options" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>type</th>
+<th>required</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>before</code></strong></td>
+<td>func</td>
+<td>no</td>
+<td>null</td>
+<td>a custom function to be ran before your records are pulled</td>
+</tr>
+<tr>
+<td><strong><code>data_class</code></strong></td>
+<td>class</td>
+<td>no</td>
+<td>null</td>
+<td>a custom class that will be passed instead of the records object</td>
+</tr>
+<tr>
+<td><strong><code>operations</code></strong></td>
+<td>array</td>
+<td>no</td>
+<td>['created', 'updated', 'deleted']</td>
+<td>will only run if record was created from the listed operation</td>
+</tr>
+<tr>
+<td><strong><code>raise_operation_error</code></strong></td>
+<td>bool</td>
+<td>no</td>
+<td>false</td>
+<td>will raise exception if operation of record is not from listed operations</td>
+</tr>
+<tr>
+<td><strong><code>raise_body_error</code></strong></td>
+<td>bool</td>
+<td>no</td>
+<td>false</td>
+<td>will raise exception if body of record does not match schema provided</td>
+</tr>
+<tr>
+<td><strong><code>required_body</code></strong></td>
+<td>str or dict</td>
+<td>no</td>
+<td>null</td>
+<td>will validate body of record against this schema</td>
+</tr>
+<tr>
+<td><strong><code>schema</code></strong></td>
+<td>str</td>
+<td>no</td>
+<td>null</td>
+<td>file path pointing to the location of the openapi.yml file</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.dynamodb.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
+
+<span class="c1"># example data class</span>
+<span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="c1"># example before function</span>
+<span class="k">def</span> <span class="nf">log_something</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">requirements</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;something&#39;</span> <span class="ow">in</span> <span class="n">requirements</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">records</span><span class="p">)</span> 
+
+<span class="c1"># example after function</span>
+<span class="k">def</span> <span class="nf">alert_something</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">requirements</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;something&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
+
+<span class="n">requirements</span><span class="p">(</span>
+    <span class="n">before</span><span class="o">=</span><span class="n">log_something</span><span class="p">,</span>
+    <span class="n">operations</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;deleted&#39;</span><span class="p">,</span> <span class="s1">&#39;updated&#39;</span><span class="p">],</span>
+    <span class="n">data_class</span><span class="o">=</span><span class="n">SomeClass</span><span class="p">,</span>
+    <span class="n">raise_operation_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">raise_body_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;service/openapi.yml&#39;</span><span class="p">,</span>
+    <span class="n">required_body</span><span class="o">=</span><span class="s1">&#39;v1-ddb-body&#39;</span><span class="p">,</span> <span class="c1"># or send jsonschema dict; schema kwarg not needed if sending jsonschema dict</span>
+    <span class="n">after</span><span class="o">=</span><span class="n">alert_something</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="dynamodb-record-properties">DynamoDB Record Properties<a class="headerlink" href="#dynamodb-record-properties" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -946,82 +1091,82 @@
 </thead>
 <tbody>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordbody"><code>body</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordbody"><code>body</code></a></strong></td>
 <td>object</td>
 <td>the new image of dynamodb record; created or updated</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordcreated"><code>created</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordcreated"><code>created</code></a></strong></td>
 <td>float</td>
 <td>the approximate creationDate time</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordexpired"><code>expired</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordexpired"><code>expired</code></a></strong></td>
 <td>bool</td>
 <td>whether the ttl has expired</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordid"><code>id</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordid"><code>id</code></a></strong></td>
 <td>str</td>
 <td>the id of the event which invoked the lambda</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordidentity"><code>identity</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordidentity"><code>identity</code></a></strong></td>
 <td>object</td>
 <td>the identity who triggered the dynamodb change</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordkeys"><code>keys</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordkeys"><code>keys</code></a></strong></td>
 <td>object</td>
 <td>the keys of DynamoDB record</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordname"><code>name</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordname"><code>name</code></a></strong></td>
 <td>str</td>
 <td>the name of the event which invoked the lambda</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordnewimage"><code>newImage</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordnewimage"><code>new_image</code></a></strong></td>
 <td>object</td>
 <td>the new image of dynamodb record; created or updated</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordoldimage"><code>oldImage</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordoldimage"><code>old_image</code></a></strong></td>
 <td>object</td>
 <td>the old image of dynamodb record; updated or deleted</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordoperation"><code>operation</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordoperation"><code>operation</code></a></strong></td>
 <td>str</td>
 <td>triggered operation lambda (create, update, delete)</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordregion"><code>region</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordregion"><code>region</code></a></strong></td>
 <td>str</td>
 <td>the region the record is from</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordsize"><code>size</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordsize"><code>size</code></a></strong></td>
 <td>int</td>
 <td>the size in bytes of the record</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordsource"><code>source</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordsource"><code>source</code></a></strong></td>
 <td>str</td>
 <td>the source of the event which invoked the lambda</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordsourcearn"><code>sourceARN</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordsourcearn"><code>source_arn</code></a></strong></td>
 <td>str</td>
 <td>the event source arn</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordstreamtype"><code>streamType</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordstreamtype"><code>stream_type</code></a></strong></td>
 <td>str</td>
 <td>the stream view type</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/node/dynamodb/record/#recordversion"><code>version</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/dynamodb/#recordversion"><code>version</code></a></strong></td>
 <td>str</td>
 <td>the event version</td>
 </tr>
@@ -1031,37 +1176,37 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">region</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">region</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;us-east-2&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;us-east-2&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordid"><code>record.id</code><a class="headerlink" href="#recordid" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">id</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;9a37c0d03eb60f7cf70cabc823de9907&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;9a37c0d03eb60f7cf70cabc823de9907&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordname"><code>record.name</code><a class="headerlink" href="#recordname" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;INSERT&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;INSERT&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordsource"><code>record.source</code><a class="headerlink" href="#recordsource" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">source</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">source</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;aws:dynamodb&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;aws:dynamodb&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordkeys"><code>record.keys</code><a class="headerlink" href="#recordkeys" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
@@ -1073,14 +1218,14 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">keys</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">keys</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">example_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;123456789&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;example_id&#39;</span><span class="p">:</span> <span class="s1">&#39;123456789&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="recordoldimage"><code>record.oldImage</code><a class="headerlink" href="#recordoldimage" title="Permanent link">&para;</a></h4>
+<h4 id="recordold_image"><code>record.old_image</code><a class="headerlink" href="#recordold_image" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
 <summary>Info</summary>
 <p>This is converted from the original DDB JSON to standard json</p>
@@ -1090,14 +1235,14 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">oldImage</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">old_image</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">old_data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;123456789&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;old_data&#39;</span><span class="p">:</span> <span class="s1">&#39;123456789&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="recordnewimage"><code>record.newImage</code><a class="headerlink" href="#recordnewimage" title="Permanent link">&para;</a></h4>
+<h4 id="recordnew_image"><code>record.new_image</code><a class="headerlink" href="#recordnew_image" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
 <summary>Info</summary>
 <p>This is converted from the original DDB JSON to standard json</p>
@@ -1107,83 +1252,83 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">newImage</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">new_image</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">new_data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;123456789&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;new_data&#39;</span><span class="p">:</span> <span class="s1">&#39;123456789&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordbody"><code>record.body</code><a class="headerlink" href="#recordbody" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>This is converted from the original DDB JSON to standard json from <code>newImage</code></p>
+<p>This is converted from the original DDB JSON to standard json from <code>new_image</code></p>
 </details>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">body</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">new_data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;123456789&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;new_data&#39;</span><span class="p">:</span> <span class="s1">&#39;123456789&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordoperation"><code>record.operation</code><a class="headerlink" href="#recordoperation" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">operation</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">operation</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;create&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;create&#39;</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="recordsourcearn"><code>record.sourceARN</code><a class="headerlink" href="#recordsourcearn" title="Permanent link">&para;</a></h4>
+<h4 id="recordsource_arn"><code>record.source_arn</code><a class="headerlink" href="#recordsource_arn" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">sourceARN</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">source_arn</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;arn:aws:dynamodb:us-east-1:771875143460:table/test-example/stream/2019-10-04T23:18:26.340&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;arn:aws:dynamodb:us-east-1:771875143460:table/test-example/stream/2019-10-04T23:18:26.340&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordversion"><code>record.version</code><a class="headerlink" href="#recordversion" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">version</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">version</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;1.1&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;1.1&#39;</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="recordstreamtype"><code>record.streamType</code><a class="headerlink" href="#recordstreamtype" title="Permanent link">&para;</a></h4>
+<h4 id="recordstream_type"><code>record.stream_type</code><a class="headerlink" href="#recordstream_type" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">streamType</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">stream_type</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="s1">&#39;NEW_AND_OLD_IMAGES&#39;</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="s1">&#39;NEW_AND_OLD_IMAGES&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordsize"><code>record.size</code><a class="headerlink" href="#recordsize" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">size</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="mf">1124</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="mi">1124</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordcreated"><code>record.created</code><a class="headerlink" href="#recordcreated" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">created</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">created</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="mf">1538695200.0</span><span class="w"> </span><span class="c1">//unix timestamp</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="mf">1538695200.0</span> <span class="c1">#unix timestamp</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordidentity"><code>record.identity</code><a class="headerlink" href="#recordidentity" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1192,22 +1337,22 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">identity</span><span class="p">);</span><span class="w"></span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">identity</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Service&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">principalId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dynamodb.amazonaws.com&#39;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Service&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;principalId&#39;</span><span class="p">:</span> <span class="s1">&#39;dynamodb.amazonaws.com&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordexpired"><code>record.expired</code><a class="headerlink" href="#recordexpired" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">expired</span><span class="p">);</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">expired</span><span class="p">);</span>
 
-<span class="c1">// example output:</span><span class="w"></span>
-<span class="kc">false</span><span class="w"></span>
+<span class="c1"># output</span>
+<span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
 
               
@@ -1229,7 +1374,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../configurations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configurations" rel="prev">
+        <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quickstart" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1238,20 +1383,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Configurations
+              Quickstart
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../s3/" class="md-footer__link md-footer__link--next" aria-label="Next: S3" rel="next">
+        <a href="../../s3/quickstart/" class="md-footer__link md-footer__link--next" aria-label="Next: Quickstart" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              S3
+              Quickstart
             </div>
           </div>
           <div class="md-footer__button md-icon">
