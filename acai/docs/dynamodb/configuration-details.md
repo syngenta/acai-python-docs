@@ -53,12 +53,12 @@ class SomeClass:
 # example before function
 def log_something(records, requirements):
     if 'something' in requirements:
-      print(records) 
+        print(records) 
 
 # example after function
 def alert_something(records, result, requirements):
-    if 'something' in result:
-      print(records)
+    if 'something' in result and 'alert' in requirements:
+        print(records)
 
 requirements(
     before=log_something,
