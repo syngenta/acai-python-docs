@@ -10,7 +10,9 @@ Developers then have the ability to further extend that functionality with custo
 Below is a full list of all the configurations available and examples of their use.
 
 ???+ examples
-    Don't like reading documentation? Then look at [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/dynamodb) which can be deployed in 1 command into your AWS account! :nerd:
+    Don't like reading documentation? Then look at 
+    [our examples,](https://github.com/syngenta/acai-python-docs/blob/main/examples/dynamodb) which can be deployed 
+    in 1 command into your AWS account! :nerd:
 
 ## Lambda Configuration
 
