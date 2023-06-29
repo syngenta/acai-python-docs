@@ -33,13 +33,13 @@ functions:
 
 | option                      | type        | required | default                           | description                                                               |
 |-----------------------------|-------------|----------|-----------------------------------|---------------------------------------------------------------------------|
-| **`before`**                | func        | no       | null                              | a custom function to be ran before your records are pulled                |
-| **`data_class`**            | class       | no       | null                              | a custom class that will be passed instead of the records object          |
-| **`operations`**            | array       | no       | ['created', 'updated', 'deleted'] | will only run if record was created from the listed operation             |
-| **`raise_operation_error`** | bool        | no       | false                             | will raise exception if operation of record is not from listed operations |
-| **`raise_body_error`**      | bool        | no       | false                             | will raise exception if body of record does not match schema provided     |
-| **`required_body`**         | str or dict | no       | null                              | will validate body of record against this schema                          |
-| **`schema`**                | str         | no       | null                              | file path pointing to the location of the openapi.yml file                |
+| **`before`**                | func        | no       | None                              | a custom function to be ran before your records are pulled                |
+| **`data_class`**            | class       | no       | None                              | a custom class that will be passed instead of the records object          |
+| **`operations`**            | list        | no       | ['created', 'updated', 'deleted'] | will only run if record was created from the listed operation             |
+| **`raise_operation_error`** | bool        | no       | False                             | will raise exception if operation of record is not from listed operations |
+| **`raise_body_error`**      | bool        | no       | False                             | will raise exception if body of record does not match schema provided     |
+| **`required_body`**         | str or dict | no       | None                              | will validate body of record against this schema                          |
+| **`schema`**                | str         | no       | None                              | file path pointing to the location of the openapi.yml file                |
 
 ```python
 from acai.dynamodb.requirements import requirements

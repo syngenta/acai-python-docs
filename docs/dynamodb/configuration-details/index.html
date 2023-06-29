@@ -971,19 +971,19 @@ Below is a full list of all the configurations available and examples of their u
 <td><strong><code>before</code></strong></td>
 <td>func</td>
 <td>no</td>
-<td>null</td>
+<td>None</td>
 <td>a custom function to be ran before your records are pulled</td>
 </tr>
 <tr>
 <td><strong><code>data_class</code></strong></td>
 <td>class</td>
 <td>no</td>
-<td>null</td>
+<td>None</td>
 <td>a custom class that will be passed instead of the records object</td>
 </tr>
 <tr>
 <td><strong><code>operations</code></strong></td>
-<td>array</td>
+<td>list</td>
 <td>no</td>
 <td>['created', 'updated', 'deleted']</td>
 <td>will only run if record was created from the listed operation</td>
@@ -992,28 +992,28 @@ Below is a full list of all the configurations available and examples of their u
 <td><strong><code>raise_operation_error</code></strong></td>
 <td>bool</td>
 <td>no</td>
-<td>false</td>
+<td>False</td>
 <td>will raise exception if operation of record is not from listed operations</td>
 </tr>
 <tr>
 <td><strong><code>raise_body_error</code></strong></td>
 <td>bool</td>
 <td>no</td>
-<td>false</td>
+<td>False</td>
 <td>will raise exception if body of record does not match schema provided</td>
 </tr>
 <tr>
 <td><strong><code>required_body</code></strong></td>
 <td>str or dict</td>
 <td>no</td>
-<td>null</td>
+<td>None</td>
 <td>will validate body of record against this schema</td>
 </tr>
 <tr>
 <td><strong><code>schema</code></strong></td>
 <td>str</td>
 <td>no</td>
-<td>null</td>
+<td>None</td>
 <td>file path pointing to the location of the openapi.yml file</td>
 </tr>
 </tbody>
