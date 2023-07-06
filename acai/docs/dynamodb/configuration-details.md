@@ -97,6 +97,7 @@ def handle(event):
 | **[`source_arn`]({{web.url}}/dynamodb/#recordsourcearn)**   | str    | the event source arn                                 |
 | **[`stream_type`]({{web.url}}/dynamodb/#recordstreamtype)** | str    | the stream view type                                 |
 | **[`version`]({{web.url}}/dynamodb/#recordversion)**        | str    | the event version                                    |
+| **[`operation`]({{web.url}}/s3/#recordoperation)**          | str    | enum of `created`, `deleted`, `updated`              |
 
 #### `record.region`
 

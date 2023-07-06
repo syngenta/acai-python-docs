@@ -19,7 +19,7 @@
     
     
       
-        <title>Configurations - Acai (Python)</title>
+        <title>Configurations Details - Acai (Python)</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#s3-event-configurations" class="md-skip">
+        <a href="#s3-configurations-details" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configurations
+              Configurations Details
             
           </span>
         </div>
@@ -422,12 +422,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Configurations
+          Configurations Details
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Configurations
+        Configurations Details
       </a>
       
         
@@ -446,16 +446,148 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    Configuration Options
+  <a href="#lambda-configuration" class="md-nav__link">
+    Lambda Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-s3-configuration-options" class="md-nav__link">
-    Example: S3 Configuration Options
+  <a href="#requirements-configuration-options" class="md-nav__link">
+    Requirements Configuration Options
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s3-record-properties" class="md-nav__link">
+    S3 Record Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="S3 Record Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recordname" class="md-nav__link">
+    record.name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsource" class="md-nav__link">
+    record.source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordversion" class="md-nav__link">
+    record.version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordtime" class="md-nav__link">
+    record.time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordregion" class="md-nav__link">
+    record.region
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordrequest" class="md-nav__link">
+    record.request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordresponse" class="md-nav__link">
+    record.response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordconfiguration_id" class="md-nav__link">
+    record.configuration_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordobject" class="md-nav__link">
+    record.object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbucket" class="md-nav__link">
+    record.bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbucket_arn" class="md-nav__link">
+    record.bucket_arn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbucket_owner" class="md-nav__link">
+    record.bucket_owner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordkey" class="md-nav__link">
+    record.key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordschema_version" class="md-nav__link">
+    record.schema_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorduser_identity" class="md-nav__link">
+    record.user_identity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordoperation" class="md-nav__link">
+    record.operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbody" class="md-nav__link">
+    record.body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -644,16 +776,148 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    Configuration Options
+  <a href="#lambda-configuration" class="md-nav__link">
+    Lambda Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-s3-configuration-options" class="md-nav__link">
-    Example: S3 Configuration Options
+  <a href="#requirements-configuration-options" class="md-nav__link">
+    Requirements Configuration Options
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s3-record-properties" class="md-nav__link">
+    S3 Record Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="S3 Record Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recordname" class="md-nav__link">
+    record.name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsource" class="md-nav__link">
+    record.source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordversion" class="md-nav__link">
+    record.version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordtime" class="md-nav__link">
+    record.time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordregion" class="md-nav__link">
+    record.region
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordrequest" class="md-nav__link">
+    record.request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordresponse" class="md-nav__link">
+    record.response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordconfiguration_id" class="md-nav__link">
+    record.configuration_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordobject" class="md-nav__link">
+    record.object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbucket" class="md-nav__link">
+    record.bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbucket_arn" class="md-nav__link">
+    record.bucket_arn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbucket_owner" class="md-nav__link">
+    record.bucket_owner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordkey" class="md-nav__link">
+    record.key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordschema_version" class="md-nav__link">
+    record.schema_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorduser_identity" class="md-nav__link">
+    record.user_identity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordoperation" class="md-nav__link">
+    record.operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordbody" class="md-nav__link">
+    record.body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -671,13 +935,41 @@
                 
 
 
-<h1 id="s3-event-configurations">S3 Event Configurations<a class="headerlink" href="#s3-event-configurations" title="Permanent link">&para;</a></h1>
-<p>The S3 event will automatically handle many common things done when eventing off a S3 event. Developers then have the ability to further extend that functionality with custom middleware. Below is a full list of all the configurations available and examples of their use.</p>
+<h1 id="s3-configurations-details">S3 Configurations Details<a class="headerlink" href="#s3-configurations-details" title="Permanent link">&para;</a></h1>
+<p>The S3 event will automatically handle many common things done when eventing off a S3 event. Developers then have the 
+ability to further extend that functionality with custom middleware. Below is a full list of all the configurations 
+available and examples of their use.</p>
 <details class="examples" open="open">
 <summary>Examples</summary>
-<p>Don't like reading documentation? Then look at <a href="https://github.com/syngenta/acai-js-docs/blob/main/examples/s3">our examples,</a> which can be deployed in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
+<p>Don't like reading documentation? Then look at 
+<a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/s3">our examples,</a> which can be deployed in 1 
+command into your AWS account! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 </details>
-<h3 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h3>
+<h2 id="lambda-configuration">Lambda Configuration<a class="headerlink" href="#lambda-configuration" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">serverless.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">s3-handler</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service/handlers/s3.handle</span><span class="w"></span>
+<span class="w">        </span><span class="nt">memorySize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"></span>
+<span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">900</span><span class="w"></span>
+<span class="w">        </span><span class="nt">events</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">s3</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nt">bucket</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uploadsBucket</span><span class="w"></span>
+<span class="w">                </span><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3:ObjectCreated:*</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="requirements-configuration-options">Requirements Configuration Options<a class="headerlink" href="#requirements-configuration-options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -693,82 +985,67 @@
 <td><strong><code>before</code></strong></td>
 <td>func</td>
 <td>no</td>
-<td>null</td>
+<td>None</td>
 <td>a custom function to be ran before your records are pulled</td>
 </tr>
 <tr>
-<td><strong><code>dataClass</code></strong></td>
+<td><strong><code>data_class</code></strong></td>
 <td>class</td>
 <td>no</td>
-<td>null</td>
+<td>None</td>
 <td>a custom class that will be passed instead of the records object</td>
 </tr>
 <tr>
-<td><strong><code>getObject</code></strong></td>
-<td>bool</td>
+<td><strong><code>data_type</code></strong></td>
+<td>enum (str)</td>
 <td>no</td>
-<td>false</td>
-<td>will pull the file from S3 bucket and hold in memory</td>
+<td>['json', 'csv']</td>
+<td>will convert data to a dict based on type; <code>requires get_object=True</code></td>
 </tr>
 <tr>
-<td><strong><code>globalLogger</code></strong></td>
+<td><strong><code>get_object</code></strong></td>
 <td>bool</td>
 <td>no</td>
-<td>false</td>
-<td>will assign the Acai logger to the global variable <code>globalLogger</code></td>
-</tr>
-<tr>
-<td><strong><code>isJSON</code></strong></td>
-<td>bool</td>
-<td>no</td>
-<td>false</td>
-<td>will convert file into JSON object; requires <code>getObject</code></td>
-</tr>
-<tr>
-<td><strong><code>isCSV</code></strong></td>
-<td>bool</td>
-<td>no</td>
-<td>false</td>
-<td>will convert file into CSV object; requires <code>getObject</code></td>
+<td>False</td>
+<td>will download object from s3 bucket and hold in memory</td>
 </tr>
 <tr>
 <td><strong><code>operations</code></strong></td>
-<td>array</td>
+<td>list</td>
 <td>no</td>
-<td>['create', 'update', 'delete']</td>
+<td>['created', 'updated', 'deleted']</td>
 <td>will only run if record was created from the listed operation</td>
 </tr>
 <tr>
-<td><strong><code>operationError</code></strong></td>
+<td><strong><code>raise_operation_error</code></strong></td>
 <td>bool</td>
 <td>no</td>
-<td>false</td>
+<td>False</td>
 <td>will raise exception if operation of record is not from listed operations</td>
 </tr>
 <tr>
-<td><strong><code>requiredBody</code></strong></td>
-<td>str or obj</td>
-<td>no</td>
-<td>null</td>
-<td>will validate body of record against this schema, requires <code>isJSON</code></td>
-</tr>
-<tr>
-<td><strong><code>schemaPath</code></strong></td>
-<td>str</td>
-<td>no</td>
-<td>null</td>
-<td>file path pointing to the location of the openapi.yml file</td>
-</tr>
-<tr>
-<td><strong><code>validationError</code></strong></td>
+<td><strong><code>raise_body_error</code></strong></td>
 <td>bool</td>
 <td>no</td>
-<td>false</td>
-<td>will raise exception if validation of record fails</td>
+<td>False</td>
+<td>will raise exception if body of record does not match schema provided</td>
+</tr>
+<tr>
+<td><strong><code>required_body</code></strong></td>
+<td>str or dict</td>
+<td>no</td>
+<td>None</td>
+<td>will validate body of record against this schema</td>
+</tr>
+<tr>
+<td><strong><code>schema</code></strong></td>
+<td>str</td>
+<td>no</td>
+<td>None</td>
+<td>file path pointing to the location of the openapi.yml file</td>
 </tr>
 </tbody>
 </table>
-<h3 id="example-s3-configuration-options">Example: S3 Configuration Options<a class="headerlink" href="#example-s3-configuration-options" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -793,31 +1070,340 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">EventClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;acai-js&#39;</span><span class="p">).</span><span class="nx">s3</span><span class="p">.</span><span class="nx">Event</span><span class="p">;</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">Grower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;api/logic/grower&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.s3.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">eventer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">globalLogger</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">operations</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;delete&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// [create, update, delete] by default; s3 doesn&#39;t support delete</span><span class="w"></span>
-<span class="w">        </span><span class="nx">operationError</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// will raise exception if wrong operation;  default false</span><span class="w"></span>
-<span class="w">        </span><span class="nx">requiredBody</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;s3-record&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// only works with isJSON</span><span class="w"></span>
-<span class="w">        </span><span class="nx">schemaPath</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;api/openapi.yml&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// only works with isJSON</span><span class="w"></span>
-<span class="w">        </span><span class="nx">validationError</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// will raise exception if validation fails;  default false</span><span class="w"></span>
-<span class="w">        </span><span class="nx">getObject</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// required for isJSON or isCSV</span><span class="w"></span>
-<span class="w">        </span><span class="nx">isJSON</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// will convert file into JSON object, must be valid JSON file</span><span class="w"></span>
-<span class="w">        </span><span class="nx">isCSV</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// will convert file into object, must be valid CSV file</span><span class="w"></span>
-<span class="w">        </span><span class="nx">dataClass</span><span class="o">:</span><span class="w"> </span><span class="nx">Grower</span><span class="p">,</span><span class="w"> </span><span class="c1">// will get instance of this instead of record instance</span><span class="w"></span>
-<span class="w">        </span><span class="nx">before</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">records</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// run this before records are sent</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">eventClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EventClient</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">records</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">eventClient</span><span class="p">.</span><span class="nx">getRecords</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">grower</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">records</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// do stuff here</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="c1"># example data class (requires, get_object=True and a data_type)</span>
+<span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="c1"># example before function</span>
+<span class="k">def</span> <span class="nf">log_something</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">requirements</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;something&#39;</span> <span class="ow">in</span> <span class="n">requirements</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">records</span><span class="p">)</span> 
+
+<span class="c1"># example after function</span>
+<span class="k">def</span> <span class="nf">alert_something</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">requirements</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;something&#39;</span> <span class="ow">in</span> <span class="n">result</span> <span class="ow">and</span> <span class="s1">&#39;alert&#39;</span> <span class="ow">in</span> <span class="n">requirements</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
+
+<span class="n">requirements</span><span class="p">(</span>
+    <span class="n">before</span><span class="o">=</span><span class="n">log_something</span><span class="p">,</span>
+    <span class="n">get_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="n">data_class</span><span class="o">=</span><span class="n">SomeClass</span><span class="p">,</span>
+    <span class="n">raise_body_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># requires, get_object=True and a data_type</span>
+    <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;service/openapi.yml&#39;</span><span class="p">,</span>
+    <span class="n">required_body</span><span class="o">=</span><span class="s1">&#39;v1-s3-body&#39;</span><span class="p">,</span> <span class="c1"># or send jsonschema dict; schema kwarg not needed if sending jsonschema dict</span>
+    <span class="n">after</span><span class="o">=</span><span class="n">alert_something</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="s3-record-properties">S3 Record Properties<a class="headerlink" href="#s3-record-properties" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordname"><code>name</code></a></strong></td>
+<td>str</td>
+<td>the name of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsource"><code>source</code></a></strong></td>
+<td>str</td>
+<td>the source of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordversion"><code>version</code></a></strong></td>
+<td>str</td>
+<td>the version of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordtime"><code>time</code></a></strong></td>
+<td>str</td>
+<td>the time of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordregion"><code>region</code></a></strong></td>
+<td>str</td>
+<td>the region of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordrequest"><code>request</code></a></strong></td>
+<td>dict</td>
+<td>the request parameters of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordresponse"><code>response</code></a></strong></td>
+<td>dict</td>
+<td>the response parameters of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordconfiguration_id"><code>configuration_id</code></a></strong></td>
+<td>str</td>
+<td>the configuration id</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordobject"><code>object</code></a></strong></td>
+<td>dict</td>
+<td>the object dict of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket"><code>bucket</code></a></strong></td>
+<td>dict</td>
+<td>the bucket dict of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket"><code>bucket</code></a></strong></td>
+<td>dict</td>
+<td>the bucket dict of the event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket_arn"><code>bucket_arn</code></a></strong></td>
+<td>str</td>
+<td>the arn of the bucket</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket_owner"><code>bucket_owner</code></a></strong></td>
+<td>str</td>
+<td>the owner of the bucket</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordkey"><code>key</code></a></strong></td>
+<td>str</td>
+<td>the key owner of the object</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordschema_version"><code>schema_version</code></a></strong></td>
+<td>str</td>
+<td>the schema version</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recorduser_identity"><code>user_identity</code></a></strong></td>
+<td>str</td>
+<td>the user identity</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordoperation"><code>operation</code></a></strong></td>
+<td>enum (str)</td>
+<td>enum of <code>created</code>, <code>deleted</code>, <code>updated</code></td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbody"><code>body</code></a></strong></td>
+<td>dict,bytes</td>
+<td>the body of file in the s3 bucket</td>
+</tr>
+</tbody>
+</table>
+<h4 id="recordname"><code>record.name</code><a class="headerlink" href="#recordname" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;ObjectRemoved: Put&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsource"><code>record.source</code><a class="headerlink" href="#recordsource" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;aws:s3&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordversion"><code>record.version</code><a class="headerlink" href="#recordversion" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;2.0&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordtime"><code>record.time</code><a class="headerlink" href="#recordtime" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;2018-09-20T21: 10: 13.821Z&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordregion"><code>record.region</code><a class="headerlink" href="#recordregion" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;us-east-1&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordrequest"><code>record.request</code><a class="headerlink" href="#recordrequest" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">request</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;sourceIPAddress&#39;</span><span class="p">:</span> <span class="s1">&#39;172.20.133.36&#39;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordresponse"><code>record.response</code><a class="headerlink" href="#recordresponse" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;x-amz-request-id&#39;</span><span class="p">:</span> <span class="s1">&#39;6B859DD0CE613FAE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;x-amz-id-2&#39;</span><span class="p">:</span> <span class="s1">&#39;EXLMfc9aiXZFzNwLKXpw35iaVvl/DkEA6GtbuxjfmuLN3kLPL/aGoa7NMSwpl3m7ICAtNbjJX4w=&#39;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordconfiguration_id"><code>record.configuration_id</code><a class="headerlink" href="#recordconfiguration_id" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">configuration_id</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;x-amz-request-id&#39;</span><span class="p">:</span> <span class="s1">&#39;6B859DD0CE613FAE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;x-amz-id-2&#39;</span><span class="p">:</span> <span class="s1">&#39;EXLMfc9aiXZFzNwLKXpw35iaVvl/DkEA6GtbuxjfmuLN3kLPL/aGoa7NMSwpl3m7ICAtNbjJX4w=&#39;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordobject"><code>record.object</code><a class="headerlink" href="#recordobject" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;user-1-prefs.json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">17545</span><span class="p">,</span>
+    <span class="s1">&#39;eTag&#39;</span><span class="p">:</span> <span class="s1">&#39;b79ac2ef68c08fa9ac6013d53038a26c&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sequencer&#39;</span><span class="p">:</span> <span class="s1">&#39;005BA40CB5BD42013A&#39;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordbucket"><code>record.bucket</code><a class="headerlink" href="#recordbucket" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">bucket</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;user-preferences&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ownerIdentity&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;principalId&#39;</span><span class="p">:</span> <span class="s1">&#39;A32KFL0DQ3MH8X&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;arn&#39;</span><span class="p">:</span> <span class="s1">&#39;arn:aws:s3:::user-preferences&#39;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordbucket_arn"><code>record.bucket_arn</code><a class="headerlink" href="#recordbucket_arn" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">bucket_arn</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;arn:aws:s3:::user-preferences&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordbucket_owner"><code>record.bucket_owner</code><a class="headerlink" href="#recordbucket_owner" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">bucket_owner</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;A32KFL0DQ3MH8X&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordkey"><code>record.key</code><a class="headerlink" href="#recordkey" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;user-1-prefs.json&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordschema_version"><code>record.schema_version</code><a class="headerlink" href="#recordschema_version" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">schema_version</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;1.0&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recorduser_identity"><code>record.user_identity</code><a class="headerlink" href="#recorduser_identity" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">user_identity</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;AWS: AROAI7Z5ZQEQ3UETKKYGQ: deploy-workers-poc-put-v1-photo&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordoperation"><code>record.operation</code><a class="headerlink" href="#recordoperation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;created&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordbody"><code>record.body</code><a class="headerlink" href="#recordbody" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;possible&#39;</span><span class="p">:</span> <span class="s1">&#39;output&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
               
