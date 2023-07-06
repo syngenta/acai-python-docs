@@ -6,20 +6,20 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Configure S3 Acai Events">
+        <meta name="description" content="Configure SNS Acai Events">
       
       
         <meta name="author" content="Paul Cruse III">
       
       
-        <link rel="canonical" href="https://syngenta.github.io/acai-python-docs/s3/configuration-details/">
+        <link rel="canonical" href="https://syngenta.github.io/acai-python-docs/sns/configuration-details/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Configurations Details - Acai (Python)</title>
+        <title>Configurations - Acai (Python)</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#s3-configurations-details" class="md-skip">
+        <a href="#sns-event-configurations" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configurations Details
+              Configurations
             
           </span>
         </div>
@@ -362,14 +362,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -389,6 +387,76 @@
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           S3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../s3/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../s3/configuration-details/" class="md-nav__link">
+        Configurations Details
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          SNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SNS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          SNS
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -422,12 +490,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Configurations Details
+          Configurations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Configurations Details
+        Configurations
       </a>
       
         
@@ -460,19 +528,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#s3-record-properties" class="md-nav__link">
-    S3 Record Properties
+  <a href="#sns-record-properties" class="md-nav__link">
+    SNS Record Properties
   </a>
   
-    <nav class="md-nav" aria-label="S3 Record Properties">
+    <nav class="md-nav" aria-label="SNS Record Properties">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recordname" class="md-nav__link">
-    record.name
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#recordsource" class="md-nav__link">
@@ -482,15 +543,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordversion" class="md-nav__link">
-    record.version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordtime" class="md-nav__link">
-    record.time
+  <a href="#recordsource_arn" class="md-nav__link">
+    record.source_arn
   </a>
   
 </li>
@@ -503,85 +557,113 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordrequest" class="md-nav__link">
-    record.request
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordresponse" class="md-nav__link">
-    record.response
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordconfiguration_id" class="md-nav__link">
-    record.configuration_id
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordobject" class="md-nav__link">
-    record.object
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordbucket" class="md-nav__link">
-    record.bucket
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordbucket_arn" class="md-nav__link">
-    record.bucket_arn
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordbucket_owner" class="md-nav__link">
-    record.bucket_owner
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordkey" class="md-nav__link">
-    record.key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordschema_version" class="md-nav__link">
-    record.schema_version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recorduser_identity" class="md-nav__link">
-    record.user_identity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordoperation" class="md-nav__link">
-    record.operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#recordbody" class="md-nav__link">
     record.body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordattributes" class="md-nav__link">
+    record.attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordmessage_attributes" class="md-nav__link">
+    record.message_attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordversion" class="md-nav__link">
+    record.version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsubscription_arn" class="md-nav__link">
+    record.subscription_arn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsignature_version" class="md-nav__link">
+    record.signature_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordtimestamp" class="md-nav__link">
+    record.timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsignature" class="md-nav__link">
+    record.signature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsigning_cert_url" class="md-nav__link">
+    record.signing_cert_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsigning_cert_url_1" class="md-nav__link">
+    record.signing_cert_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordmessage_id" class="md-nav__link">
+    record.message_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordmessage" class="md-nav__link">
+    record.message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsns_type" class="md-nav__link">
+    record.sns_type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordunsubscribe_url" class="md-nav__link">
+    record.unsubscribe_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordtopic_arn" class="md-nav__link">
+    record.topic_arn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsubject" class="md-nav__link">
+    record.subject
   </a>
   
 </li>
@@ -595,74 +677,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_6">
-          SNS
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="SNS" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          SNS
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sns/quickstart/" class="md-nav__link">
-        Quickstart
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sns/configuration-details/" class="md-nav__link">
-        Configurations
-      </a>
     </li>
   
 
@@ -858,19 +872,12 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#s3-record-properties" class="md-nav__link">
-    S3 Record Properties
+  <a href="#sns-record-properties" class="md-nav__link">
+    SNS Record Properties
   </a>
   
-    <nav class="md-nav" aria-label="S3 Record Properties">
+    <nav class="md-nav" aria-label="SNS Record Properties">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recordname" class="md-nav__link">
-    record.name
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#recordsource" class="md-nav__link">
@@ -880,15 +887,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordversion" class="md-nav__link">
-    record.version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordtime" class="md-nav__link">
-    record.time
+  <a href="#recordsource_arn" class="md-nav__link">
+    record.source_arn
   </a>
   
 </li>
@@ -901,85 +901,113 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordrequest" class="md-nav__link">
-    record.request
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordresponse" class="md-nav__link">
-    record.response
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordconfiguration_id" class="md-nav__link">
-    record.configuration_id
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordobject" class="md-nav__link">
-    record.object
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordbucket" class="md-nav__link">
-    record.bucket
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordbucket_arn" class="md-nav__link">
-    record.bucket_arn
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordbucket_owner" class="md-nav__link">
-    record.bucket_owner
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordkey" class="md-nav__link">
-    record.key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordschema_version" class="md-nav__link">
-    record.schema_version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recorduser_identity" class="md-nav__link">
-    record.user_identity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordoperation" class="md-nav__link">
-    record.operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#recordbody" class="md-nav__link">
     record.body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordattributes" class="md-nav__link">
+    record.attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordmessage_attributes" class="md-nav__link">
+    record.message_attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordversion" class="md-nav__link">
+    record.version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsubscription_arn" class="md-nav__link">
+    record.subscription_arn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsignature_version" class="md-nav__link">
+    record.signature_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordtimestamp" class="md-nav__link">
+    record.timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsignature" class="md-nav__link">
+    record.signature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsigning_cert_url" class="md-nav__link">
+    record.signing_cert_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsigning_cert_url_1" class="md-nav__link">
+    record.signing_cert_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordmessage_id" class="md-nav__link">
+    record.message_id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordmessage" class="md-nav__link">
+    record.message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsns_type" class="md-nav__link">
+    record.sns_type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordunsubscribe_url" class="md-nav__link">
+    record.unsubscribe_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordtopic_arn" class="md-nav__link">
+    record.topic_arn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordsubject" class="md-nav__link">
+    record.subject
   </a>
   
 </li>
@@ -1003,14 +1031,14 @@
                 
 
 
-<h1 id="s3-configurations-details">S3 Configurations Details<a class="headerlink" href="#s3-configurations-details" title="Permanent link">&para;</a></h1>
-<p>The S3 event will automatically handle many common things done when eventing off a S3 event. Developers then have the 
-ability to further extend that functionality with custom middleware. Below is a full list of all the configurations 
-available and examples of their use.</p>
+<h1 id="sns-event-configurations">SNS Event Configurations<a class="headerlink" href="#sns-event-configurations" title="Permanent link">&para;</a></h1>
+<p>The SNS event will automatically handle many common things done when eventing off an SNS stream. Developers 
+then have the ability to further extend that functionality with custom middleware. Below is a full list of all the 
+configurations available and examples of their use.</p>
 <details class="examples" open="open">
 <summary>Examples</summary>
 <p>Don't like reading documentation? Then look at 
-<a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/s3">our examples,</a> which can be deployed in 1 
+<a href="https://github.com/syngenta/acai-python-docs/blob/main/examples/sns">our examples,</a> which can be deployed in 1 
 command into your AWS account! <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd:" /></p>
 </details>
 <h2 id="lambda-configuration">Lambda Configuration<a class="headerlink" href="#lambda-configuration" title="Permanent link">&para;</a></h2>
@@ -1028,14 +1056,14 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 <span class="normal">7</span>
 <span class="normal">8</span>
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">s3-handler</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service/handlers/s3.handle</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sns-handler</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service/handlers/sns.handle</span><span class="w"></span>
 <span class="w">        </span><span class="nt">memorySize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"></span>
 <span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">900</span><span class="w"></span>
 <span class="w">        </span><span class="nt">events</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">s3</span><span class="p">:</span><span class="w"></span>
-<span class="w">                </span><span class="nt">bucket</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uploadsBucket</span><span class="w"></span>
-<span class="w">                </span><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3:ObjectCreated:*</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sns</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nt">arn</span><span class="p">:</span><span class="w"></span>
+<span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">Fn::GetAtt</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">SomeTopic</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;Arn&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <h2 id="requirements-configuration-options">Requirements Configuration Options<a class="headerlink" href="#requirements-configuration-options" title="Permanent link">&para;</a></h2>
 <table>
@@ -1069,34 +1097,6 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 <td>no</td>
 <td>None</td>
 <td>a custom class that will be passed instead of the records object</td>
-</tr>
-<tr>
-<td><strong><code>data_type</code></strong></td>
-<td>enum (str)</td>
-<td>no</td>
-<td>['json', 'csv']</td>
-<td>will convert data to a dict based on type; <code>requires get_object=True</code></td>
-</tr>
-<tr>
-<td><strong><code>get_object</code></strong></td>
-<td>bool</td>
-<td>no</td>
-<td>False</td>
-<td>will download object from s3 bucket and hold in memory</td>
-</tr>
-<tr>
-<td><strong><code>operations</code></strong></td>
-<td>list</td>
-<td>no</td>
-<td>['created', 'updated', 'deleted']</td>
-<td>will only run if record was created from the listed operation</td>
-</tr>
-<tr>
-<td><strong><code>raise_operation_error</code></strong></td>
-<td>bool</td>
-<td>no</td>
-<td>False</td>
-<td>will raise exception if operation of record is not from listed operations</td>
 </tr>
 <tr>
 <td><strong><code>raise_body_error</code></strong></td>
@@ -1149,9 +1149,7 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.s3.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.sns.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
 
 <span class="c1"># example data class (requires, get_object=True and a data_type)</span>
 <span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
@@ -1171,19 +1169,17 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 
 <span class="n">requirements</span><span class="p">(</span>
     <span class="n">before</span><span class="o">=</span><span class="n">log_something</span><span class="p">,</span>
-    <span class="n">get_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
     <span class="n">data_class</span><span class="o">=</span><span class="n">SomeClass</span><span class="p">,</span>
-    <span class="n">raise_body_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># requires, get_object=True and a data_type</span>
+    <span class="n">raise_body_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;service/openapi.yml&#39;</span><span class="p">,</span>
-    <span class="n">required_body</span><span class="o">=</span><span class="s1">&#39;v1-s3-body&#39;</span><span class="p">,</span> <span class="c1"># or send jsonschema dict; schema kwarg not needed if sending jsonschema dict</span>
+    <span class="n">required_body</span><span class="o">=</span><span class="s1">&#39;v1-sns-body&#39;</span><span class="p">,</span> <span class="c1"># or send jsonschema dict; schema kwarg not needed if sending jsonschema dict</span>
     <span class="n">after</span><span class="o">=</span><span class="n">alert_something</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="s3-record-properties">S3 Record Properties<a class="headerlink" href="#s3-record-properties" title="Permanent link">&para;</a></h2>
+<h2 id="sns-record-properties">SNS Record Properties<a class="headerlink" href="#sns-record-properties" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1194,24 +1190,14 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 </thead>
 <tbody>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordname"><code>name</code></a></strong></td>
-<td>str</td>
-<td>the name of the event</td>
-</tr>
-<tr>
 <td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsource"><code>source</code></a></strong></td>
 <td>str</td>
 <td>the source of the event</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordversion"><code>version</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsource_arn"><code>source_arn</code></a></strong></td>
 <td>str</td>
-<td>the version of the event</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordtime"><code>time</code></a></strong></td>
-<td>str</td>
-<td>the time of the event</td>
+<td>the source arn of the event</td>
 </tr>
 <tr>
 <td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordregion"><code>region</code></a></strong></td>
@@ -1219,81 +1205,82 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 <td>the region of the event</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordrequest"><code>request</code></a></strong></td>
-<td>dict</td>
-<td>the request parameters of the event</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordresponse"><code>response</code></a></strong></td>
-<td>dict</td>
-<td>the response parameters of the event</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordconfiguration_id"><code>configuration_id</code></a></strong></td>
-<td>str</td>
-<td>the configuration id</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordobject"><code>object</code></a></strong></td>
-<td>dict</td>
-<td>the object dict of the event</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket"><code>bucket</code></a></strong></td>
-<td>dict</td>
-<td>the bucket dict of the event</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket"><code>bucket</code></a></strong></td>
-<td>dict</td>
-<td>the bucket dict of the event</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket_arn"><code>bucket_arn</code></a></strong></td>
-<td>str</td>
-<td>the arn of the bucket</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbucket_owner"><code>bucket_owner</code></a></strong></td>
-<td>str</td>
-<td>the owner of the bucket</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordkey"><code>key</code></a></strong></td>
-<td>str</td>
-<td>the key owner of the object</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordschema_version"><code>schema_version</code></a></strong></td>
-<td>str</td>
-<td>the schema version</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recorduser_identity"><code>user_identity</code></a></strong></td>
-<td>str</td>
-<td>the user identity</td>
-</tr>
-<tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordoperation"><code>operation</code></a></strong></td>
-<td>enum (str)</td>
-<td>enum of <code>created</code>, <code>deleted</code>, <code>updated</code></td>
-</tr>
-<tr>
 <td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordbody"><code>body</code></a></strong></td>
-<td>dict,bytes</td>
+<td>dict,str</td>
 <td>the body of file in the s3 bucket</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordattributes"><code>attributes</code></a></strong></td>
+<td>dict</td>
+<td>the attributes dict of the message attributes; easier than use message attributes</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordmessage_attributes"><code>message_attributes</code></a></strong></td>
+<td>dict</td>
+<td>the message attributes of the message</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordversion"><code>version</code></a></strong></td>
+<td>str</td>
+<td>the version sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsubscription_arn"><code>subscription_arn</code></a></strong></td>
+<td>str</td>
+<td>the subscription arn of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsignature_version"><code>signature_version</code></a></strong></td>
+<td>str</td>
+<td>the signature version of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordtimestamp"><code>timestamp</code></a></strong></td>
+<td>str</td>
+<td>the timestamp of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsignature"><code>signature</code></a></strong></td>
+<td>str</td>
+<td>the signature of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsigning_cert_url"><code>signing_cert_url</code></a></strong></td>
+<td>str</td>
+<td>the signing cert url of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordmessage_id"><code>message_id</code></a></strong></td>
+<td>str</td>
+<td>the message id of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordmessage"><code>message</code></a></strong></td>
+<td>str</td>
+<td>the message of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsns_type"><code>sns_type</code></a></strong></td>
+<td>str</td>
+<td>the type of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordunsubscribe_url"><code>unsubscribe_url</code></a></strong></td>
+<td>str</td>
+<td>the unsubscribe_url of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordtopic_arn"><code>topic_arn</code></a></strong></td>
+<td>str</td>
+<td>the topic arn of the sns event</td>
+</tr>
+<tr>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/s3/#recordsubject"><code>subject</code></a></strong></td>
+<td>str</td>
+<td>the subject of the sns event</td>
 </tr>
 </tbody>
 </table>
-<h4 id="recordname"><code>record.name</code><a class="headerlink" href="#recordname" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;ObjectRemoved: Put&#39;</span>
-</code></pre></div></td></tr></table></div>
 <h4 id="recordsource"><code>record.source</code><a class="headerlink" href="#recordsource" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1301,25 +1288,16 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
 
 <span class="c1"># output</span>
-<span class="s1">&#39;aws:s3&#39;</span>
+<span class="s1">&#39;aws:sns&#39;</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="recordversion"><code>record.version</code><a class="headerlink" href="#recordversion" title="Permanent link">&para;</a></h4>
+<h4 id="recordsource_arn"><code>record.source_arn</code><a class="headerlink" href="#recordsource_arn" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">source_arn</span><span class="p">)</span>
 
 <span class="c1"># output</span>
-<span class="s1">&#39;2.0&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordtime"><code>record.time</code><a class="headerlink" href="#recordtime" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;2018-09-20T21: 10: 13.821Z&#39;</span>
+<span class="s1">&#39;arn:aws:sns:us-east-2:123456789012:my-queue&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordregion"><code>record.region</code><a class="headerlink" href="#recordregion" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1329,143 +1307,6 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 
 <span class="c1"># output</span>
 <span class="s1">&#39;us-east-1&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordrequest"><code>record.request</code><a class="headerlink" href="#recordrequest" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">request</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="p">{</span>
-    <span class="s1">&#39;sourceIPAddress&#39;</span><span class="p">:</span> <span class="s1">&#39;172.20.133.36&#39;</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordresponse"><code>record.response</code><a class="headerlink" href="#recordresponse" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="p">{</span>
-    <span class="s1">&#39;x-amz-request-id&#39;</span><span class="p">:</span> <span class="s1">&#39;6B859DD0CE613FAE&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;x-amz-id-2&#39;</span><span class="p">:</span> <span class="s1">&#39;EXLMfc9aiXZFzNwLKXpw35iaVvl/DkEA6GtbuxjfmuLN3kLPL/aGoa7NMSwpl3m7ICAtNbjJX4w=&#39;</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordconfiguration_id"><code>record.configuration_id</code><a class="headerlink" href="#recordconfiguration_id" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">configuration_id</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="p">{</span>
-    <span class="s1">&#39;x-amz-request-id&#39;</span><span class="p">:</span> <span class="s1">&#39;6B859DD0CE613FAE&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;x-amz-id-2&#39;</span><span class="p">:</span> <span class="s1">&#39;EXLMfc9aiXZFzNwLKXpw35iaVvl/DkEA6GtbuxjfmuLN3kLPL/aGoa7NMSwpl3m7ICAtNbjJX4w=&#39;</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordobject"><code>record.object</code><a class="headerlink" href="#recordobject" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="p">{</span>
-    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;user-1-prefs.json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">17545</span><span class="p">,</span>
-    <span class="s1">&#39;eTag&#39;</span><span class="p">:</span> <span class="s1">&#39;b79ac2ef68c08fa9ac6013d53038a26c&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;sequencer&#39;</span><span class="p">:</span> <span class="s1">&#39;005BA40CB5BD42013A&#39;</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordbucket"><code>record.bucket</code><a class="headerlink" href="#recordbucket" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">bucket</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="p">{</span>
-    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;user-preferences&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;ownerIdentity&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;principalId&#39;</span><span class="p">:</span> <span class="s1">&#39;A32KFL0DQ3MH8X&#39;</span>
-    <span class="p">},</span>
-    <span class="s1">&#39;arn&#39;</span><span class="p">:</span> <span class="s1">&#39;arn:aws:s3:::user-preferences&#39;</span>
-<span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordbucket_arn"><code>record.bucket_arn</code><a class="headerlink" href="#recordbucket_arn" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">bucket_arn</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;arn:aws:s3:::user-preferences&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordbucket_owner"><code>record.bucket_owner</code><a class="headerlink" href="#recordbucket_owner" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">bucket_owner</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;A32KFL0DQ3MH8X&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordkey"><code>record.key</code><a class="headerlink" href="#recordkey" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;user-1-prefs.json&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordschema_version"><code>record.schema_version</code><a class="headerlink" href="#recordschema_version" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">schema_version</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;1.0&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recorduser_identity"><code>record.user_identity</code><a class="headerlink" href="#recorduser_identity" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">user_identity</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;AWS: AROAI7Z5ZQEQ3UETKKYGQ: deploy-workers-poc-put-v1-photo&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordoperation"><code>record.operation</code><a class="headerlink" href="#recordoperation" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;created&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordbody"><code>record.body</code><a class="headerlink" href="#recordbody" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1477,8 +1318,171 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
 
 <span class="c1"># output</span>
 <span class="p">{</span>
-    <span class="s1">&#39;possible&#39;</span><span class="p">:</span> <span class="s1">&#39;output&#39;</span>
+    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span>
 <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordattributes"><code>record.attributes</code><a class="headerlink" href="#recordattributes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">attributes</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;SomeString&#39;</span><span class="p">:</span> <span class="s1">&#39;Some String&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SomeBinary&#39;</span><span class="p">:</span> <span class="s1">&#39;Some Binary&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordmessage_attributes"><code>record.message_attributes</code><a class="headerlink" href="#recordmessage_attributes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">message_attributes</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;SomeString&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;DataType&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;StringValue&#39;</span><span class="p">:</span> <span class="s1">&#39;Some String&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;SomeBinary&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;DataType&#39;</span><span class="p">:</span> <span class="s1">&#39;binary&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;BinaryValue&#39;</span><span class="p">:</span> <span class="s1">&#39;Some Binary&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordversion"><code>record.version</code><a class="headerlink" href="#recordversion" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;1.0&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsubscription_arn"><code>record.subscription_arn</code><a class="headerlink" href="#recordsubscription_arn" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">subscription_arn</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;arn:aws:sns:us-east-1:123456789012:sns-lambda:21be56ed-a058-49f5-8c98-aedd2564c486&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsignature_version"><code>record.signature_version</code><a class="headerlink" href="#recordsignature_version" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">signature_version</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;1&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordtimestamp"><code>record.timestamp</code><a class="headerlink" href="#recordtimestamp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">timestamp</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;2019-01-02T12:45:07.000Z&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsignature"><code>record.signature</code><a class="headerlink" href="#recordsignature" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">signature</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;tcc6faL2yUC6dgZdmrwh1Y4cGa/ebXEkAi6RibDsvpi+tE/1+82j...65r==&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsigning_cert_url"><code>record.signing_cert_url</code><a class="headerlink" href="#recordsigning_cert_url" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">signing_cert_url</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;https://sns.us-east-1.amazonaws.com/SimpleNotificationService-ac565b8b1a6c5d002d285f9598aa1d9b.pem&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsigning_cert_url_1"><code>record.signing_cert_url</code><a class="headerlink" href="#recordsigning_cert_url_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">signing_cert_url</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;https://sns.us-east-1.amazonaws.com/SimpleNotificationService-ac565b8b1a6c5d002d285f9598aa1d9b.pem&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordmessage_id"><code>record.message_id</code><a class="headerlink" href="#recordmessage_id" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">message_id</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;95df01b4-ee98-5cb9-9903-4c221d41eb5e&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordmessage"><code>record.message</code><a class="headerlink" href="#recordmessage" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="p">{</span>
+    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsns_type"><code>record.sns_type</code><a class="headerlink" href="#recordsns_type" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">sns_type</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;Notification&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordunsubscribe_url"><code>record.unsubscribe_url</code><a class="headerlink" href="#recordunsubscribe_url" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">unsubscribe_url</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&amp;amp;SubscriptionArn=arn:aws:sns:us-east-1:123456789012:test-lambda:21be56ed-a058-49f5-8c98-aedd2564c486&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordtopic_arn"><code>record.topic_arn</code><a class="headerlink" href="#recordtopic_arn" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">topic_arn</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;arn:aws:sns:us-east-1:123456789012:sns-lambda&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="recordsubject"><code>record.subject</code><a class="headerlink" href="#recordsubject" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">subject</span><span class="p">)</span>
+
+<span class="c1"># output</span>
+<span class="s1">&#39;TestInvoke&#39;</span>
 </code></pre></div></td></tr></table></div>
 
               
@@ -1516,7 +1520,7 @@ command into your AWS account! <img alt="🤓" class="twemoji" src="https://twem
       
       
         
-        <a href="../../sns/quickstart/" class="md-footer__link md-footer__link--next" aria-label="Next: Quickstart" rel="next">
+        <a href="../../sqs/quickstart/" class="md-footer__link md-footer__link--next" aria-label="Next: Quickstart" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">

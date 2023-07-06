@@ -35,6 +35,7 @@ functions:
 | option                      | type        | required | default                           | description                                                               |
 |-----------------------------|-------------|----------|-----------------------------------|---------------------------------------------------------------------------|
 | **`before`**                | func        | no       | None                              | a custom function to be ran before your records are pulled                |
+| **`after`**                 | func        | no       | None                              | a custom function to be ran after your records are pulled                 |
 | **`data_class`**            | class       | no       | None                              | a custom class that will be passed instead of the records object          |
 | **`data_type`**             | enum (str)  | no       | ['json', 'csv']                   | will convert data to a dict based on type; `requires get_object=True`     |
 | **`get_object`**            | bool        | no       | False                             | will download object from s3 bucket and hold in memory                    |

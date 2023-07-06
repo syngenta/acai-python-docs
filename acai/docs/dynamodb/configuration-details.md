@@ -36,6 +36,7 @@ functions:
 | option                      | type        | required | default                           | description                                                               |
 |-----------------------------|-------------|----------|-----------------------------------|---------------------------------------------------------------------------|
 | **`before`**                | func        | no       | None                              | a custom function to be ran before your records are pulled                |
+| **`after`**                 | func        | no       | None                              | a custom function to be ran after your records are pulled                 |
 | **`data_class`**            | class       | no       | None                              | a custom class that will be passed instead of the records object          |
 | **`operations`**            | list        | no       | ['created', 'updated', 'deleted'] | will only run if record was created from the listed operation             |
 | **`raise_operation_error`** | bool        | no       | False                             | will raise exception if operation of record is not from listed operations |

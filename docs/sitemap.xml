@@ -51,6 +51,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://syngenta.github.io/acai-python-docs/sns/configuration-details/</loc>
+         <lastmod>2023-07-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/sns/quickstart/</loc>
+         <lastmod>2023-07-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://syngenta.github.io/acai-python-docs/sqs/configuration-details/</loc>
          <lastmod>2023-07-06</lastmod>
          <changefreq>daily</changefreq>

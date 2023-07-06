@@ -3,7 +3,7 @@ title: Quickstart
 description: Use Acai with SQS Events
 ---
 
-# SQS Quickstart
+# SNS Quickstart
 
 Event handler for Amazon SQS Events.
 
@@ -27,13 +27,13 @@ $ pip install acai
 
 After installation, create a handler file and configure the AWS lambda to use that file as its handler.
 
-=== "sqs.py"
+=== "sns.py"
 
     ```python
-    from acai.sqs.requirements import requirements
+    from acai.sns.requirements import requirements
     
     requirements(
-        required_body='v1'-sqs-event'
+        required_body='v1'-sns-event'
     )
     def handle(event):
         for record in event.records:
@@ -44,12 +44,12 @@ After installation, create a handler file and configure the AWS lambda to use th
 
     ```yaml
     functions:
-        sqs-handler:
-            handler: service/handlers/sqs.handle
+        sns-handler:
+            handler: service/handlers/sns.handle
             memorySize: 512
             timeout: 900
             events:
                 - sqs:
                     arn:
-                        Fn::GetAtt: [ SomeQueue, 'Arn' ]
+                        Fn::GetAtt: [ SomeTopic, 'Arn' ]
     ```
