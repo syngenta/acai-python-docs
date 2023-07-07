@@ -64,7 +64,7 @@ def alert_something(records, result, requirements):
     if 'something' in result and 'alert' in requirements:
         print(records)
 
-requirements(
+@requirements(
     before=log_something,
     get_object=True,
     data_type='json',

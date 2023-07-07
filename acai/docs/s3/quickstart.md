@@ -33,7 +33,7 @@ After installation, create a handler file and configure the AWS lambda to use th
     ```python
     from acai.s3.requirements import requirements
     
-    requirements(
+    @requirements(
         get_object=True,
         data_type='json'
     )

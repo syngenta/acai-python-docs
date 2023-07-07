@@ -8,6 +8,9 @@ nav:
     - APIGateway:
         - apigateway/quickstart.md
         - apigateway/configuration-details.md
+    - DocumentDB:
+        - documentdb/quickstart.md
+        - documentdb/configuration-details.md
     - DynamoDB:
         - dynamodb/quickstart.md
         - dynamodb/configuration-details.md

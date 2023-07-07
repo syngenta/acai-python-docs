@@ -32,7 +32,7 @@ After installation, create a handler file and configure the AWS lambda to use th
     ```python
     from acai.dynamodb.requirements import requirements
     
-    requirements(
+    @requirements(
         operations=['created', 'deleted']
     )
     def handle(event):

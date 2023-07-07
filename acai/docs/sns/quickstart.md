@@ -32,7 +32,7 @@ After installation, create a handler file and configure the AWS lambda to use th
     ```python
     from acai.sns.requirements import requirements
     
-    requirements(
+    @requirements(
         required_body='v1'-sns-event'
     )
     def handle(event):
