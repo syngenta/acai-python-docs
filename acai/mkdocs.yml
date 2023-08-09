@@ -14,6 +14,21 @@ nav:
     - DynamoDB:
         - dynamodb/quickstart.md
         - dynamodb/configuration-details.md
+    - Firehose:
+        - firehose/quickstart.md
+        - firehose/configuration-details.md
+    - Generic:
+        - generic/quickstart.md
+        - generic/configuration-details.md
+    - Kinesis:
+        - kinesis/quickstart.md
+        - kinesis/configuration-details.md
+    - MQ:
+        - mq/quickstart.md
+        - mq/configuration-details.md
+    - MSK:
+        - msk/quickstart.md
+        - msk/configuration-details.md
     - S3:
         - s3/quickstart.md
         - s3/configuration-details.md
