@@ -2,82 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/changes/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/install/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/apigateway/configuration-details/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/apigateway/quickstart/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/common/logger/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/documentdb/configuration-details/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/documentdb/quickstart/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/dynamodb/configuration-details/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/dynamodb/quickstart/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/firehose/configuration-details/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/firehose/quickstart/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/generic/configuration-details/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/generic/quickstart/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/kinesis/configuration-details/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/kinesis/quickstart/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/mq/configuration-details/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/mq/quickstart/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/msk/configuration-details/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://syngenta.github.io/acai-python-docs/msk/quickstart/</loc>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/s3/configuration-details/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/s3/quickstart/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/sns/configuration-details/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/sns/quickstart/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/sqs/configuration-details/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://syngenta.github.io/acai-python-docs/sqs/quickstart/</loc>
-         <lastmod>2023-07-07</lastmod>
+         <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

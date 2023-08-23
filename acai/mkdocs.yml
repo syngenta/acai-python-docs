@@ -1,4 +1,4 @@
-site_name: Acai (Python)
+site_name: Acai
 site_url: https://syngenta.github.io/acai-python-docs
 site_author: Paul Cruse III
 site_dir: ../docs
@@ -45,11 +45,10 @@ nav:
     - Issues: https://github.com/syngenta/acai-python/issues
 theme:
     name: material
-    logo: https://avatars.githubusercontent.com/u/65528694?s=200&v=4
+    logo: https://raw.githubusercontent.com/syngenta/acai-python-docs/main/logos/logo-icon-docs.png
     palette:
         -
-            media: "(prefers-color-scheme: light)"
-            scheme: syngenta-light
+            scheme: acai
     highlightjs: true
     hljs_languages:
         - python
@@ -98,16 +97,3 @@ extra:
         url: https://syngenta.github.io/acai-python-docs
 extra_css:
     - extra.css
-
-### colors ###
-# blue: #01004C
-# green: #70D979
-# text: white
-# dark mode:
-    # bg: blue
-    # text: white
-    # links: green
-# light mode:
-    # bg: white
-    # text: blue
-    # links: green
