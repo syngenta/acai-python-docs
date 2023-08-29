@@ -1,0 +1,99 @@
+site_name: acai-aws
+site_url: https://syngenta.github.io/acai-python-docs
+site_author: Paul Cruse III
+site_dir: ../docs
+nav:
+    - Home: index.md
+    - install.md
+    - APIGateway:
+        - apigateway/quickstart.md
+        - apigateway/configuration-details.md
+    - DocumentDB:
+        - documentdb/quickstart.md
+        - documentdb/configuration-details.md
+    - DynamoDB:
+        - dynamodb/quickstart.md
+        - dynamodb/configuration-details.md
+    - Firehose:
+        - firehose/quickstart.md
+        - firehose/configuration-details.md
+    - Generic:
+        - generic/quickstart.md
+        - generic/configuration-details.md
+    - Kinesis:
+        - kinesis/quickstart.md
+        - kinesis/configuration-details.md
+    - MQ:
+        - mq/quickstart.md
+        - mq/configuration-details.md
+    - MSK:
+        - msk/quickstart.md
+        - msk/configuration-details.md
+    - S3:
+        - s3/quickstart.md
+        - s3/configuration-details.md
+    - SNS:
+        - sns/quickstart.md
+        - sns/configuration-details.md
+    - SQS:
+        - sqs/quickstart.md
+        - sqs/configuration-details.md
+    - common/logger.md
+    - changes.md
+    - PyPi Registry: https://pypi.org/project/acai-aws/
+    - Github Repository: https://github.com/syngenta/acai-python
+    - Issues: https://github.com/syngenta/acai-python/issues
+theme:
+    name: material
+    logo: https://raw.githubusercontent.com/syngenta/acai-python-docs/main/logos/logo-icon-docs.png
+    palette:
+        -
+            scheme: acai
+    highlightjs: true
+    hljs_languages:
+        - python
+        - yml
+    shortcuts:
+        help: 191    # ?
+        next: 78     # n
+        previous: 80 # p
+        search: 83   # s
+    features:
+        - navigation.top
+        - navigation.instant
+        - navigation.indexes
+        - navigation.tracking
+        - content.code.annotate
+markdown_extensions:
+    - codehilite
+    - meta
+    - admonition
+    - pymdownx.details
+    - pymdownx.tabbed:
+        alternate_style: true
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.highlight:
+        linenums: true
+    - pymdownx.snippets:
+        base_path: "."
+        check_paths: true
+    - toc:
+        permalink: true
+        toc_depth: 4
+    - pymdownx.superfences:
+        custom_fences:
+            -
+                name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+    - search
+    - markdownextradata
+    - mkdocs-video
+extra:
+    web:
+        url: https://syngenta.github.io/acai-python-docs
+extra_css:
+    - extra.css

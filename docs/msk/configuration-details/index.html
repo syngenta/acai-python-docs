@@ -19,7 +19,7 @@
     
     
       
-        <title>Configurations Details - acai-python</title>
+        <title>Configurations Details - acai-aws</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="acai-python" class="md-header__button md-logo" aria-label="acai-python" data-md-component="logo">
+    <a href="../.." title="acai-aws" class="md-header__button md-logo" aria-label="acai-aws" data-md-component="logo">
       
   <img src="https://raw.githubusercontent.com/syngenta/acai-python-docs/main/logos/logo-icon-docs.png" alt="logo">
 
@@ -98,7 +98,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            acai-python
+            acai-aws
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,12 +180,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="acai-python" class="md-nav__button md-logo" aria-label="acai-python" data-md-component="logo">
+    <a href="../.." title="acai-aws" class="md-nav__button md-logo" aria-label="acai-aws" data-md-component="logo">
       
   <img src="https://raw.githubusercontent.com/syngenta/acai-python-docs/main/logos/logo-icon-docs.png" alt="logo">
 
     </a>
-    acai-python
+    acai-aws
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1181,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://www.npmjs.com/package/acai" class="md-nav__link">
+      <a href="https://pypi.org/project/acai-aws/" class="md-nav__link">
         PyPi Registry
       </a>
     </li>
@@ -1423,13 +1423,13 @@ in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https:/
 <span class="normal">8</span>
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">msk-handler</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service/handlers/msk.handle</span><span class="w"></span>
-<span class="w">            </span><span class="nt">memorySize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"></span>
-<span class="w">            </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w"></span>
-<span class="w">            </span><span class="nt">events</span><span class="p">:</span><span class="w"></span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">msk</span><span class="p">:</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">arn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:kafka:region:XXXXXX:cluster/MyCluster/xxxx-xxxxx-xxxx</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytopic</span><span class="w"></span>
+<span class="w">        </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service/handlers/msk.handle</span><span class="w"></span>
+<span class="w">        </span><span class="nt">memorySize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"></span>
+<span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w"></span>
+<span class="w">        </span><span class="nt">events</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">msk</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nt">arn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:kafka:region:XXXXXX:cluster/MyCluster/xxxx-xxxxx-xxxx</span><span class="w"></span>
+<span class="w">                </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytopic</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <h2 id="requirements-configuration-options">Requirements Configuration Options<a class="headerlink" href="#requirements-configuration-options" title="Permanent link">&para;</a></h2>
 <table>
@@ -1515,7 +1515,7 @@ in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https:/
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai.firehose.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai_aws.firehose.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
 
 <span class="c1"># example data class</span>
 <span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
