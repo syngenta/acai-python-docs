@@ -402,8 +402,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#required_path" class="md-nav__link">
-    required_path
+  <a href="#required_route" class="md-nav__link">
+    required_route
   </a>
   
 </li>
@@ -1604,8 +1604,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#required_path" class="md-nav__link">
-    required_path
+  <a href="#required_route" class="md-nav__link">
+    required_route
   </a>
   
 </li>
@@ -2414,7 +2414,7 @@ other custom validations for more advanced use cases.</p>
 
 <span class="nd">@requirements</span><span class="p">(</span>
     <span class="n">required_headers</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x-api-key&#39;</span><span class="p">,</span> <span class="s1">&#39;x-correlation-id&#39;</span><span class="p">]</span>
-    <span class="n">required_path</span><span class="o">=</span><span class="s1">&#39;grower/</span><span class="si">{grower_id}</span><span class="s1">&#39;</span>
+    <span class="n">required_route</span><span class="o">=</span><span class="s1">&#39;grower/</span><span class="si">{grower_id}</span><span class="s1">&#39;</span>
     <span class="n">auth_required</span><span class="o">=</span><span class="kc">True</span>
     <span class="n">required_body</span><span class="o">=</span><span class="p">{</span>
         <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
@@ -2473,7 +2473,7 @@ other custom validations for more advanced use cases.</p>
 <td>only items in this array are allowed in the request</td>
 </tr>
 <tr>
-<td><strong><a href="https://syngenta.github.io/acai-python-docs/apigateway/configuration-details/#required_path"><code>required_path</code></a></strong></td>
+<td><strong><a href="https://syngenta.github.io/acai-python-docs/apigateway/configuration-details/#required_route"><code>required_route</code></a></strong></td>
 <td>str</td>
 <td>when using parameters, this is the required parameters</td>
 </tr>
@@ -2569,7 +2569,7 @@ may result in poor API consumer experience.</p>
 <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
     <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="required_path"><code>required_path</code><a class="headerlink" href="#required_path" title="Permanent link">&para;</a></h4>
+<h4 id="required_route"><code>required_route</code><a class="headerlink" href="#required_route" title="Permanent link">&para;</a></h4>
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>This is required if you are using dynamic routing (ex. <code>_id.py</code>) with path parameters. </p>
@@ -2580,7 +2580,7 @@ may result in poor API consumer experience.</p>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@requirements</span><span class="p">(</span>
-    <span class="n">required_path</span><span class="o">=</span><span class="s1">&#39;grower/</span><span class="si">{id}</span><span class="s1">&#39;</span>
+    <span class="n">required_route</span><span class="o">=</span><span class="s1">&#39;grower/</span><span class="si">{id}</span><span class="s1">&#39;</span>
 <span class="p">)</span>
 <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
     <span class="k">pass</span>

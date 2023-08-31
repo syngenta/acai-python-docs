@@ -268,7 +268,7 @@ def post(request, response):
 
 @requirements(
     required_headers=['x-api-key', 'x-correlation-id']
-    required_path='grower/{grower_id}'
+    required_route='grower/{grower_id}'
     auth_required=True
     required_body={
         'type': 'object',
@@ -306,7 +306,7 @@ def delete(request, response):
 | **[`available_headers`]({{web.url}}/apigateway/configuration-details/#available_headers)** | array | only headers in this array will be allowed in the request      |
 | **[`required_query`]({{web.url}}/apigateway/configuration-details/#required_query)**       | array | every item in the array is a required query string parameter   |
 | **[`available_query`]({{web.url}}/apigateway/configuration-details/#available_query)**     | array | only items in this array are allowed in the request            |
-| **[`required_path`]({{web.url}}/apigateway/configuration-details/#required_path)**         | str   | when using parameters, this is the required parameters         |
+| **[`required_route`]({{web.url}}/apigateway/configuration-details/#required_route)**         | str   | when using parameters, this is the required parameters         |
 | **[`required_body`]({{web.url}}/apigateway/configuration-details/#required_body)**         | str   | references a JSschema component in your `schema`               |
 | **[`required_auth`]({{web.url}}/apigateway/configuration-details/#auth_required)**         | bool  | will trigger `with_auth` function defined in the router config |
 | **[`before`]({{web.url}}/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function        |
@@ -366,7 +366,7 @@ def get(request, response):
     pass
 ```
 
-#### `required_path`
+#### `required_route`
 
 ???+ warning
     This is required if you are using dynamic routing (ex. `_id.py`) with path parameters. 
@@ -374,7 +374,7 @@ The router will provide a path values in `request.path_params`
 
 ```python
 @requirements(
-    required_path='grower/{id}'
+    required_route='grower/{id}'
 )
 def get(request, response):
     pass
