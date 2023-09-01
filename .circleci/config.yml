@@ -1,0 +1,32 @@
+version: 2.1
+commands:
+    python-install:
+        steps:
+            - run: pip install pipenv
+            - run: pipenv install
+    python-build:
+        steps:
+            - run: cd acai_aws && pipenv run build
+    git-committ-push:
+        steps:
+            - run: git add --all
+            - run: git commit -m "Building & Deploying $CIRCLE_TAG" 
+            - run: git push
+jobs:
+    install-build-deploy:
+        docker:
+            - image: cimg/python:3.9
+        steps:
+            - checkout
+            - python-install
+            - python-build
+            - git-committ-push
+workflows:
+    install-build-deploy-workflow:
+        jobs:
+            - install-build-deploy:
+                filters:
+                    tags:
+                        only: /.*/
+                    branches:
+                        ignore: /.*/
