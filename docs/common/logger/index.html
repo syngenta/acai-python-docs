@@ -1448,13 +1448,13 @@ effortless to find the exact log they are looking for. Below is an example of ho
 <span class="sd">    "time": "2023-09-01T19:35:06.163634+00:00",</span>
 <span class="sd">    "stack": [</span>
 <span class="sd">        "Traceback (most recent call last):",</span>
-<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/router.py\", line 36, in route",</span>
+<span class="sd">        "File \"/some-directory/router.py\", line 36, in route",</span>
 <span class="sd">        "self.__run_route_procedure(request, response)",</span>
-<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/router.py\", line 53, in __run_route_procedure",</span>
+<span class="sd">        "File \"/some-directory/router.py\", line 53, in __run_route_procedure",</span>
 <span class="sd">        "endpoint.run(request, response)",</span>
-<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/endpoint.py\", line 32, in run",</span>
+<span class="sd">        "File \"/some-directory/endpoint.py\", line 32, in run",</span>
 <span class="sd">        "return self.__method(request, response)",</span>
-<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/requirements.py\", line 21, in run_method",</span>
+<span class="sd">        "File \"/some-directory/requirements.py\", line 21, in run_method",</span>
 <span class="sd">        "func(request, response)",</span>
 <span class="sd">        "File \"api/v1/handler/grower/_grower_id.py\", line 8, in get",</span>
 <span class="sd">        "grower = Grower.get_by_id(grower_id=request.path_params['grower_id_HERE'])",</span>
