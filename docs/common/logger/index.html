@@ -1261,6 +1261,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#decorator-usage" class="md-nav__link">
+    Decorator Usage
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1376,6 +1383,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#decorator-usage" class="md-nav__link">
+    Decorator Usage
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1408,7 +1422,22 @@ effortless to find the exact log they are looking for. Below is an example of ho
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai_aws.common</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai_aws.common</span> <span class="kn">import</span> <span class="n">logger</span>
 
 <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">'INFO'</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="s1">'some log'</span><span class="p">)</span> <span class="c1"># level=INFO|DEBUG|WARN|ERROR</span>
 
@@ -1416,9 +1445,63 @@ effortless to find the exact log they are looking for. Below is an example of ho
 <span class="sd">"""</span>
 <span class="sd">{</span>
 <span class="sd">    level: '$LEVEL', </span>
+<span class="sd">    "time": "2023-09-01T19:35:06.163634+00:00",</span>
+<span class="sd">    "stack": [</span>
+<span class="sd">        "Traceback (most recent call last):",</span>
+<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/router.py\", line 36, in route",</span>
+<span class="sd">        "self.__run_route_procedure(request, response)",</span>
+<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/router.py\", line 53, in __run_route_procedure",</span>
+<span class="sd">        "endpoint.run(request, response)",</span>
+<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/endpoint.py\", line 32, in run",</span>
+<span class="sd">        "return self.__method(request, response)",</span>
+<span class="sd">        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/requirements.py\", line 21, in run_method",</span>
+<span class="sd">        "func(request, response)",</span>
+<span class="sd">        "File \"api/v1/handler/grower/_grower_id.py\", line 8, in get",</span>
+<span class="sd">        "grower = Grower.get_by_id(grower_id=request.path_params['grower_id_HERE'])",</span>
+<span class="sd">        "KeyError: 'grower_id_HERE'"</span>
+<span class="sd">    ],</span>
 <span class="sd">    log: '$MESSGE'</span>
 <span class="sd">}</span>
 <span class="sd">"""</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="decorator-usage">Decorator Usage<a class="headerlink" href="#decorator-usage" title="Permanent link">¶</a></h2>
+<p>The Acai logger also comes packaged as an easy to use log decorator that can decorate any method or function and even apply log conditions so you can
+control when exactly something is logged.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">acai_aws.common.logger.decorator</span> <span class="kn">import</span> <span class="n">log</span>
+
+<span class="nd">@log</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">mock_func_simple</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">'args'</span><span class="p">:</span> <span class="p">[</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">],</span> <span class="s1">'kwargs'</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">}</span>
+
+<span class="nd">@log</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">'INFO'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mock_func_level</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">'args'</span><span class="p">:</span> <span class="p">[</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">],</span> <span class="s1">'kwargs'</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">}</span>
+
+<span class="nd">@log</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">'INFO'</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="n">some_log_condition</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mock_func_condition</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">'args'</span><span class="p">:</span> <span class="p">[</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">],</span> <span class="s1">'kwargs'</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">some_log_condition</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></td></tr></table></div></div>
 
 
