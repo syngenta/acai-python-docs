@@ -7,6 +7,10 @@ commands:
     python-build:
         steps:
             - run: cd acai_aws && pipenv run build
+    git-setup:
+        steps:
+            - run: git config user.email "auto@circleci.com"
+            - run: git config user.name "circleci-user"
     git-committ-push:
         steps:
             - run: git add --all
@@ -20,6 +24,7 @@ jobs:
             - checkout
             - python-install
             - python-build
+            - git-setup
             - git-committ-push
 workflows:
     install-build-deploy-workflow:
