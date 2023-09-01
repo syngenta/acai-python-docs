@@ -20,7 +20,50 @@ logger.log(level='INFO', log='some log') # level=INFO|DEBUG|WARN|ERROR
 """
 {
 	level: '$LEVEL', 
+    "time": "2023-09-01T19:35:06.163634+00:00",
+    "stack": [
+        "Traceback (most recent call last):",
+        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/router.py\", line 36, in route",
+        "self.__run_route_procedure(request, response)",
+        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/router.py\", line 53, in __run_route_procedure",
+        "endpoint.run(request, response)",
+        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/endpoint.py\", line 32, in run",
+        "return self.__method(request, response)",
+        "File \"/Users/paulcruse3/Developer/projects/examples/apigateway/directory/.venv/lib/python3.9/site-packages/acai_aws/apigateway/requirements.py\", line 21, in run_method",
+        "func(request, response)",
+        "File \"api/v1/handler/grower/_grower_id.py\", line 8, in get",
+        "grower = Grower.get_by_id(grower_id=request.path_params['grower_id_HERE'])",
+        "KeyError: 'grower_id_HERE'"
+    ],
     log: '$MESSGE'
 }
 """
+```
+
+## Decorator Usage
+
+The Acai logger also comes packaged as an easy to use log decorator that can decorate any method or function and even apply log conditions so you can
+control when exactly something is logged.
+
+
+```python
+from acai_aws.common.logger.decorator import log
+
+@log()
+def mock_func_simple(arg1, arg2, **kwargs):
+    return {'args': [arg1, arg2], 'kwargs': kwargs}
+
+@log(level='INFO')
+def mock_func_level(arg1, arg2, **kwargs):
+    return {'args': [arg1, arg2], 'kwargs': kwargs}
+
+@log(level='INFO', condition=some_log_condition)
+def mock_func_condition(arg1, arg2, **kwargs):
+    return {'args': [arg1, arg2], 'kwargs': kwargs}
+
+def some_log_condition(*args, **_):
+    if args[0] == 1:
+        return True
+    return False
+
 ```
