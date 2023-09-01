@@ -13,8 +13,9 @@ commands:
             - run: git config user.name "circleci-user"
     git-committ-push:
         steps:
+            - run: git checkout main
             - run: git add --all
-            - run: git commit -m "Building & Deploying $CIRCLE_TAG" 
+            - run: git commit -m 'Building & Deploying $CIRCLE_TAG'
             - run: git push
 jobs:
     install-build-deploy:
