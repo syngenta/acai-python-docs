@@ -1,0 +1,722 @@
+openapi: 3.0.0
+info:
+    title: Acai Mapping Examples
+    version: 1.0.0
+    description: Acai API Example
+    contact:
+        name: Paul Cruse III
+        email: paulcruse3@gmail.com
+        url: https://acaiproject.io/
+tags:
+    - name: Acai
+      description: Acai
+servers:
+    - url: https://acaiproject.io
+paths:
+    /mapping-example/org:
+        post:
+            tags:
+                - acai
+            operationId: PostOrg
+            summary: Create new org
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/post-org-request'
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/org-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        get:
+            tags:
+                - acai
+            operationId: GetOrg
+            summary: Get Org
+            parameters:
+                -   in: header
+                    name: x-org-id
+                    description: id of org
+                    required: false
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/org-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        patch:
+            tags:
+                - acai
+            operationId: PatchOrg
+            summary: Update Org
+            parameters:
+                -   in: header
+                    name: x-org-id
+                    description: id of org
+                    required: false
+                    schema:
+                        type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/patch-org-request'
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/org-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+    /mapping-example/grower:
+        post:
+            tags:
+                - acai
+            operationId: PostGrower
+            summary: Create new grower
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/post-grower-request'
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/grower-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        get:
+            tags:
+                - acai
+            operationId: GetGrower
+            summary: Get a mapping of growers
+            parameters:
+                -   in: query
+                    name: first
+                    description: first name of the grower
+                    required: false
+                    schema:
+                        type: string
+                -   in: query
+                    name: last
+                    description: last name of the grower
+                    required: false
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/growers-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+    /mapping-example/grower/{growerId}:
+        get:
+            tags:
+                - acai
+            operationId: GetGrowerByID
+            summary: Get a grower
+            parameters:
+                -   in: path
+                    name: growerId
+                    description: id of grower
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/grower-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        patch:
+            tags:
+                - acai
+            operationId: PatchGrower
+            summary: Update grower
+            parameters:
+                -   in: path
+                    name: growerId
+                    description: id of grower
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/patch-grower-request'
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/grower-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        delete:
+            tags:
+                - acai
+            operationId: DeleteGrower
+            summary: Delete a grower
+            parameters:
+                -   in: path
+                    name: growerId
+                    description: id of grower
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/grower-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+    /mapping-example/farm:
+        post:
+            tags:
+                - acai
+            operationId: PostFarm
+            summary: Create new farm
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/post-farm-request'
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/farm-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        get:
+            tags:
+                - acai
+            operationId: GetFarms
+            summary: Get a mapping of farms
+            parameters:
+                -   in: query
+                    name: ownerId
+                    description: owner of farm
+                    required: false
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/farms-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+    /mapping-example/farm/{farmId}:
+        get:
+            tags:
+                - acai
+            operationId: GetFarmByID
+            summary: Get a mapping of farms
+            parameters:
+                -   in: path
+                    name: farmId
+                    description: id of farm
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/farm-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        patch:
+            tags:
+                - acai
+            operationId: PatchFarm
+            summary: Update a farm
+            parameters:
+                -   in: path
+                    name: farmId
+                    description: id of farm
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/patch-farm-request'
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/farm-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        delete:
+            tags:
+                - acai
+            operationId: DeleteFarmByID
+            summary: Delete a farms
+            parameters:
+                -   in: path
+                    name: farmId
+                    description: id of farm
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/farm-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+    /mapping-example/farm/{farmId}/field:
+        get:
+            tags:
+                - acai
+            operationId: GetFarmFields
+            summary: Get a mapping of fields for farm
+            parameters:
+                -   in: path
+                    name: farmId
+                    description: id of farm
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/fields-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+    /mapping-example/farm/{farmId}/field/{fieldId}:
+        get:
+            tags:
+                - acai
+            operationId: GetFarmFieldByID
+            summary: Get a field for a farm
+            parameters:
+                -   in: path
+                    name: farmId
+                    description: id of farm
+                    required: true
+                    schema:
+                        type: string
+                -   in: path
+                    name: fieldId
+                    description: id of field
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/field-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        put:
+            tags:
+                - acai
+            operationId: PutFarmFieldByID
+            summary: Update a field for a farm
+            parameters:
+                -   in: path
+                    name: farmId
+                    description: id of farm
+                    required: true
+                    schema:
+                        type: string
+                -   in: path
+                    name: fieldId
+                    description: id of field
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/put-field-request'
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/field-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+        delete:
+            tags:
+                - acai
+            operationId: DeleteFarmFieldByID
+            summary: Delete a field for a farm
+            parameters:
+                -   in: path
+                    name: farmId
+                    description: id of farm
+                    required: true
+                    schema:
+                        type: string
+                -   in: path
+                    name: fieldId
+                    description: id of field
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: Successful request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/field-model'
+                400:
+                    $ref: '#/components/responses/BadRequest'
+                401:
+                    $ref: '#/components/responses/Unauthorized'
+components:
+    responses:
+        BadRequest:
+            description: Malformed request
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/error-response'
+        Unauthorized:
+            description: Unathorized request
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/error-response'
+        NotFound:
+            description: Not found
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/error-response'
+    schemas:
+        error-response:
+            title: error-response
+            type: object
+            properties:
+                errors:
+                    type: array
+                    items:
+                        type: string
+        growers-model:
+            title: growers-model
+            type: object
+            properties:
+                growers:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/grower-model'
+        grower-model:
+            title: grower-model
+            type: object
+            properties:
+                id:
+                    type: string
+                first:
+                    type: string
+                last:
+                    type: string
+                phone:
+                    type: string
+                    minLength: 10
+                email:
+                    type: string
+                    format: email
+                created:
+                    type: string
+                modified:
+                    type: string
+        org-model:
+            title: org-model
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                address:
+                    type: string
+                city:
+                    type: string
+                state:
+                    type: string
+                zip:
+                    type: string
+                revenue:
+                    type: string
+                profit:
+                    type: string
+                created:
+                    type: string
+                modified:
+                    type: string
+        farms-model:
+            title: farms-model
+            type: object
+            properties:
+                farms:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/farm-model'
+        farm-model:
+            title: farm-model
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                address:
+                    type: string
+                city:
+                    type: string
+                state:
+                    type: string
+                zip:
+                    type: string
+                created:
+                    type: string
+                modified:
+                    type: string
+        fields-model:
+            title: fields-model
+            type: object
+            properties:
+                fields:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/field-model'
+        field-model:
+            title: field-model
+            type: object
+            properties:
+                id:
+                    type: string
+                farmId:
+                    type: string
+                name:
+                    type: string
+                coordinates:
+                    type: array
+                    items:
+                        type: string
+                created:
+                    type: string
+                modified:
+                    type: string
+        post-grower-request:
+            title: post-grower-request
+            type: object
+            required:
+                - first
+                - last
+                - phone
+                - email
+            properties:
+                first:
+                    type: string
+                last:
+                    type: string
+                phone:
+                    type: string
+                    minLength: 10
+                email:
+                    type: string
+                    format: email
+        patch-grower-request:
+            title: patch-grower-request
+            type: object
+            properties:
+                first:
+                    type: string
+                last:
+                    type: string
+                phone:
+                    type: string
+                    minLength: 10
+                email:
+                    type: string
+                    format: email
+        post-org-request:
+            title: post-org-request
+            type: object
+            required:
+                - name
+                - address
+                - city
+                - state
+                - zip
+            properties:
+                name:
+                    type: string
+                address:
+                    type: string
+                city:
+                    type: string
+                state:
+                    type: string
+                zip:
+                    type: string
+        patch-org-request:
+            title: patch-org-request
+            type: object
+            properties:
+                name:
+                    type: string
+                address:
+                    type: string
+                city:
+                    type: string
+                state:
+                    type: string
+                zip:
+                    type: string
+        post-farm-request:
+            title: post-farm-request
+            type: object
+            required:
+                - org_id
+                - name
+                - address
+                - city
+                - state
+                - zip
+            properties:
+                org_id:
+                    type: string
+                name:
+                    type: string
+                address:
+                    type: string
+                city:
+                    type: string
+                state:
+                    type: string
+                zip:
+                    type: string
+        patch-farm-request:
+            title: patch-farm-request
+            type: object
+            properties:
+                name:
+                    type: string
+                address:
+                    type: string
+                city:
+                    type: string
+                state:
+                    type: string
+                zip:
+                    type: string
+        post-field-request:
+            title: post-field-request
+            type: object
+            required:
+                - name
+                - coordinates
+            properties:
+                name:
+                    type: string
+                coordinates:
+                    type: array
+                    items:
+                        type: string
+        put-field-request:
+            title: put-field-request
+            type: object
+            required:
+                - name
+                - coordinates
+            properties:
+                name:
+                    type: string
+                coordinates:
+                    type: array
+                    items:
+                        type: string

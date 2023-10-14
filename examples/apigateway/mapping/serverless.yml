@@ -1,0 +1,74 @@
+service: mapping-example
+frameworkVersion: '3'
+plugins:
+    - serverless-plugin-bind-deployment-id
+    - serverless-plugin-log-retention
+    - serverless-deployment-bucket
+    - serverless-offline
+package:
+    exclude:
+        - .*
+        - .**/**
+        - aws/**
+        - README.md
+        - serverless.yml
+        - package.json
+        - package-lock.json
+provider:
+    name: aws
+    runtime: python3.9
+    versionFunctions: false
+    endpointType: regional
+    stage: ${env:stage, 'local'}
+    region: ${env:region, 'us-east-2'}
+    stackName: ${self:provider.stackTags.name}
+    apiName: ${self:provider.stackTags.name}
+    deploymentBucket:
+        name: ${self:provider.stackTags.name}-acai-aws-examples
+    stackTags:
+        name: ${self:provider.stage}-${self:service}
+        service: ${self:service}
+        environment: ${self:provider.stage}
+        managed-by: serverless-framework
+custom:
+    logRetentionInDays: 1
+    pythonRequirements:
+        useDownloadCache: false
+        useStaticCache: false
+        usePipenv: true
+        usePoetry: false
+        dockerizePip: non-linux
+        dockerImage: lambci/lambda:build-python3.9
+        slim: true
+        slimPatternsAppendDefaults: false
+        slimPatterns:
+            - '**/*.py[c|o]'
+            - '**/__pycache__*'
+    cors:
+        origin: '*'
+        allowCredentials: false
+        headers:
+            - Content-Type
+            - Authorization
+            - x-api-key
+    serverless-offline:
+        httpPort: 9000
+        stage: local
+        prefix: ${self:service}
+        region: us-east-2
+        noAuth: true
+        noPrependStageInUrl: true
+functions:
+    v1-apigateway-handler:
+        handler: api/v1/__router.route
+        memorySize: 256
+        timeout: 30
+        events:
+            - http:
+                path: /v1
+                method: ANY
+                cors: ${self:custom.cors}
+            - http:
+                path: /v1/{proxy+}
+                method: ANY
+                cors: ${self:custom.cors}
