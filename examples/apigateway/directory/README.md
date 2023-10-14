@@ -1,4 +1,4 @@
-# Acai AWS Python Mapping Example
+# Acai AWS Python Directory Example
 
 A simple mock of an API deployed with serverless to ApiGateway
 

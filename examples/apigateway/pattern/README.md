@@ -1,4 +1,4 @@
-# Acai AWS Python Directory Example
+# Acai AWS Python Pattern Example
 
 A simple mock of an API deployed with serverless to ApiGateway
 
