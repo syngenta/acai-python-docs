@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "6ae2698d-2107-4c21-a688-13c1292150bc",
+		"name": "Acai AWS Directory Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1888415"
+	},
+	"item": [
+		{
+			"name": "GROWER",
+			"item": [
+				{
+					"name": "GROWER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first\": \"Developer\",\n    \"last\": \"Acai\",\n    \"email\": \"developer@acaiproject.io\",\n    \"phone\": \"0123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/grower",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"grower"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GROWERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_url}}/v1/grower",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"grower"
+							],
+							"query": [
+								{
+									"key": "first",
+									"value": "Paul",
+									"disabled": true
+								},
+								{
+									"key": "last",
+									"value": "Cruse",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GROWER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host_url}}/v1/grower/2680ddc5-542f-4e67-ba43-d34be1c3b9fd",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"grower",
+								"2680ddc5-542f-4e67-ba43-d34be1c3b9fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GROWER BY ID",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first\": \"Developer\",\n    \"last\": \"Acai\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/grower/2680ddc5-542f-4e67-ba43-d34be1c3b9fd",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"grower",
+								"2680ddc5-542f-4e67-ba43-d34be1c3b9fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GROWER BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/grower/2680ddc5-542f-4e67-ba43-d34be1c3b9fd",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"grower",
+								"2680ddc5-542f-4e67-ba43-d34be1c3b9fd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORG",
+			"item": [
+				{
+					"name": "ORG",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host_url}}/v1/org",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"org"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ORG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Acai Project\",\n    \"address\": \"123 Main St\",\n    \"city\": \"Chicago\",\n    \"state\": \"IL\",\n    \"zip\": \"60616\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/org",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"org"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FARM",
+			"item": [
+				{
+					"name": "FARM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"org_id\":\"e04b5b86-e1bd-4322-adcb-fe00a81c3ec8\",\n    \"name\": \"Some Farm\",\n    \"address\": \"123 Main St\",\n    \"city\": \"Chicago\",\n    \"state\": \"IL\",\n    \"zip\": \"60616\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARMS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm?org_id=e04b5b86-e1bd-4322-adcb-fe00a81c3ec8",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm"
+							],
+							"query": [
+								{
+									"key": "org_id",
+									"value": "e04b5b86-e1bd-4322-adcb-fe00a81c3ec8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARM BY ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARM BY ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Syngenta Digital Farm\",\n    \"address\": \"123 Main St\",\n    \"city\": \"Chicago\",\n    \"state\": \"IL\",\n    \"zip\": \"60616\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARM BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FIELD",
+			"item": [
+				{
+					"name": "FARM FIELDS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea/field",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+								"field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARM FIELDS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Samuel Henderson\",\n    \"coordinates\": [\n        \"234.4.255.115\",\n        \"7.91.143.48\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea/field",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+								"field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARM FIELD BY ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea/field/82c65f81-d93d-4c22-a1fa-1268aa1bf0b8",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+								"field",
+								"82c65f81-d93d-4c22-a1fa-1268aa1bf0b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARM FIELD BY ID",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Paul's Field\",\n    \"coordinates\": [\n        \"23.64562\",\n        \"-179.64512\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1/farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea/field/82c65f81-d93d-4c22-a1fa-1268aa1bf0b8",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+								"field",
+								"82c65f81-d93d-4c22-a1fa-1268aa1bf0b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FARM FIELD BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-org-id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Syngenta Digital\",\n    \"address\": \"123 Main St\",\n    \"city\": \"Chicago\",\n    \"state\": \"IL\",\n    \"zip\": \"60616\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host_url}}/v1//farm/5ccfa4d3-facf-40d2-88d7-92d9319257ea/field/82c65f81-d93d-4c22-a1fa-1268aa1bf0b8",
+							"host": [
+								"{{host_url}}"
+							],
+							"path": [
+								"v1",
+								"",
+								"farm",
+								"5ccfa4d3-facf-40d2-88d7-92d9319257ea",
+								"field",
+								"82c65f81-d93d-4c22-a1fa-1268aa1bf0b8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host_url",
+			"value": "http://localhost:9000/directory-example",
+			"type": "string"
+		}
+	]
+}
