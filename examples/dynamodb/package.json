@@ -2,11 +2,15 @@
     "name": "dynamodb",
     "scripts": {
         "serverless": "serverless",
-        "start": "pipenv run serverless offline start"
+        "start": "pipenv run serverless offline start",
+        "ddb": "DYNAMO_ENDPOINT=http://localhost:4001 node -r dotenv/config node_modules/dynamodb-admin/bin/dynamodb-admin"
     },
     "devDependencies": {
+        "dynamodb-admin": "^4.5.0",
         "serverless": "^3.34.0",
         "serverless-deployment-bucket": "^1.6.0",
+        "serverless-dynamodb": "^0.2.46",
+        "serverless-offline": "^13.2.0",
         "serverless-plugin-bind-deployment-id": "^2.0.3",
         "serverless-plugin-log-retention": "^2.0.0",
         "serverless-python-requirements": "^6.0.0"

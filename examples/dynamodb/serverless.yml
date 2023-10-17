@@ -4,6 +4,7 @@ plugins:
     - serverless-plugin-bind-deployment-id
     - serverless-plugin-log-retention
     - serverless-deployment-bucket
+    - serverless-dynamodb
     - serverless-offline
 package:
     exclude:
@@ -44,6 +45,20 @@ custom:
         slimPatterns:
             - '**/*.py[c|o]'
             - '**/__pycache__*'
+    serverless-dynamodb:
+        stages:
+            - local
+        start:
+            port: 4001
+            inMemory: true
+            migrate: true
+            seed: true
+        seed:
+            cache:
+                sources:
+                    -
+                        table: ${self:provider.stackTags.name}-example
+                        sources: [./infra/local/seed/test.json]
 resources:
     - ${file(./infra/resources/dynamodb.yml)}
 functions:
