@@ -1,0 +1,63 @@
+service: s3-example
+frameworkVersion: '3'
+plugins:
+    - serverless-plugin-bind-deployment-id
+    - serverless-plugin-log-retention
+    - serverless-deployment-bucket
+    - serverless-s3-local
+    - serverless-offline
+package:
+    exclude:
+        - .*
+        - .**/**
+        - infra/**
+        - README.md
+        - serverless.yml
+        - package.json
+        - package-lock.json
+provider:
+    name: aws
+    runtime: python3.9
+    versionFunctions: false
+    endpointType: regional
+    stage: ${env:stage, 'local'}
+    region: ${env:region, 'us-east-2'}
+    stackName: ${self:provider.stackTags.name}
+    apiName: ${self:provider.stackTags.name}
+    deploymentBucket:
+        name: ${self:provider.stackTags.name}-acai-aws-examples
+    stackTags:
+        name: ${self:provider.stage}-${self:service}
+        service: ${self:service}
+        environment: ${self:provider.stage}
+        managed-by: serverless-framework
+    exampleBucket:
+        name: ${self:provider.stackTags.name}-examples
+custom:
+    logRetentionInDays: 1
+    pythonRequirements:
+        useDownloadCache: false
+        useStaticCache: false
+        usePipenv: true
+        usePoetry: false
+        dockerizePip: non-linux
+        dockerImage: lambci/lambda:build-python3.9
+        slim: true
+        slimPatternsAppendDefaults: false
+        slimPatterns:
+            - '**/*.py[c|o]'
+            - '**/__pycache__*'
+    s3:
+        host: localhost
+        port: 5005
+        directory: ./.s3_buckets
+functions:
+    v1-s3-stream-handler:
+        name: ${self:provider.stackTags.name}-v1-s3-stream-handler
+        handler: app/handler.stream
+        description: example ddb handler
+        memorySize: 256
+        events:
+            - s3:
+                  bucket: exampleBucket
+                  event: s3:ObjectCreated:*
