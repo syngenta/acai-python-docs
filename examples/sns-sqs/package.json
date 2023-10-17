@@ -1,0 +1,15 @@
+{
+    "name": "sns-sqs",
+    "scripts": {
+        "serverless": "serverless",
+        "start": "pipenv run serverless offline start"
+    },
+    "devDependencies": {
+        "serverless": "^3.34.0",
+        "serverless-deployment-bucket": "^1.6.0",
+        "serverless-offline": "^13.2.0",
+        "serverless-plugin-bind-deployment-id": "^2.0.3",
+        "serverless-plugin-log-retention": "^2.0.0",
+        "serverless-python-requirements": "^6.0.0"
+    }
+}

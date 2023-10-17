@@ -1,0 +1,6 @@
+Resources:
+    ExampleQueue:
+        Type: AWS::SQS::Queue
+        Properties:
+            QueueName: ${self:provider.stackTags.name}
+            VisibilityTimeout: 900

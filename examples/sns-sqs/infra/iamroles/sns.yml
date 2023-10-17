@@ -1,0 +1,6 @@
+Effect: Allow
+Action:
+    - sns:*
+Resource:
+    - arn:aws:sns:*:*:${self:provider.stackTags.name}
+    - arn:aws:sns:*:*:${self:provider.stackTags.name}*
