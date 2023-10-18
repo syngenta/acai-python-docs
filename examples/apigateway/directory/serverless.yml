@@ -6,29 +6,32 @@ plugins:
     - serverless-deployment-bucket
     - serverless-offline
 package:
-    exclude:
-        - .*
-        - .**/**
-        - aws/**
-        - README.md
-        - serverless.yml
-        - package.json
-        - package-lock.json
+    patterns:
+        - '!.*'
+        - '!.**/**'
+        - '!infra/**'
+        - '!README.md'
+        - '!serverless.yml'
+        - '!package.json'
+        - '!package-lock.json'
+resources:
+    - ${file(./infra/resources/apigateway.yml)}
 provider:
     name: aws
     runtime: python3.9
     versionFunctions: false
     endpointType: regional
-    stage: ${env:stage, 'local'}
-    region: ${env:region, 'us-east-2'}
+    environment: ${file(./infra/envs/${param:env, 'local'}.yml):environment}
+    stage: ${opt:stage, 'local'}
+    region: ${opt:region, 'us-east-2'}
     stackName: ${self:provider.stackTags.name}
     apiName: ${self:provider.stackTags.name}
     deploymentBucket:
         name: ${self:provider.stackTags.name}-acai-aws-examples
     stackTags:
-        name: ${self:provider.stage}-${self:service}
+        name: ${opt:stage, 'local'}-${self:service}
         service: ${self:service}
-        environment: ${self:provider.stage}
+        environment: ${opt:stage, 'local'}
         managed-by: serverless-framework
 custom:
     logRetentionInDays: 1

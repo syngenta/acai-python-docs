@@ -1,0 +1,4 @@
+environment:
+    SERVICE: ${self:service}
+    STAGE: ${self:provider.stage}
+    LOG_FORMAT: JSON

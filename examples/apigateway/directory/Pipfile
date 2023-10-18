@@ -7,5 +7,5 @@ name = "pypi"
 python_version = "3.9"
 
 [packages]
-acai_aws = "==2.0.0b7"
+acai_aws = "==2.0.0b11"
 chance = "*"

@@ -1,0 +1,49 @@
+Resources:
+    ApiGwAccountConfig:
+        Type: 'AWS::ApiGateway::Account'
+        Properties:
+            CloudWatchRoleArn: !GetAtt 'ApiGatewayLoggingRole.Arn'
+    ApiGatewayLoggingRole:
+        Type: 'AWS::IAM::Role'
+        Properties:
+            Path: '/'
+            ManagedPolicyArns:
+                - !Sub 'arn:aws:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs'
+            AssumeRolePolicyDocument:
+                Version: '2012-10-17'
+                Statement:
+                    -
+                        Effect: Allow
+                        Action: 'sts:AssumeRole'
+                        Principal:
+                            Service:
+                                - 'apigateway.amazonaws.com'
+    ApiGatewayDomainName:
+        Type: AWS::ApiGateway::DomainName
+        Properties:
+            DomainName: acai-pattern-demo.chiloproject.io
+            CertificateArn: arn:aws:acm:us-east-1:138454093397:certificate/aaf62b09-1933-4ad4-ad60-3e3dca986dbb
+    ApiGatewayStage:
+        Type: AWS::ApiGateway::Stage
+        Properties:
+            StageName: ${self:provider.stage}
+            DeploymentId:
+                Ref: __deployment__
+            RestApiId:
+                Ref: ApiGatewayRestApi
+            MethodSettings:
+                -
+                    ResourcePath: /*
+                    HttpMethod: '*'
+                    LoggingLevel: INFO
+                    DataTraceEnabled: true
+                    MetricsEnabled: true
+    ApiGatewayBasePathMapping:
+        Type: AWS::ApiGateway::BasePathMapping
+        Properties:
+            BasePath: ${self:service}
+            DomainName: acai-pattern-demo.chiloproject.io
+            RestApiId:
+                Ref: ApiGatewayRestApi
+            Stage:
+                Ref: ApiGatewayStage
