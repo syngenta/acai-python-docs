@@ -3,6 +3,7 @@
     "scripts": {
         "serverless": "serverless",
         "start": "pipenv run serverless offline start",
+        "deploy": "serverless deploy --stage=demo --region=us-east-2 --param='env=cloud'",
         "ddb": "DYNAMO_ENDPOINT=http://localhost:4001 node -r dotenv/config node_modules/dynamodb-admin/bin/dynamodb-admin"
     },
     "devDependencies": {
