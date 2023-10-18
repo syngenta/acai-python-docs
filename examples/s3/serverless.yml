@@ -5,34 +5,40 @@ plugins:
     - serverless-plugin-log-retention
     - serverless-deployment-bucket
     - serverless-s3-local
+    - serverless-python-requirements
     - serverless-offline
 package:
-    exclude:
-        - .*
-        - .**/**
-        - infra/**
-        - README.md
-        - serverless.yml
-        - package.json
-        - package-lock.json
+    patterns:
+        - '!.*'
+        - '!.**/**'
+        - '!infra/**'
+        - '!node_modules/**'
+        - '!Pipfile'
+        - '!Pipfile.lock'
+        - '!README.md'
+        - '!serverless.yml'
+        - '!package.json'
+        - '!package-lock.json'
 provider:
     name: aws
     runtime: python3.9
+    architecture: arm64
     versionFunctions: false
     endpointType: regional
-    stage: ${env:stage, 'local'}
-    region: ${env:region, 'us-east-2'}
+    stage: ${opt:stage, 'local'}
+    region: ${opt:region, 'us-east-2'}
     stackName: ${self:provider.stackTags.name}
     apiName: ${self:provider.stackTags.name}
     deploymentBucket:
         name: ${self:provider.stackTags.name}-acai-aws-examples
     stackTags:
-        name: ${self:provider.stage}-${self:service}
+        name: ${opt:stage, 'local'}-${self:service}
         service: ${self:service}
-        environment: ${self:provider.stage}
+        environment: ${opt:stage, 'local'}
         managed-by: serverless-framework
-    exampleBucket:
-        name: ${self:provider.stackTags.name}-examples
+    s3:
+        exampleBucket:
+            name: ${self:provider.stackTags.name}-examples
 custom:
     logRetentionInDays: 1
     pythonRequirements:
@@ -41,9 +47,9 @@ custom:
         usePipenv: true
         usePoetry: false
         dockerizePip: non-linux
-        dockerImage: lambci/lambda:build-python3.9
+        dockerImage: public.ecr.aws/sam/build-python3.9:latest
         slim: true
-        slimPatternsAppendDefaults: false
+        slimPatternsAppendDefaults: true
         slimPatterns:
             - '**/*.py[c|o]'
             - '**/__pycache__*'
@@ -52,10 +58,10 @@ custom:
         port: 5005
         directory: ./.s3_buckets
 functions:
-    v1-s3-stream-handler:
-        name: ${self:provider.stackTags.name}-v1-s3-stream-handler
-        handler: app/handler.stream
-        description: example ddb handler
+    v1-s3-handler:
+        name: ${self:provider.stackTags.name}-v1-s3-handler
+        handler: app/handler.handle
+        description: example s3 handler
         memorySize: 256
         events:
             - s3:

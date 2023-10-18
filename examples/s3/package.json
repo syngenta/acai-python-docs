@@ -2,7 +2,8 @@
     "name": "s3",
     "scripts": {
         "serverless": "serverless",
-        "start": "pipenv run serverless offline start"
+        "start": "pipenv run serverless offline start",
+        "deploy": "serverless deploy --stage=demo --region=us-east-2 --param='env=cloud'"
     },
     "devDependencies": {
         "serverless": "^3.34.0",
