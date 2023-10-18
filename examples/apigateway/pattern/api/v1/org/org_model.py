@@ -21,7 +21,7 @@ class OrgModel:
     @staticmethod  
     def create_random(**kwargs):
         return {
-            'id': kwargs.get('org_id', chance.hex_hash()),
+            'id': kwargs.get('id', chance.hex_hash()),
             'name': chance.name(),
             'address': chance.street(),
             'city': chance.city(),
