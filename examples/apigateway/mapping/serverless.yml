@@ -10,6 +10,8 @@ package:
         - '!.*'
         - '!.**/**'
         - '!infra/**'
+        - '!node_modules/**'
+        - '!Acai AWS Mapping Example.postman_collection.json'
         - '!README.md'
         - '!serverless.yml'
         - '!package.json'
