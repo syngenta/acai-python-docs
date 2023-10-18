@@ -36,6 +36,10 @@ provider:
         service: ${self:service}
         environment: ${opt:stage, 'local'}
         managed-by: serverless-framework
+    iam:
+        role:
+            statements:
+                - ${file(./infra/iamroles/s3.yml)}
     s3:
         exampleBucket:
             name: ${self:provider.stackTags.name}-examples
