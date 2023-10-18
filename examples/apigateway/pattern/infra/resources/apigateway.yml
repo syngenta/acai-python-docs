@@ -21,8 +21,8 @@ Resources:
     ApiGatewayDomainName:
         Type: AWS::ApiGateway::DomainName
         Properties:
-            DomainName: acai-pattern-demo.chiloproject.io
-            CertificateArn: arn:aws:acm:us-east-1:138454093397:certificate/aaf62b09-1933-4ad4-ad60-3e3dca986dbb
+            DomainName: <INSET-DOMAIN-NAME>
+            CertificateArn: <INSET-CERT-ARC>
     ApiGatewayStage:
         Type: AWS::ApiGateway::Stage
         Properties:
@@ -42,7 +42,7 @@ Resources:
         Type: AWS::ApiGateway::BasePathMapping
         Properties:
             BasePath: ${self:service}
-            DomainName: acai-pattern-demo.chiloproject.io
+            DomainName: <INSET-DOMAIN-NAME>
             RestApiId:
                 Ref: ApiGatewayRestApi
             Stage:
