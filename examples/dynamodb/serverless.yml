@@ -5,43 +5,50 @@ plugins:
     - serverless-plugin-log-retention
     - serverless-deployment-bucket
     - serverless-dynamodb
+    - serverless-python-requirements
     - serverless-offline
 package:
-    exclude:
-        - .*
-        - .**/**
-        - infra/**
-        - README.md
-        - serverless.yml
-        - package.json
-        - package-lock.json
+    patterns:
+        - '!.*'
+        - '!.**/**'
+        - '!infra/**'
+        - '!node_modules/**'
+        - '!Pipfile'
+        - '!Pipfile.lock'
+        - '!README.md'
+        - '!serverless.yml'
+        - '!package.json'
+        - '!package-lock.json'
+resources:
+    - ${file(./infra/resources/dynamodb.yml)}
 provider:
     name: aws
     runtime: python3.9
+    architecture: arm64
     versionFunctions: false
     endpointType: regional
-    stage: ${env:stage, 'local'}
-    region: ${env:region, 'us-east-2'}
+    stage: ${opt:stage, 'local'}
+    region: ${opt:region, 'us-east-2'}
     stackName: ${self:provider.stackTags.name}
     apiName: ${self:provider.stackTags.name}
     deploymentBucket:
         name: ${self:provider.stackTags.name}-acai-aws-examples
     stackTags:
-        name: ${self:provider.stage}-${self:service}
+        name: ${opt:stage, 'local'}-${self:service}
         service: ${self:service}
-        environment: ${self:provider.stage}
+        environment: ${opt:stage, 'local'}
         managed-by: serverless-framework
 custom:
     logRetentionInDays: 1
     pythonRequirements:
         useDownloadCache: false
         useStaticCache: false
-        usePipenv: true
         usePoetry: false
+        usePipenv: true
         dockerizePip: non-linux
-        dockerImage: lambci/lambda:build-python3.9
+        dockerImage: public.ecr.aws/sam/build-python3.9:latest
         slim: true
-        slimPatternsAppendDefaults: false
+        slimPatternsAppendDefaults: true
         slimPatterns:
             - '**/*.py[c|o]'
             - '**/__pycache__*'
@@ -59,8 +66,6 @@ custom:
                     -
                         table: ${self:provider.stackTags.name}-example
                         sources: [./infra/local/seed/test.json]
-resources:
-    - ${file(./infra/resources/dynamodb.yml)}
 functions:
     v1-ddb-stream-handler:
         name: ${self:provider.stackTags.name}-v1-ddb-stream-handler

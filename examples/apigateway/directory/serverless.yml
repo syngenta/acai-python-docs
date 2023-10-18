@@ -8,26 +8,17 @@ plugins:
     - serverless-offline
 package:
     patterns:
-        - '!.git/**'
-        - '!.github/**'
-        - '!.circleci/**'
-        - '!.serverless/**'
-        - '!.idea/**'
-        - '!.vscode/**'
+        - '!.*'
+        - '!.**/**'
         - '!infra/**'
         - '!node_modules/**'
-        - '!**/.nvmrc'
-        - '!**/.python-version'
-        - '!**/.gitignore'
-        - '!**/.project'
-        - '!**/.DS_Store'
-        - '!Acai AWS Directory Example.postman_collection.json'
         - '!Pipfile'
         - '!Pipfile.lock'
         - '!README.md'
         - '!serverless.yml'
         - '!package.json'
         - '!package-lock.json'
+        - '!Acai AWS Directory Example.postman_collection.json'
 resources:
     - ${file(./infra/resources/apigateway.yml)}
 provider:
@@ -78,6 +69,7 @@ custom:
         noPrependStageInUrl: true
 functions:
     v1-apigateway-handler:
+        name: ${self:provider.stackTags.name}-v1-apigateway-handler
         handler: api/v1/handler/__router.route
         memorySize: 256
         timeout: 30
