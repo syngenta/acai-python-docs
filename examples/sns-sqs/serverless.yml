@@ -62,16 +62,17 @@ custom:
 functions:
     v1-sns-handler:
         name: ${self:provider.stackTags.name}-v1-sns-handler
-        handler: app/handler.handle
+        handler: app/sns_handler.handle
         description: example sns handler
         memorySize: 256
         events:
            - sns:
+                topicName: ${self:provider.stackTags.name}
                 arn:
-                    Fn::GetAtt: [ ExampleSNS, 'Arn' ]
+                    Fn::GetAtt: [ ExampleSNS, 'TopicArn' ]
     v1-sqs-handler:
         name: ${self:provider.stackTags.name}-v1-sqs-handler
-        handler: app/handler.handle
+        handler: app/sqs_handler.handle
         description: example sqs handler
         memorySize: 256
         events:
