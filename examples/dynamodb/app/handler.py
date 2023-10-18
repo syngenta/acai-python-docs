@@ -2,6 +2,6 @@ from acai_aws.dynamodb.requirements import requirements
 
 
 @requirements(operations=['created', 'deleted'])
-def handle(event):
+def stream(event):
     for record in event.records:
         print(record)
