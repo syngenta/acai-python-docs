@@ -7,11 +7,18 @@ plugins:
     - serverless-offline
 package:
     patterns:
-        - '!.*'
-        - '!.**/**'
+        - '!.git/**'
+        - '!.github/**'
+        - '!.circleci/**'
+        - '!.serverless/**'
+        - '!.idea/**'
+        - '!.vscode/**'
         - '!infra/**'
         - '!node_modules/**'
+        - '!.DS_Store'
         - '!Acai AWS Directory Example.postman_collection.json'
+        - '!Pipfile'
+        - '!Pipfile.lock'
         - '!README.md'
         - '!serverless.yml'
         - '!package.json'

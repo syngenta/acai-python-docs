@@ -3,7 +3,7 @@
     "scripts": {
         "serverless": "serverless",
         "start": "pipenv run serverless offline start --stage=local --region=us-east-2 --param='env=local'",
-        "deploy": "sudo rm -rf .venv && serverless deploy --stage=demo --region=us-east-2 --param='env=cloud'"
+        "deploy": "pipenv run serverless deploy --stage=demo --region=us-east-2 --param='env=cloud'"
     },
     "devDependencies": {
         "serverless": "^3.34.0",
