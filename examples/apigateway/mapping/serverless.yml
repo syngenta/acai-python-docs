@@ -4,6 +4,7 @@ plugins:
     - serverless-plugin-bind-deployment-id
     - serverless-plugin-log-retention
     - serverless-deployment-bucket
+    - serverless-python-requirements
     - serverless-offline
 package:
     patterns:
@@ -15,7 +16,11 @@ package:
         - '!.vscode/**'
         - '!infra/**'
         - '!node_modules/**'
-        - '!.DS_Store'
+        - '!**/.nvmrc'
+        - '!**/.python-version'
+        - '!**/.gitignore'
+        - '!**/.project'
+        - '!**/.DS_Store'
         - '!Acai AWS Mapping Example.postman_collection.json'
         - '!README.md'
         - '!serverless.yml'
@@ -51,9 +56,9 @@ custom:
         usePipenv: true
         usePoetry: false
         dockerizePip: non-linux
-        dockerImage: lambci/lambda:build-python3.9
+        dockerImage: public.ecr.aws/sam/build-python3.9:latest
         slim: true
-        slimPatternsAppendDefaults: false
+        slimPatternsAppendDefaults: true
         slimPatterns:
             - '**/*.py[c|o]'
             - '**/__pycache__*'
