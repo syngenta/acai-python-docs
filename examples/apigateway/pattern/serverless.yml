@@ -28,6 +28,7 @@ resources:
 provider:
     name: aws
     runtime: python3.9
+    architecture: arm64
     versionFunctions: false
     endpointType: regional
     environment: ${file(./infra/envs/${param:env, 'local'}.yml):environment}
