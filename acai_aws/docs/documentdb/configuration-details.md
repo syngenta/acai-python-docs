@@ -16,22 +16,59 @@ Below is a full list of all the configurations available and examples of their u
 
 ## Lambda Configuration
 
-=== "serverless.yml"
+=== "Serverless Configuration"
 
-```yaml
-functions:
-    documentdb-handler:
-        handler: service/handlers/documentdb.handle
-        memorySize: 512
-        timeout: 30
-        events:
-            - stream:
-                type: documentdb
-                arn:
-                    Fn::GetAtt: [ SomeDocDBCluser, ClusterArn ]
-```
+    ```yaml
+    functions:
+        documentdb-handler:
+            handler: service/handlers/documentdb.handle
+            memorySize: 512
+            timeout: 30
+            events:
+                - stream:
+                    type: documentdb
+                    arn:
+                        Fn::GetAtt: [ SomeDocDBCluser, ClusterArn ]
+    ```
 
-## Requirements Configuration Options
+=== "Handler Configuration"
+
+    ```python
+    from acai_aws.documentdb.requirements import requirements
+    from acai_aws.common import logger
+
+    @requirements(
+        before=log_something,
+        operations=['created', 'deleted', 'updated'],
+        data_class=SomeClass,
+        raise_operation_error=True,
+        raise_body_error=True,
+        schema='service/openapi.yml',
+        required_body='v1-docdb-body', # or jsonschema dict
+        after=alert_something,
+    )
+    def handle(event):
+        for record in event.records:
+            logger.log(log=record)
+        
+    # example data class
+    class SomeClass:
+        def __init__(self, record):
+            for k, v in record.body.items():
+                setattr(self, k, v)
+
+    # example before function
+    def log_something(records, requirements):
+        if 'something' in requirements:
+            logger.log(log=records) 
+
+    # example after function
+    def alert_something(records, result, requirements):
+        if 'something' in result and 'alert' in requirements:
+            logger.log(log=records)
+    ```
+
+### Requirements Configuration Options
 
 | option                      | type        | required | default                           | description                                                               |
 |-----------------------------|-------------|----------|-----------------------------------|---------------------------------------------------------------------------|
@@ -44,53 +81,122 @@ functions:
 | **`required_body`**         | str or dict | no       | None                              | will validate body of record against this schema                          |
 | **`schema`**                | str         | no       | None                              | file path pointing to the location of the openapi.yml file                |
 
-```python
-from acai_aws.documentdb.requirements import requirements
-
-# example data class
-class SomeClass:
-    def __init__(self, record):
-        for k, v in record.body.items():
-            setattr(self, k, v)
-
-# example before function
-def log_something(records, requirements):
-    if 'something' in requirements:
-        print(records) 
-
-# example after function
-def alert_something(records, result, requirements):
-    if 'something' in result and 'alert' in requirements:
-        print(records)
-
-@requirements(
-    before=log_something,
-    operations=['created', 'deleted', 'updated'],
-    data_class=SomeClass,
-    raise_operation_error=True,
-    raise_body_error=True,
-    schema='service/openapi.yml',
-    required_body='v1-docdb-body', # or send jsonschema dict; schema kwarg not needed if sending jsonschema dict
-    after=alert_something,
-)
-def handle(event):
-    for record in event.records:
-        print(record)
-```
-
 ## DocumentDB Record Properties
 
-| property                                                    | type   | description                                          |
-|-------------------------------------------------------------|--------|------------------------------------------------------|
-| **[`body`]({{web.url}}/dynamodb/#recordbody)**              | object | the new image of dynamodb record; created or updated |
+| property                                                         | type   | description                                           |
+|-------------------------------------------------------------------|--------|------------------------------------------------------|
+| **[`event_id`]({{web.url}}/documentdb/#recordevent_id)**          | string | id of the event                                      |
+| **[`cluster_time`]({{web.url}}/documentdb/#recordcluster_time)**  | string | time from the cluster of the event                   |
+| **[`document_key`]({{web.url}}/documentdb/#recorddocument_key)**  | string | key of the document which was triggered              |
+| **[`full_document`]({{web.url}}/documentdb/#recordfull_document)**| dict   | full document of what was triggered                  |
+| **[`operation`]({{web.url}}/documentdb/#recordoperation)**        | string | operation which triggered the event                  |
+| **[`change_event`]({{web.url}}/documentdb/#recordchange_event)**  | string | detailed mongo specific operation event name         |
+| **[`body`]({{web.url}}/documentdb/#recordbody)**                  | dict   | the new image of dynamodb record; created or updated |
+| **[`db`]({{web.url}}/documentdb/#recorddb)**                      | dict   | mongo database details                               |
+| **[`collection`]({{web.url}}/documentdb/#recordcollection)**      | dict   | mongo collections details                            |
 
 
-#### `record.region`
+#### `record.event_id`
 
 ```python
-print(record.region);
+print(record.event_id);
 
 # output
-'us-east-2'
+'0163eeb6e7000000090100000009000041e1'
+```
+
+#### `record.cluster_time`
+
+```python
+print(record.cluster_time);
+
+# output
+'2023-02-16T00:00:00Z'
+```
+
+#### `record.documentKey`
+
+```python
+print(record.documentKey);
+
+# output
+'63eeb6e7d418cd98afb1c1d7'
+```
+
+#### `record.fullDocument`
+
+```python
+print(record.fullDocument);
+
+# output
+{
+    '_id': {
+        '$oid': '63eeb6e7d418cd98afb1c1d7'
+    },
+    'lang': 'en-us',
+    'sms': True,
+    'email': True,
+    'push': True
+}
+```
+
+#### `record.operation`
+
+```python
+print(record.operation);
+
+# output
+'created'
+```
+
+#### `record.change_event`
+
+```python
+print(record.change_event);
+
+# output
+'insert'
+```
+
+#### `record.change_event`
+
+```python
+print(record.change_event);
+
+# output
+'insert'
+```
+
+#### `record.body`
+
+```python
+print(record.body);
+
+# output
+{
+    'id': '63eeb6e7d418cd98afb1c1d7',
+    'lang': 'en-us',
+    'sms': True,
+    'email': True,
+    'push': True
+}
+```
+
+#### `record.db`
+
+```python
+print(record.db);
+
+# output
+'test_collection'
+```
+
+#### `record.collection`
+
+```python
+print(record.collection);
+
+# output
+'test_database'
 ```
 

@@ -16,21 +16,56 @@ Below is a full list of all the configurations available and examples of their u
 
 ## Lambda Configuration
 
-=== "serverless.yml"
+=== "Serverless Configuraiton"
 
-```yaml
-functions:
-    msk-handler:
-        handler: service/handlers/msk.handle
-        memorySize: 512
-        timeout: 30
-        events:
-            - msk:
-                arn: arn:aws:kafka:region:XXXXXX:cluster/MyCluster/xxxx-xxxxx-xxxx
-                topic: mytopic
-```
+    ```yaml
+    functions:
+        msk-handler:
+            handler: service/handlers/msk.handle
+            memorySize: 512
+            timeout: 30
+            events:
+                - msk:
+                    arn: arn:aws:kafka:region:XXXXXX:cluster/MyCluster/xxxx-xxxxx-xxxx
+                    topic: mytopic
+    ```
 
-## Requirements Configuration Options
+=== "Handler Configuraiton"
+
+    ```python
+    from acai_aws.firehose.requirements import requirements
+    from acai_aws.common import logger
+
+    @requirements(
+        before=log_something,
+        data_class=SomeClass,
+        raise_operation_error=True,
+        raise_body_error=True,
+        schema='service/openapi.yml',
+        required_body='v1-msk-body', # or jsonschema dict
+        after=alert_something,
+    )
+    def handle(event):
+        for record in event.records:
+            logger.log(log=record.body)
+        
+    # example data class
+    class SomeClass:
+        def __init__(self, record):
+            for k, v in record.body.items():
+                setattr(self, k, v)
+
+    # example before function
+    def log_something(records, requirements):
+        logger.log(log=event.body) 
+
+    # example after function
+    def alert_something(event, result, requirements):
+        if 'something' in result and 'alert' in requirements:
+            logger.log(log=event)
+    ```
+
+### Requirements Configuration Options
 
 | option                      | type        | required | default                           | description                                                               |
 |-----------------------------|-------------|----------|-----------------------------------|---------------------------------------------------------------------------|
@@ -40,38 +75,6 @@ functions:
 | **`raise_body_error`**      | bool        | no       | False                             | will raise exception if body of record does not match schema provided     |
 | **`required_body`**         | str or dict | no       | None                              | will validate body of record against this schema                          |
 | **`schema`**                | str         | no       | None                              | file path pointing to the location of the openapi.yml file                |
-
-```python
-from acai_aws.firehose.requirements import requirements
-
-# example data class
-class SomeClass:
-    def __init__(self, record):
-        for k, v in record.body.items():
-            setattr(self, k, v)
-
-# example before function
-def log_something(records, requirements):
-    print(event.body) 
-
-# example after function
-def alert_something(event, result, requirements):
-    if 'something' in result and 'alert' in requirements:
-        print(event)
-
-@requirements(
-    before=log_something,
-    data_class=SomeClass,
-    raise_operation_error=True,
-    raise_body_error=True,
-    schema='service/openapi.yml',
-    required_body='v1-msk-body', # or send jsonschema dict; schema kwarg not needed if sending jsonschema dict
-    after=alert_something,
-)
-def handle(event):
-    for record in event.records:
-        print(record.body)
-```
 
 ## MQ Event Properties
 

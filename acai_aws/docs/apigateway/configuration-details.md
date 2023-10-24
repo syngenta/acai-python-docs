@@ -5,11 +5,8 @@ description: Advance usage and understanding of the Acai with Apigateway
 
 # Apigateway Configuration Details
 
-If you are looking for a more customized application, you can review the full litany of configuration options below.
-This will give you the greatest control on how you python application will run.
-
-The router is the core of the apigateway event handler and will automatically route based on the way your project is 
-configured. Most of the time, there is no need to manage lists of routes matched to files or exports; all that is
+The router is will automatically route based structure of your files. 
+There is no need to manage lists of routes matched to files or exports; all that is
 required is that you create a file in the location or pattern configured to hold your endpoints and the router will
 automatically find it.
 
@@ -20,22 +17,97 @@ automatically find it.
 
 ## Lambda Configuration
 
-=== "Serverless Framework"
+=== "Serverless Configuration"
 
-```yaml
-functions:
-    apigateway-handler:
-        handler: api/handler/router.route
-        events:
-            - http:
-                path: /
-                method: ANY
-            - http:
-                path: /{proxy+}
-                method: ANY    
-```
+    ```yaml
+    functions:
+        apigateway-handler:
+            handler: api/handler/router.route
+            events:
+                - http:
+                    path: /
+                    method: ANY
+                - http:
+                    path: /{proxy+}
+                    method: ANY    
+    ```
 
-## Router Configuration Options
+=== "Handler Configuration"
+
+    ```py
+    from acai_aws.apigateway.router import Router
+
+    router = Router(
+        base_path='your-service/v1',
+        handlers='api/handlers',
+        schema='api/openapi.yml',
+        auto_validate=True, # default False
+        validate_response=True, # default False
+        verbose_logging=True, # default False
+        timeout=25, # time in seconds, ints only,
+        output_error=False, # default True;
+        cache_mode='all', # static-only | dynamic-only ; all is default
+        cache_size=512, # 128 is default; use None to disable cache
+        before_all=before_all_example_example,
+        after_all=after_all_example,
+        on_error=on_error_example,
+        with_auth=with_auth_example,
+        on_timeout=on_timeout_example
+    )
+    router.auto_load()
+
+    def route(event, context):
+        return router.route(event, context)
+    
+
+    # requirements = kwargs from @requirements decorator; default: {}
+    def before_all_example(request, response, requirements): 
+        pass
+
+
+    # requirements = kwargs from @requirements decorator; default: {}
+    def after_all_example(request, response, requirements):
+        pass
+
+
+    # requirements = kwargs from @requirements decorator; default: {}
+    def with_auth_example(request, response, requirements):
+        pass
+
+
+    # error is the exception object raised
+    def on_error_example(request, response, error): 
+        pass
+
+
+    # error is the exception object raised
+    def on_timeout_example(request, response, error): 
+        pass
+
+    ```
+
+#### Router Configuration Details
+
+| option                  | type | required                               | description                                                                                                                                       |
+|-------------------------|------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`after_all`**         | func | no                                     | will call this function after EVERY request to the API                                                                                            |
+| **`auto_validate`**     | bool | no; requires `schema`                  | will automatically validate request against openapi.yml                                                                                           |
+| **`base_path`**         | str  | yes                                    | the base path of the API Gateway instance this is running on                                                                                      |
+| **`before_all`**        | func | no                                     | will call this function before EVERY request to the API                                                                                           |
+| **`cache_mode`**        | str  | no; 'all','static-only','dynamic-only' | will cache route endpoint module (not response) based on option, all (default), static endpoints or dynamic endpoints (route with path variables) |
+| **`cache_size`**        | int  | no; (default 128)                      | how many endpoint modules to cache                                                                                                                |
+| **`handlers`**          | str  | yes                                    | file path pointing to the directory where the endpoints are                                                                                       |
+| **`on_error`**          | func | no                                     | will call this function on every unhandled error; not including validation errors                                                                 |
+| **`output_error`**      | bool | no (default: true)                     | will output more detailed error from stacktrace as part of api response; otherwise will only say `internal server error`                          |
+| **`schema`**            | str  | yes, if `auto_validate`                | file path pointing to the location of the openapi.yml file                                                                                        |
+| **`with_auth`**         | func | no                                     | will call this function when `requirements` decorator have `auth_required` set to `True`                                                          |
+| **`validate_response`** | bool | no                                     | will validate response of an endpoint, can effect performance, not recommended for production                                                     |
+| **`verbose_logging`**   | bool | no                                     | will log every setup, every request and every response                                                                                            |
+| **`timeout`**           | int  | no (default `None`)                    | timeout functionality for main handler logic (does not indclude before, after, before_all, after_all)                                             |
+| **`on_timeout`**        | func | no                                     | when timout error is raised, this function will run                                                                                               |
+
+
+## Routing Options
 
 There are three ways to organize your routes: `directory`, `pattern` and `mapping`; `directory` and `pattern` routing 
 mode requires your project files to be placed in a particular way; `mapping` does not require any structure, as you 
@@ -44,8 +116,9 @@ define every route, and it's a corresponding file. Below are the three ways conf
 #### Routing Mode: Directory
 
 ???+ tip
-    If you are using route params, you will need use dynamic file names which follow this pattern: 
-`_some_variable_name.py`.
+    If you are using route params, you will need use dynamic file names which requires it begins with an `_`. 
+    
+    example: `_some_variable_name.py`.
 
 === "file structure"
 
@@ -148,7 +221,7 @@ define every route, and it's a corresponding file. Below are the three ways conf
     It may be more maintainable to store your routes list in a separate file, this example does not have that for brevity
 
 ???+ warning
-    Even though you are matching your files to your routes, the handler files must have functions that match HTTP method (see endpoint examples here)
+    Even though you are matching your files to your routes, the handler files must have functions that match HTTP method (see endpoint examples [here]({{web.url}}/apigateway/configuration-details/#endpoint-configuration-options))
 
 ???+ danger
     This is not the preferred routing mode to use; this can lead to a sloppy, unpredictable project architecture which will be hard to maintain and extend. This is *NOT RECOMMENDED*.
@@ -181,25 +254,6 @@ define every route, and it's a corresponding file. Below are the three ways conf
     def handle(event, context):
         return router.route(event, context)
     ```
-
-
-#### Full Router Configuration Options
-
-| option                  | type | required                               | description                                                                                                                                       |
-|-------------------------|------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| **`after_all`**         | func | no                                     | will call this function after EVERY request to the API                                                                                            |
-| **`auto_validate`**     | bool | no; requires `schema`                  | will automatically validate request against openapi.yml                                                                                           |
-| **`base_path`**         | str  | yes                                    | the base path of the API Gateway instance this is running on                                                                                      |
-| **`before_all`**        | func | no                                     | will call this function before EVERY request to the API                                                                                           |
-| **`cache_mode`**        | str  | no; 'all','static-only','dynamic-only' | will cache route endpoint module (not response) based on option, all (default), static endpoints or dynamic endpoints (route with path variables) |
-| **`cache_size`**        | int  | no; (default 128)                      | how many endpoint modules to cache                                                                                                                |
-| **`handlers`**          | str  | yes                                    | file path pointing to the directory where the endpoints are                                                                                       |
-| **`on_error`**          | func | no                                     | will call this function on every unhandled error; not including validation errors                                                                 |
-| **`schema`**            | str  | yes, if `after_all`                    | file path pointing to the location of the openapi.yml file                                                                                        |
-| **`with_auth`**         | func | no                                     | will call this function when `requirements` decorator have `auth_required` set to `True`                                                          |
-| **`validate_response`** | bool | no                                     | will validate response of an endpoint, can effect performance, not recommended for production                                                     |
-| **`verbose_logging`**   | bool | no                                     | will log every setup, every request and every response                                                                                            |
-
 
 ## Endpoint Configuration Options
 
@@ -312,7 +366,7 @@ def delete(request, response):
 | **[`before`]({{web.url}}/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function        |
 | **[`after`]({{web.url}}/apigateway/configuration-details/#after)**                         | func  | a custom function to be ran after your method function         |
 | **[`data_class`]({{web.url}}/apigateway/configuration-details/#data_class)**               | class | a custom class that will be passed instead of the request obj  |
-| **[`custom-requirement`]**                                                                 | any   | see bottom of page                                             |
+| **[`custom-requirement`]**                                                                 | any   | see bottom of section                                             |
 
 #### `required_headers`
 

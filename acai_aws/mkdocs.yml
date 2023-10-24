@@ -38,7 +38,7 @@ nav:
     - SQS:
         - sqs/quickstart.md
         - sqs/configuration-details.md
-    - common/logger.md
+    - logger.md
     - changes.md
     - PyPi Registry: https://pypi.org/project/acai-aws/
     - Github Repository: https://github.com/syngenta/acai-python
@@ -90,8 +90,6 @@ markdown_extensions:
                 format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
     - search
-    - markdownextradata
-    - mkdocs-video
 extra:
     web:
         url: https://syngenta.github.io/acai-python-docs

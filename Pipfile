@@ -7,11 +7,8 @@ name = "pypi"
 python_version = "3.9"
 
 [packages]
-mkdocs = "*"
+mkdocs = "==1.5.3"
 mkdocs-material = "*"
-mkdocs-markdownextradata-plugin = "*"
-pygments = "*"
-mkdocs-video = "*"
 
 [scripts]
 serve = "mkdocs serve"

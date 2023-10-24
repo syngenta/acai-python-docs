@@ -26,7 +26,7 @@ $ pip install acai_aws
 
 After installation, create a handler file and configure the AWS lambda to use that file as its handler.
 
-=== "generic.py"
+=== "msk.py"
 
     ```python
     from acai_aws.msk.requirements import requirements

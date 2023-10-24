@@ -16,21 +16,56 @@ configurations available and examples of their use.
 
 ## Lambda Configuration
 
-=== "serverless.yml"
+=== "Serverless Configuration"
 
-```yaml
-functions:
-    sqs-handler:
-        handler: service/handlers/sqs.handle
-        memorySize: 512
-        timeout: 900
-        events:
-            - sqs:
-                arn:
-                    Fn::GetAtt: [ SomeQueue, 'Arn' ]
-```
+    ```yaml
+    functions:
+        sqs-handler:
+            handler: service/handlers/sqs.handle
+            memorySize: 512
+            timeout: 900
+            events:
+                - sqs:
+                    arn:
+                        Fn::GetAtt: [ SomeQueue, 'Arn' ]
+    ```
 
-## Requirements Configuration Options
+=== "Handler Configuration"
+
+    ```python
+    from acai.sqs.requirements import requirements
+    from acai_aws.common import logger
+
+    @requirements(
+        before=log_something,
+        data_class=SomeClass,
+        raise_body_error=True,
+        schema='service/openapi.yml',
+        required_body='v1-sqs-body', # or jsonschema dict
+        after=alert_something,
+    )
+    def handle(event):
+        for record in event.records:
+            logger.log(log=record)
+
+    # example data class
+    class SomeClass:
+        def __init__(self, record):
+            for k, v in record.body.items():
+                setattr(self, k, v)
+
+    # example before function
+    def log_something(records, requirements):
+        if 'something' in requirements:
+            logger.log(log=records) 
+
+    # example after function
+    def alert_something(records, result, requirements):
+        if 'something' in result and 'alert' in requirements:
+            logger.log(log=records)
+    ```
+
+### Requirements Configuration Options
 
 | option                 | type        | required | default | description                                                           |
 |------------------------|-------------|----------|---------|-----------------------------------------------------------------------|
@@ -40,38 +75,6 @@ functions:
 | **`raise_body_error`** | bool        | no       | False   | will raise exception if body of record does not match schema provided |
 | **`required_body`**    | str or dict | no       | None    | will validate body of record against this schema                      |
 | **`schema`**           | str         | no       | None    | file path pointing to the location of the openapi.yml file            |
-
-```python
-from acai.sqs.requirements import requirements
-
-# example data class (requires, get_object=True and a data_type)
-class SomeClass:
-    def __init__(self, record):
-        for k, v in record.body.items():
-            setattr(self, k, v)
-
-# example before function
-def log_something(records, requirements):
-    if 'something' in requirements:
-        print(records) 
-
-# example after function
-def alert_something(records, result, requirements):
-    if 'something' in result and 'alert' in requirements:
-        print(records)
-
-@requirements(
-    before=log_something,
-    data_class=SomeClass,
-    raise_body_error=True,
-    schema='service/openapi.yml',
-    required_body='v1-sqs-body', # or send jsonschema dict; schema kwarg not needed if sending jsonschema dict
-    after=alert_something,
-)
-def handle(event):
-    for record in event.records:
-        print(record)
-```
 
 ## SQS Record Properties
 

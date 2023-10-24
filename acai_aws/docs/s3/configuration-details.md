@@ -16,7 +16,7 @@ available and examples of their use.
 
 ## Lambda Configuration
 
-=== "serverless.yml"
+=== "Serverless Configuration"
 
 ```yaml
 functions:
@@ -30,7 +30,44 @@ functions:
                 event: s3:ObjectCreated:*
 ```
 
-## Requirements Configuration Options
+=== "Handler Configuration"
+
+    ```python
+    from acai_aws.s3.requirements import requirements
+    from acai_aws.common import logger
+
+    # example data class (requires, get_object=True and a data_type)
+    class SomeClass:
+        def __init__(self, record):
+            for k, v in record.body.items():
+                setattr(self, k, v)
+
+    # example before function
+    def log_something(records, requirements):
+        if 'something' in requirements:
+            logger.log(log=records) 
+
+    # example after function
+    def alert_something(records, result, requirements):
+        if 'something' in result and 'alert' in requirements:
+            logger.log(log=records)
+
+    @requirements(
+        before=log_something,
+        get_object=True,
+        data_type='json',
+        data_class=SomeClass,
+        raise_body_error=True, # requires get_object and data_type
+        schema='service/openapi.yml',
+        required_body='v1-s3-body', # or jsonschema dict
+        after=alert_something,
+    )
+    def handle(event):
+        for record in event.records:
+            logger.log(log=record)
+    ```
+
+### Requirements Configuration Options
 
 | option                      | type        | required | default                           | description                                                               |
 |-----------------------------|-------------|----------|-----------------------------------|---------------------------------------------------------------------------|
@@ -44,40 +81,6 @@ functions:
 | **`raise_body_error`**      | bool        | no       | False                             | will raise exception if body of record does not match schema provided     |
 | **`required_body`**         | str or dict | no       | None                              | will validate body of record against this schema                          |
 | **`schema`**                | str         | no       | None                              | file path pointing to the location of the openapi.yml file                |
-
-```python
-from acai_aws.s3.requirements import requirements
-
-# example data class (requires, get_object=True and a data_type)
-class SomeClass:
-    def __init__(self, record):
-        for k, v in record.body.items():
-            setattr(self, k, v)
-
-# example before function
-def log_something(records, requirements):
-    if 'something' in requirements:
-        print(records) 
-
-# example after function
-def alert_something(records, result, requirements):
-    if 'something' in result and 'alert' in requirements:
-        print(records)
-
-@requirements(
-    before=log_something,
-    get_object=True,
-    data_type='json',
-    data_class=SomeClass,
-    raise_body_error=True, # requires, get_object=True and a data_type
-    schema='service/openapi.yml',
-    required_body='v1-s3-body', # or send jsonschema dict; schema kwarg not needed if sending jsonschema dict
-    after=alert_something,
-)
-def handle(event):
-    for record in event.records:
-        print(record)
-```
 
 ## S3 Record Properties
 
