@@ -41,6 +41,7 @@ automatically find it.
         base_path='your-service/v1',
         handlers='api/handlers',
         schema='api/openapi.yml',
+        cors=True, # default True
         auto_validate=True, # default False
         validate_response=True, # default False
         verbose_logging=True, # default False
@@ -105,6 +106,7 @@ automatically find it.
 | **`verbose_logging`**   | bool | no                                     | will log every setup, every request and every response                                                                                            |
 | **`timeout`**           | int  | no (default `None`)                    | timeout functionality for main handler logic (does not indclude before, after, before_all, after_all)                                             |
 | **`on_timeout`**        | func | no                                     | when timout error is raised, this function will run                                                                                               |
+| **`cors`**              | bool | no (default True)                      | will open cors to allow hitting from any source (`*`)                                                                                             |
 
 
 ## Routing Options
