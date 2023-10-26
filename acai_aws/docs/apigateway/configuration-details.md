@@ -49,7 +49,7 @@ automatically find it.
         output_error=False, # default True;
         cache_mode='all', # static-only | dynamic-only ; all is default
         cache_size=512, # 128 is default; use None to disable cache
-        before_all=before_all_example_example,
+        before_all=before_all_example,
         after_all=after_all_example,
         on_error=on_error_example,
         with_auth=with_auth_example,
