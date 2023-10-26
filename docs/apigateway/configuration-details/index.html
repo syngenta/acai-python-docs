@@ -506,6 +506,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    timeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#custom-requirements" class="md-nav__link">
     custom requirements
   </a>
@@ -1945,6 +1952,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    timeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#custom-requirements" class="md-nav__link">
     custom requirements
   </a>
@@ -2797,17 +2811,26 @@ other custom validations for more advanced use cases.</p>
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
-<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># example for endpoint file: api/grower.py</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># example for endpoint file: api/grower.py</span>
 <span class="kn">from</span> <span class="nn">acai_aws.apigateway.requirements</span> <span class="kn">import</span> <span class="n">requirements</span>
+<span class="kn">from</span> <span class="nn">acai_aws.common.logger</span> <span class="kn">import</span> <span class="n">logger</span>
 
 <span class="kn">from</span> <span class="nn">api.logic.grower</span> <span class="kn">import</span> <span class="n">Grower</span>
 <span class="kn">from</span> <span class="nn">api.logic.middlware</span> <span class="kn">import</span> <span class="n">log_grower</span><span class="p">,</span> <span class="n">filter_grower</span>
 
 
 <span class="c1"># example after function</span>
-<span class="c1"># def filter_grower(request, response, requirements):</span>
-<span class="c1">#     if &#39;GET&#39; in response.raw[&#39;message&#39;]:</span>
-<span class="c1">#       print(response.raw)</span>
+<span class="k">def</span> <span class="nf">filter_grower</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">requirements</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;GET&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">raw</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]:</span>
+      <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
 
 <span class="nd">@requirements</span><span class="p">(</span>
     <span class="n">required_query</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;requester_id&#39;</span><span class="p">],</span>
@@ -2822,8 +2845,8 @@ other custom validations for more advanced use cases.</p>
 
 
 <span class="c1"># example before function</span>
-<span class="c1"># def log_grower(request, response, requirements):</span>
-<span class="c1">#     print(request.body[&#39;grower_id&#39;])</span>
+<span class="k">def</span> <span class="nf">log_grower</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">requirements</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="s1">&#39;grower_id&#39;</span><span class="p">])</span>
 
 <span class="nd">@requirements</span><span class="p">(</span>
     <span class="n">required_body</span><span class="o">=</span><span class="s1">&#39;v1-grower-post-request&#39;</span><span class="p">,</span>
@@ -2859,6 +2882,13 @@ other custom validations for more advanced use cases.</p>
 <span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
     <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;PATCH called&#39;</span><span class="p">,</span> <span class="s1">&#39;request_body&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">}</span>
     <span class="k">return</span> <span class="n">response</span>
+
+
+<span class="nd">@requirements</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># this will override timeout set in router.py</span>
+<span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;PUT called&#39;</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">response</span>
+
 
 <span class="c1"># requirements is not required</span>
 <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
@@ -2924,6 +2954,11 @@ other custom validations for more advanced use cases.</p>
 <td><strong><a href="{{web.url}}/apigateway/configuration-details/#data_class"><code>data_class</code></a></strong></td>
 <td>class</td>
 <td>a custom class that will be passed instead of the request obj</td>
+</tr>
+<tr>
+<td><strong><a href="{{web.url}}/apigateway/configuration-details/#timeout"><code>timeout</code></a></strong></td>
+<td>bool</td>
+<td>timeout set for that method, not including before/after calls</td>
 </tr>
 <tr>
 <td><strong>[<code>custom-requirement</code>]</strong></td>
@@ -3152,6 +3187,17 @@ may result in poor API consumer experience.</p>
 <span class="nd">@requirements</span><span class="p">(</span>
     <span class="n">data_class</span><span class="o">=</span><span class="n">Grower</span>
 <span class="p">)</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">grower</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="timeout"><code>timeout</code><a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h4>
+<details class="info" open="open">
+<summary>Info</summary>
+<p>This will override the timeout set in the main router configuration and only counts time for this request, not including before/after functions</p>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@requirements</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">grower</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
     <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>

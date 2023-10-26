@@ -286,15 +286,16 @@ validation options.
 ```python
 # example for endpoint file: api/grower.py
 from acai_aws.apigateway.requirements import requirements
+from acai_aws.common.logger import logger
 
 from api.logic.grower import Grower
 from api.logic.middlware import log_grower, filter_grower
 
 
 # example after function
-# def filter_grower(request, response, requirements):
-#     if 'GET' in response.raw['message']:
-#       print(response.raw)
+def filter_grower(request, response, requirements):
+    if 'GET' in response.raw['message']:
+      logger.log(log=response.raw)
     
 @requirements(
     required_query=['requester_id'],
@@ -309,8 +310,8 @@ def get(request, response):
 
 
 # example before function
-# def log_grower(request, response, requirements):
-#     print(request.body['grower_id'])
+def log_grower(request, response, requirements):
+    logger.log(log=request.body['grower_id'])
     
 @requirements(
     required_body='v1-grower-post-request',
@@ -347,6 +348,13 @@ def patch(request, response):
     response.body = {'message': 'PATCH called', 'request_body': request.body}
     return response
 
+
+@requirements(timeout=20) # this will override timeout set in router.py
+def put(request, response):
+    response.body = {'message': 'PUT called'}
+    return response
+
+
 # requirements is not required
 def delete(request, response):
     response.body = {'message': 'DELETE called'}
@@ -362,13 +370,14 @@ def delete(request, response):
 | **[`available_headers`]({{web.url}}/apigateway/configuration-details/#available_headers)** | array | only headers in this array will be allowed in the request      |
 | **[`required_query`]({{web.url}}/apigateway/configuration-details/#required_query)**       | array | every item in the array is a required query string parameter   |
 | **[`available_query`]({{web.url}}/apigateway/configuration-details/#available_query)**     | array | only items in this array are allowed in the request            |
-| **[`required_route`]({{web.url}}/apigateway/configuration-details/#required_route)**         | str   | when using parameters, this is the required parameters         |
+| **[`required_route`]({{web.url}}/apigateway/configuration-details/#required_route)**       | str   | when using parameters, this is the required parameters         |
 | **[`required_body`]({{web.url}}/apigateway/configuration-details/#required_body)**         | str   | references a JSschema component in your `schema`               |
 | **[`required_auth`]({{web.url}}/apigateway/configuration-details/#auth_required)**         | bool  | will trigger `with_auth` function defined in the router config |
 | **[`before`]({{web.url}}/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function        |
 | **[`after`]({{web.url}}/apigateway/configuration-details/#after)**                         | func  | a custom function to be ran after your method function         |
 | **[`data_class`]({{web.url}}/apigateway/configuration-details/#data_class)**               | class | a custom class that will be passed instead of the request obj  |
-| **[`custom-requirement`]**                                                                 | any   | see bottom of section                                             |
+| **[`timeout`]({{web.url}}/apigateway/configuration-details/#timeout)**                     | bool  | timeout set for that method, not including before/after calls  |
+| **[`custom-requirement`]**                                                                 | any   | see bottom of section                                          |
 
 #### `required_headers`
 
@@ -533,6 +542,18 @@ class Grower:
 @requirements(
     data_class=Grower
 )
+def post(grower, response):
+    pass
+```
+
+#### `timeout`
+
+???+ info
+    This will override the timeout set in the main router configuration and only counts time for this request, not including before/after functions
+
+```python
+
+@requirements(timeout=20)
 def post(grower, response):
     pass
 ```
