@@ -497,15 +497,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recorddocumentkey" class="md-nav__link">
-    record.documentKey
+  <a href="#recorddocument_key" class="md-nav__link">
+    record.document_key
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordfulldocument" class="md-nav__link">
-    record.fullDocument
+  <a href="#recordfull_document" class="md-nav__link">
+    record.full_document
   </a>
   
 </li>
@@ -519,13 +519,6 @@
         
           <li class="md-nav__item">
   <a href="#recordchange_event" class="md-nav__link">
-    record.change_event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordchange_event_1" class="md-nav__link">
     record.change_event
   </a>
   
@@ -1538,15 +1531,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recorddocumentkey" class="md-nav__link">
-    record.documentKey
+  <a href="#recorddocument_key" class="md-nav__link">
+    record.document_key
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recordfulldocument" class="md-nav__link">
-    record.fullDocument
+  <a href="#recordfull_document" class="md-nav__link">
+    record.full_document
   </a>
   
 </li>
@@ -1560,13 +1553,6 @@
         
           <li class="md-nav__item">
   <a href="#recordchange_event" class="md-nav__link">
-    record.change_event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recordchange_event_1" class="md-nav__link">
     record.change_event
   </a>
   
@@ -1797,47 +1783,47 @@ in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https:/
 </thead>
 <tbody>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recordevent_id"><code>event_id</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recordevent_id"><code>event_id</code></a></strong></td>
 <td>string</td>
 <td>id of the event</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recordcluster_time"><code>cluster_time</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recordcluster_time"><code>cluster_time</code></a></strong></td>
 <td>string</td>
 <td>time from the cluster of the event</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recorddocument_key"><code>document_key</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recorddocument_key"><code>document_key</code></a></strong></td>
 <td>string</td>
 <td>key of the document which was triggered</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recordfull_document"><code>full_document</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recordfull_document"><code>full_document</code></a></strong></td>
 <td>dict</td>
 <td>full document of what was triggered</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recordoperation"><code>operation</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recordoperation"><code>operation</code></a></strong></td>
 <td>string</td>
 <td>operation which triggered the event</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recordchange_event"><code>change_event</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recordchange_event"><code>change_event</code></a></strong></td>
 <td>string</td>
 <td>detailed mongo specific operation event name</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recordbody"><code>body</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recordbody"><code>body</code></a></strong></td>
 <td>dict</td>
 <td>the new image of dynamodb record; created or updated</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recorddb"><code>db</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recorddb"><code>db</code></a></strong></td>
 <td>dict</td>
 <td>mongo database details</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/documentdb/#recordcollection"><code>collection</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/documentdb/configuration-details/#recordcollection"><code>collection</code></a></strong></td>
 <td>dict</td>
 <td>mongo collections details</td>
 </tr>
@@ -1861,16 +1847,16 @@ in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https:/
 <span class="c1"># output</span>
 <span class="s1">&#39;2023-02-16T00:00:00Z&#39;</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="recorddocumentkey"><code>record.documentKey</code><a class="headerlink" href="#recorddocumentkey" title="Permanent link">&para;</a></h4>
+<h4 id="recorddocument_key"><code>record.document_key</code><a class="headerlink" href="#recorddocument_key" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">documentKey</span><span class="p">);</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">document_key</span><span class="p">);</span>
 
 <span class="c1"># output</span>
 <span class="s1">&#39;63eeb6e7d418cd98afb1c1d7&#39;</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="recordfulldocument"><code>record.fullDocument</code><a class="headerlink" href="#recordfulldocument" title="Permanent link">&para;</a></h4>
+<h4 id="recordfull_document"><code>record.full_document</code><a class="headerlink" href="#recordfull_document" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1882,7 +1868,7 @@ in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https:/
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">fullDocument</span><span class="p">);</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">full_document</span><span class="p">);</span>
 
 <span class="c1"># output</span>
 <span class="p">{</span>
@@ -1905,15 +1891,6 @@ in 1 command into your AWS account! <img alt="🤓" class="twemoji" src="https:/
 <span class="s1">&#39;created&#39;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="recordchange_event"><code>record.change_event</code><a class="headerlink" href="#recordchange_event" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">change_event</span><span class="p">);</span>
-
-<span class="c1"># output</span>
-<span class="s1">&#39;insert&#39;</span>
-</code></pre></div></td></tr></table></div>
-<h4 id="recordchange_event_1"><code>record.change_event</code><a class="headerlink" href="#recordchange_event_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>

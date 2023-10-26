@@ -78,26 +78,26 @@ configurations available and examples of their use.
 
 ## SNS Record Properties
 
-| property                                                             | type     | description                                                                       |
-|----------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------|
-| **[`source`]({{web.url}}/s3/#recordsource)**                         | str      | the source of the event                                                           |
-| **[`source_arn`]({{web.url}}/s3/#recordsource_arn)**                 | str      | the source arn of the event                                                       |
-| **[`region`]({{web.url}}/s3/#recordregion)**                         | str      | the region of the event                                                           |
-| **[`body`]({{web.url}}/s3/#recordbody)**                             | dict,str | the body of file in the s3 bucket                                                 |
-| **[`attributes`]({{web.url}}/s3/#recordattributes)**                 | dict     | the attributes dict of the message attributes; easier than use message attributes |
-| **[`message_attributes`]({{web.url}}/s3/#recordmessage_attributes)** | dict     | the message attributes of the message                                             |
-| **[`version`]({{web.url}}/s3/#recordversion)**                       | str      | the version sns event                                                             |
-| **[`subscription_arn`]({{web.url}}/s3/#recordsubscription_arn)**     | str      | the subscription arn of the sns event                                             |
-| **[`signature_version`]({{web.url}}/s3/#recordsignature_version)**   | str      | the signature version of the sns event                                            |
-| **[`timestamp`]({{web.url}}/s3/#recordtimestamp)**                   | str      | the timestamp of the sns event                                                    |
-| **[`signature`]({{web.url}}/s3/#recordsignature)**                   | str      | the signature of the sns event                                                    |
-| **[`signing_cert_url`]({{web.url}}/s3/#recordsigning_cert_url)**     | str      | the signing cert url of the sns event                                             |
-| **[`message_id`]({{web.url}}/s3/#recordmessage_id)**                 | str      | the message id of the sns event                                                   |
-| **[`message`]({{web.url}}/s3/#recordmessage)**                       | str      | the message of the sns event                                                      |
-| **[`sns_type`]({{web.url}}/s3/#recordsns_type)**                     | str      | the type of the sns event                                                         |
-| **[`unsubscribe_url`]({{web.url}}/s3/#recordunsubscribe_url)**       | str      | the unsubscribe_url of the sns event                                              |
-| **[`topic_arn`]({{web.url}}/s3/#recordtopic_arn)**                   | str      | the topic arn of the sns event                                                    |
-| **[`subject`]({{web.url}}/s3/#recordsubject)**                       | str      | the subject of the sns event                                                      |
+| property                                                                                          | type     | description                                                                       |
+|---------------------------------------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------|
+| **[`source`](/acai-python-docs/sns/configuration-details/#recordsource)**                         | str      | the source of the event                                                           |
+| **[`source_arn`](/acai-python-docs/sns/configuration-details/#recordsource_arn)**                 | str      | the source arn of the event                                                       |
+| **[`region`](/acai-python-docs/sns/configuration-details/#recordregion)**                         | str      | the region of the event                                                           |
+| **[`body`](/acai-python-docs/sns/configuration-details/#recordbody)**                             | dict,str | the body of the sns message                                                       |
+| **[`attributes`](/acai-python-docs/sns/configuration-details/#recordattributes)**                 | dict     | the attributes dict of the message attributes; easier than use message attributes |
+| **[`message_attributes`](/acai-python-docs/sns/configuration-details/#recordmessage_attributes)** | dict     | the message attributes of the message                                             |
+| **[`version`](/acai-python-docs/sns/configuration-details/#recordversion)**                       | str      | the version sns event                                                             |
+| **[`subscription_arn`](/acai-python-docs/sns/configuration-details/#recordsubscription_arn)**     | str      | the subscription arn of the sns event                                             |
+| **[`signature_version`](/acai-python-docs/sns/configuration-details/#recordsignature_version)**   | str      | the signature version of the sns event                                            |
+| **[`timestamp`](/acai-python-docs/sns/configuration-details/#recordtimestamp)**                   | str      | the timestamp of the sns event                                                    |
+| **[`signature`](/acai-python-docs/sns/configuration-details/#recordsignature)**                   | str      | the signature of the sns event                                                    |
+| **[`signing_cert_url`](/acai-python-docs/sns/configuration-details/#recordsigning_cert_url)**     | str      | the signing cert url of the sns event                                             |
+| **[`message_id`](/acai-python-docs/sns/configuration-details/#recordmessage_id)**                 | str      | the message id of the sns event                                                   |
+| **[`message`](/acai-python-docs/sns/configuration-details/#recordmessage)**                       | str      | the message of the sns event                                                      |
+| **[`sns_type`](/acai-python-docs/sns/configuration-details/#recordsns_type)**                     | str      | the type of the sns event                                                         |
+| **[`unsubscribe_url`](/acai-python-docs/sns/configuration-details/#recordunsubscribe_url)**       | str      | the unsubscribe_url of the sns event                                              |
+| **[`topic_arn`](/acai-python-docs/sns/configuration-details/#recordtopic_arn)**                   | str      | the topic arn of the sns event                                                    |
+| **[`subject`](/acai-python-docs/sns/configuration-details/#recordsubject)**                       | str      | the subject of the sns event                                                      |
 
 #### `record.source`
 

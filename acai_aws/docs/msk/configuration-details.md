@@ -80,22 +80,22 @@ Below is a full list of all the configurations available and examples of their u
 
 | property                                                                     | type             | description                                          |
 |------------------------------------------------------------------------------|------------------|------------------------------------------------------|
-| **[`message_id`]({{web.url}}/firehose/#recordmessage_id)**                   | str              | id of the message                                    |
-| **[`message_type`]({{web.url}}/firehose/#recordmessage_type)**               | str              | type of the message                                  |
-| **[`delivery_mode`]({{web.url}}/firehose/#recorddelivery_mode)**             | int              | mode of delivery                                     |
-| **[`reply_to`]({{web.url}}/firehose/#recordreply_to)**                       | str (nullable)   | reply to string                                      |
-| **[`record_type`]({{web.url}}/firehose/#recordrecord_type)**                 | str (nullable)   | type of record                                       |
-| **[`expiration`]({{web.url}}/firehose/#recordexpiration)**                   | str              | expiration of message                                |
-| **[`priority`]({{web.url}}/firehose/#recordpriority)**                       | int              | priority of message                                  |
-| **[`correlation_id`]({{web.url}}/firehose/#recordcorrelation_id)**           | str              | correlation id of message                            |
-| **[`redelivered`]({{web.url}}/firehose/#recordredelivered)**                 | bool             | whether the message has been redelivered             |
-| **[`destination`]({{web.url}}/firehose/#recorddestination)**                 | dict             | destination of the message                           |
-| **[`properties`]({{web.url}}/firehose/#recordproperties)**                   | dict             | properties of the message                            |
-| **[`time_stamp`]({{web.url}}/firehose/#recordtime_stamp)**                   | int              | time_stamp of the message                            |
-| **[`in_time`]({{web.url}}/firehose/#recordin_time)**                         | int              | in time of the message                               |
-| **[`out_time`]({{web.url}}/firehose/#recordout_time)**                       | int              | out time of the message                              |
-| **[`body`]({{web.url}}/firehose/#recordbody)**                               | any              | body of the message                                  |
-| **[`data`]({{web.url}}/firehose/#recorddata)**                               | any              | data of the message                                  |
+| **[`message_id`](/acai-python-docs/msk/configuration-details/#recordmessage_id)**                   | str              | id of the message                                    |
+| **[`message_type`](/acai-python-docs/msk/configuration-details/#recordmessage_type)**               | str              | type of the message                                  |
+| **[`delivery_mode`](/acai-python-docs/msk/configuration-details/#recorddelivery_mode)**             | int              | mode of delivery                                     |
+| **[`reply_to`](/acai-python-docs/msk/configuration-details/#recordreply_to)**                       | str (nullable)   | reply to string                                      |
+| **[`record_type`](/acai-python-docs/msk/configuration-details/#recordrecord_type)**                 | str (nullable)   | type of record                                       |
+| **[`expiration`](/acai-python-docs/msk/configuration-details/#recordexpiration)**                   | str              | expiration of message                                |
+| **[`priority`](/acai-python-docs/msk/configuration-details/#recordpriority)**                       | int              | priority of message                                  |
+| **[`correlation_id`](/acai-python-docs/msk/configuration-details/#recordcorrelation_id)**           | str              | correlation id of message                            |
+| **[`redelivered`](/acai-python-docs/msk/configuration-details/#recordredelivered)**                 | bool             | whether the message has been redelivered             |
+| **[`destination`](/acai-python-docs/msk/configuration-details/#recorddestination)**                 | dict             | destination of the message                           |
+| **[`properties`](/acai-python-docs/msk/configuration-details/#recordproperties)**                   | dict             | properties of the message                            |
+| **[`time_stamp`](/acai-python-docs/msk/configuration-details/#recordtime_stamp)**                   | int              | time_stamp of the message                            |
+| **[`in_time`](/acai-python-docs/msk/configuration-details/#recordin_time)**                         | int              | in time of the message                               |
+| **[`out_time`](/acai-python-docs/msk/configuration-details/#recordout_time)**                       | int              | out time of the message                              |
+| **[`body`](/acai-python-docs/msk/configuration-details/#recordbody)**                               | any              | body of the message                                  |
+| **[`data`](/acai-python-docs/msk/configuration-details/#recorddata)**                               | any              | data of the message                                  |
 
 
 #### `record.message_id`

@@ -83,15 +83,15 @@ Below is a full list of all the configurations available and examples of their u
 
 | property                                                                     | type   | description                                          |
 |------------------------------------------------------------------------------|--------|------------------------------------------------------|
-| **[`record_id`]({{web.url}}/firehose/#recordrecord_id)**                     | str    | record id of the stream                              |
-| **[`epoc_time_stamp`]({{web.url}}/firehose/#recordepoc_time_stamp)**         | int    | epoc time stamp of the stream                        |
-| **[`shard_id`]({{web.url}}/firehose/#recordshard_id)**                       | str    | shard id arn of the stream                           |
-| **[`subsequence_number`]({{web.url}}/firehose/#recordvsubsequence_number)**  | str    | subsequence number arn of the stream                 |
-| **[`partition_key`]({{web.url}}/firehose/#recordpartition_key)**             | str    | partition key                                        |
-| **[`time_stamp`]({{web.url}}/firehose/#recordtime_stamp)**                   | str    | time stamp                                           |
-| **[`sequence_number`]({{web.url}}/firehose/#recordsequence_number)**         | str    | sequence number                                      |
-| **[`data`]({{web.url}}/firehose/#recorddata)**                               | any    | can be anything, automaticallyed b64 decoded objects |
-| **[`body`]({{web.url}}/firehose/#recordbody)**                               | any    | can be anything, automaticallyed b64 decoded objects |
+| **[`record_id`](/acai-python-docs/firehose/configuration-details/#recordrecord_id)**                     | str    | record id of the stream                              |
+| **[`epoc_time_stamp`](/acai-python-docs/firehose/configuration-details/#recordepoc_time_stamp)**         | int    | epoc time stamp of the stream                        |
+| **[`shard_id`](/acai-python-docs/firehose/configuration-details/#recordshard_id)**                       | str    | shard id arn of the stream                           |
+| **[`subsequence_number`](/acai-python-docs/firehose/configuration-details/#recordvsubsequence_number)**  | str    | subsequence number arn of the stream                 |
+| **[`partition_key`](/acai-python-docs/firehose/configuration-details/#recordpartition_key)**             | str    | partition key                                        |
+| **[`time_stamp`](/acai-python-docs/firehose/configuration-details/#recordtime_stamp)**                   | str    | time stamp                                           |
+| **[`sequence_number`](/acai-python-docs/firehose/configuration-details/#recordsequence_number)**         | str    | sequence number                                      |
+| **[`data`](/acai-python-docs/firehose/configuration-details/#recorddata)**                               | any    | can be anything, automaticallyed b64 decoded objects |
+| **[`body`](/acai-python-docs/firehose/configuration-details/#recordbody)**                               | any    | can be anything, automaticallyed b64 decoded objects |
 
 
 #### `record.record_id`

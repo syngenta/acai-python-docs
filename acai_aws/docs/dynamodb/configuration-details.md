@@ -83,25 +83,25 @@ Below is a full list of all the configurations available and examples of their u
 
 ## DynamoDB Record Properties
 
-| property                                                    | type   | description                                          |
-|-------------------------------------------------------------|--------|------------------------------------------------------|
-| **[`body`]({{web.url}}/dynamodb/#recordbody)**              | object | the new image of dynamodb record; created or updated |
-| **[`created`]({{web.url}}/dynamodb/#recordcreated)**        | float  | the approximate creationDate time                    |
-| **[`expired`]({{web.url}}/dynamodb/#recordexpired)**        | bool   | whether the ttl has expired                          |
-| **[`id`]({{web.url}}/dynamodb/#recordid)**                  | str    | the id of the event which invoked the lambda         |
-| **[`identity`]({{web.url}}/dynamodb/#recordidentity)**      | object | the identity who triggered the dynamodb change       |
-| **[`keys`]({{web.url}}/dynamodb/#recordkeys)**              | object | the keys of DynamoDB record                          |
-| **[`name`]({{web.url}}/dynamodb/#recordname)**              | str    | the name of the event which invoked the lambda       |
-| **[`new_image`]({{web.url}}/dynamodb/#recordnewimage)**     | object | the new image of dynamodb record; created or updated |
-| **[`old_image`]({{web.url}}/dynamodb/#recordoldimage)**     | object | the old image of dynamodb record; updated or deleted |
-| **[`operation`]({{web.url}}/dynamodb/#recordoperation)**    | str    | triggered operation lambda (create, update, delete)  |
-| **[`region`]({{web.url}}/dynamodb/#recordregion)**          | str    | the region the record is from                        |
-| **[`size`]({{web.url}}/dynamodb/#recordsize)**              | int    | the size in bytes of the record                      |
-| **[`source`]({{web.url}}/dynamodb/#recordsource)**          | str    | the source of the event which invoked the lambda     |
-| **[`source_arn`]({{web.url}}/dynamodb/#recordsourcearn)**   | str    | the event source arn                                 |
-| **[`stream_type`]({{web.url}}/dynamodb/#recordstreamtype)** | str    | the stream view type                                 |
-| **[`version`]({{web.url}}/dynamodb/#recordversion)**        | str    | the event version                                    |
-| **[`operation`]({{web.url}}/s3/#recordoperation)**          | str    | enum of `created`, `deleted`, `updated`              |
+| property                                                                                | type   | description                                          |
+|-----------------------------------------------------------------------------------------|--------|------------------------------------------------------|
+| **[`body`](/acai-python-docs/dynamodb/configuration-details/#recordbody)**              | object | the new image of dynamodb record; created or updated |
+| **[`created`](/acai-python-docs/dynamodb/configuration-details/#recordcreated)**        | float  | the approximate creationDate time                    |
+| **[`expired`](/acai-python-docs/dynamodb/configuration-details/#recordexpired)**        | bool   | whether the ttl has expired                          |
+| **[`id`](/acai-python-docs/dynamodb/configuration-details/#recordid)**                  | str    | the id of the event which invoked the lambda         |
+| **[`identity`](/acai-python-docs/dynamodb/configuration-details/#recordidentity)**      | object | the identity who triggered the dynamodb change       |
+| **[`keys`](/acai-python-docs/dynamodb/configuration-details/#recordkeys)**              | object | the keys of DynamoDB record                          |
+| **[`name`](/acai-python-docs/dynamodb/configuration-details/#recordname)**              | str    | the name of the event which invoked the lambda       |
+| **[`new_image`](/acai-python-docs/dynamodb/configuration-details/#recordnewimage)**     | object | the new image of dynamodb record; created or updated |
+| **[`old_image`](/acai-python-docs/dynamodb/configuration-details/#recordoldimage)**     | object | the old image of dynamodb record; updated or deleted |
+| **[`operation`](/acai-python-docs/dynamodb/configuration-details/#recordoperation)**    | str    | triggered operation lambda (create, update, delete)  |
+| **[`region`](/acai-python-docs/dynamodb/configuration-details/#recordregion)**          | str    | the region the record is from                        |
+| **[`size`](/acai-python-docs/dynamodb/configuration-details/#recordsize)**              | int    | the size in bytes of the record                      |
+| **[`source`](/acai-python-docs/dynamodb/configuration-details/#recordsource)**          | str    | the source of the event which invoked the lambda     |
+| **[`source_arn`](/acai-python-docs/dynamodb/configuration-details/#recordsourcearn)**   | str    | the event source arn                                 |
+| **[`stream_type`](/acai-python-docs/dynamodb/configuration-details/#recordstreamtype)** | str    | the stream view type                                 |
+| **[`version`](/acai-python-docs/dynamodb/configuration-details/#recordversion)**        | str    | the event version                                    |
+| **[`operation`](/acai-python-docs/dynamodb/configuration-details/#recordoperation)**    | str    | enum of `created`, `deleted`, `updated`              |
 
 #### `record.region`
 

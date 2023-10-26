@@ -78,15 +78,15 @@ configurations available and examples of their use.
 
 ## SQS Record Properties
 
-| property                                                              | type     | description                                                                       |
-|-----------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------|
-| **[`source`]({{web.url}}/sqs/#recordsource)**                         | str      | the source of the event                                                           |
-| **[`source_arn`]({{web.url}}/sqs/#recordsource_arn)**                 | str      | the source arn of the event                                                       |
-| **[`region`]({{web.url}}/sqs/#recordregion)**                         | str      | the region of the event                                                           |
-| **[`body`]({{web.url}}/sqs/#recordbody)**                             | dict,str | the body sqs message                                                              |
-| **[`md5_of_body`]({{web.url}}/sqs/#recordmd5_of_body)**               | str      | the md5 of the body                                                               |
-| **[`attributes`]({{web.url}}/sqs/#recordattributes)**                 | dict     | the attributes dict of the message attributes; easier than use message attributes |
-| **[`message_attributes`]({{web.url}}/sqs/#recordmessage_attributes)** | dict     | the message attributes of the message                                             |
+| property                                                                                          | type     | description                                                                       |
+|---------------------------------------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------|
+| **[`source`](/acai-python-docs/sqs/configuration-details/#recordsource)**                         | str      | the source of the event                                                           |
+| **[`source_arn`](/acai-python-docs/sqs/configuration-details/#recordsource_arn)**                 | str      | the source arn of the event                                                       |
+| **[`region`](/acai-python-docs/sqs/configuration-details/#recordregion)**                         | str      | the region of the event                                                           |
+| **[`body`](/acai-python-docs/sqs/configuration-details/#recordbody)**                             | dict,str | the body sqs message                                                              |
+| **[`md5_of_body`](/acai-python-docs/sqs/configuration-details/#recordmd5_of_body)**               | str      | the md5 of the body                                                               |
+| **[`attributes`](/acai-python-docs/sqs/configuration-details/#recordattributes)**                 | dict     | the attributes dict of the message attributes; easier than use message attributes |
+| **[`message_attributes`](/acai-python-docs/sqs/configuration-details/#recordmessage_attributes)** | dict     | the message attributes of the message                                             |
 
 #### `record.source`
 

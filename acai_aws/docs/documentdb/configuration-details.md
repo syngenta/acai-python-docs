@@ -83,17 +83,17 @@ Below is a full list of all the configurations available and examples of their u
 
 ## DocumentDB Record Properties
 
-| property                                                         | type   | description                                           |
-|-------------------------------------------------------------------|--------|------------------------------------------------------|
-| **[`event_id`]({{web.url}}/documentdb/#recordevent_id)**          | string | id of the event                                      |
-| **[`cluster_time`]({{web.url}}/documentdb/#recordcluster_time)**  | string | time from the cluster of the event                   |
-| **[`document_key`]({{web.url}}/documentdb/#recorddocument_key)**  | string | key of the document which was triggered              |
-| **[`full_document`]({{web.url}}/documentdb/#recordfull_document)**| dict   | full document of what was triggered                  |
-| **[`operation`]({{web.url}}/documentdb/#recordoperation)**        | string | operation which triggered the event                  |
-| **[`change_event`]({{web.url}}/documentdb/#recordchange_event)**  | string | detailed mongo specific operation event name         |
-| **[`body`]({{web.url}}/documentdb/#recordbody)**                  | dict   | the new image of dynamodb record; created or updated |
-| **[`db`]({{web.url}}/documentdb/#recorddb)**                      | dict   | mongo database details                               |
-| **[`collection`]({{web.url}}/documentdb/#recordcollection)**      | dict   | mongo collections details                            |
+| property                                                                                       | type   | description                                          |
+|------------------------------------------------------------------------------------------------|--------|------------------------------------------------------|
+| **[`event_id`](/acai-python-docs/documentdb/configuration-details/#recordevent_id)**           | string | id of the event                                      |
+| **[`cluster_time`](/acai-python-docs/documentdb/configuration-details/#recordcluster_time)**   | string | time from the cluster of the event                   |
+| **[`document_key`](/acai-python-docs/documentdb/configuration-details/#recorddocument_key)**   | string | key of the document which was triggered              |
+| **[`full_document`](/acai-python-docs/documentdb/configuration-details/#recordfull_document)** | dict   | full document of what was triggered                  |
+| **[`operation`](/acai-python-docs/documentdb/configuration-details/#recordoperation)**         | string | operation which triggered the event                  |
+| **[`change_event`](/acai-python-docs/documentdb/configuration-details/#recordchange_event)**   | string | detailed mongo specific operation event name         |
+| **[`body`](/acai-python-docs/documentdb/configuration-details/#recordbody)**                   | dict   | the new image of dynamodb record; created or updated |
+| **[`db`](/acai-python-docs/documentdb/configuration-details/#recorddb)**                       | dict   | mongo database details                               |
+| **[`collection`](/acai-python-docs/documentdb/configuration-details/#recordcollection)**       | dict   | mongo collections details                            |
 
 
 #### `record.event_id`
@@ -114,19 +114,19 @@ print(record.cluster_time);
 '2023-02-16T00:00:00Z'
 ```
 
-#### `record.documentKey`
+#### `record.document_key`
 
 ```python
-print(record.documentKey);
+print(record.document_key);
 
 # output
 '63eeb6e7d418cd98afb1c1d7'
 ```
 
-#### `record.fullDocument`
+#### `record.full_document`
 
 ```python
-print(record.fullDocument);
+print(record.full_document);
 
 # output
 {
@@ -147,15 +147,6 @@ print(record.operation);
 
 # output
 'created'
-```
-
-#### `record.change_event`
-
-```python
-print(record.change_event);
-
-# output
-'insert'
 ```
 
 #### `record.change_event`

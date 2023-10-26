@@ -82,18 +82,18 @@ Below is a full list of all the configurations available and examples of their u
 
 | property                                                                    | type   | description                                          |
 |-----------------------------------------------------------------------------|--------|------------------------------------------------------|
-| **[`id`]({{web.url}}/kinesis/#recordid)**                                   | str    | id of the stream                                     |
-| **[`name`]({{web.url}}/kinesis/#recordname)**                               | str    | name of the stream                                   |
-| **[`source_arn`]({{web.url}}/kinesis/#recordsource_arn)**                   | str    | source arn of the stream                             |
-| **[`region`]({{web.url}}/kinesis/#recordregion)**                           | str    | region arn of the stream                             |
-| **[`version`]({{web.url}}/kinesis/#recordversion)**                         | str    | version arn of the stream                            |
-| **[`invoke_identity_arn`]({{web.url}}/kinesis/#recordinvoke_identity_arn)** | str    | arn of the indentity                                 |
-| **[`schema_version`]({{web.url}}/kinesis/#recordschema_version)**           | str    | schema version                                       |
-| **[`partition_key`]({{web.url}}/kinesis/#recordpartition_key)**             | str    | partition key                                        |
-| **[`time_stamp`]({{web.url}}/kinesis/#recordtime_stamp)**                   | str    | time stamp                                           |
-| **[`sequence_number`]({{web.url}}/kinesis/#recordsequence_number)**         | str    | sequence number                                      |
-| **[`data`]({{web.url}}/kinesis/#recorddata)**                               | any    | can be anything, automaticallyed b64 decoded objects |
-| **[`body`]({{web.url}}/kinesis/#recordbody)**                               | any    | can be anything, automaticallyed b64 decoded objects |
+| **[`id`](/acai-python-docs/kinesis/configuration-details/#recordid)**                                   | str    | id of the stream                                     |
+| **[`name`](/acai-python-docs/kinesis/configuration-details/#recordname)**                               | str    | name of the stream                                   |
+| **[`source_arn`](/acai-python-docs/kinesis/configuration-details/#recordsource_arn)**                   | str    | source arn of the stream                             |
+| **[`region`](/acai-python-docs/kinesis/configuration-details/#recordregion)**                           | str    | region arn of the stream                             |
+| **[`version`](/acai-python-docs/kinesis/configuration-details/#recordversion)**                         | str    | version arn of the stream                            |
+| **[`invoke_identity_arn`](/acai-python-docs/kinesis/configuration-details/#recordinvoke_identity_arn)** | str    | arn of the indentity                                 |
+| **[`schema_version`](/acai-python-docs/kinesis/configuration-details/#recordschema_version)**           | str    | schema version                                       |
+| **[`partition_key`](/acai-python-docs/kinesis/configuration-details/#recordpartition_key)**             | str    | partition key                                        |
+| **[`time_stamp`](/acai-python-docs/kinesis/configuration-details/#recordtime_stamp)**                   | str    | time stamp                                           |
+| **[`sequence_number`](/acai-python-docs/kinesis/configuration-details/#recordsequence_number)**         | str    | sequence number                                      |
+| **[`data`](/acai-python-docs/kinesis/configuration-details/#recorddata)**                               | any    | can be anything, automaticallyed b64 decoded objects |
+| **[`body`](/acai-python-docs/kinesis/configuration-details/#recordbody)**                               | any    | can be anything, automaticallyed b64 decoded objects |
 
 
 #### `record.id`

@@ -223,7 +223,7 @@ define every route, and it's a corresponding file. Below are the three ways conf
     It may be more maintainable to store your routes list in a separate file, this example does not have that for brevity
 
 ???+ warning
-    Even though you are matching your files to your routes, the handler files must have functions that match HTTP method (see endpoint examples [here]({{web.url}}/apigateway/configuration-details/#endpoint-configuration-options))
+    Even though you are matching your files to your routes, the handler files must have functions that match HTTP method (see endpoint examples [here](/acai-python-docs/apigateway/configuration-details/#endpoint-configuration-options))
 
 ???+ danger
     This is not the preferred routing mode to use; this can lead to a sloppy, unpredictable project architecture which will be hard to maintain and extend. This is *NOT RECOMMENDED*.
@@ -274,11 +274,11 @@ validation options.
 
 ???+ info
     See the full configuration list, explanation and example of each setting in our 
-    [Configurations Section]({{web.url}}/apigateway/endpoint/configurations/).
+    [Configurations Section](/acai-python-docs/apigateway/endpoint/configurations/).
 
 ???+ tip
     If you are already using an `openapi.yml`, none of these requirements below are necessary. Ensure your `router` has 
-    enabled [`auto_validate`]({{web.url}}/apigateway/router/configurations/#example-router-config-with-directory-routing) 
+    enabled [`auto_validate`](/acai-python-docs/apigateway/router/configurations/#example-router-config-with-directory-routing) 
     with proper `schema` configured and the below requirements are not necessary for any basic structural validation 
     (headers, body, query, params will be checked via openapi.yml). You can still use `before`, `after` & `data_class` with 
     other custom validations for more advanced use cases.
@@ -366,17 +366,17 @@ def delete(request, response):
 
 | requirement                                                                                | type  | description                                                    |
 |--------------------------------------------------------------------------------------------|-------|----------------------------------------------------------------|
-| **[`required_headers`]({{web.url}}/apigateway/configuration-details/#required_headers)**   | array | every header in this array must be in the headers of request   |
-| **[`available_headers`]({{web.url}}/apigateway/configuration-details/#available_headers)** | array | only headers in this array will be allowed in the request      |
-| **[`required_query`]({{web.url}}/apigateway/configuration-details/#required_query)**       | array | every item in the array is a required query string parameter   |
-| **[`available_query`]({{web.url}}/apigateway/configuration-details/#available_query)**     | array | only items in this array are allowed in the request            |
-| **[`required_route`]({{web.url}}/apigateway/configuration-details/#required_route)**       | str   | when using parameters, this is the required parameters         |
-| **[`required_body`]({{web.url}}/apigateway/configuration-details/#required_body)**         | str   | references a JSschema component in your `schema`               |
-| **[`required_auth`]({{web.url}}/apigateway/configuration-details/#auth_required)**         | bool  | will trigger `with_auth` function defined in the router config |
-| **[`before`]({{web.url}}/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function        |
-| **[`after`]({{web.url}}/apigateway/configuration-details/#after)**                         | func  | a custom function to be ran after your method function         |
-| **[`data_class`]({{web.url}}/apigateway/configuration-details/#data_class)**               | class | a custom class that will be passed instead of the request obj  |
-| **[`timeout`]({{web.url}}/apigateway/configuration-details/#timeout)**                     | bool  | timeout set for that method, not including before/after calls  |
+| **[`required_headers`](/acai-python-docs/apigateway/configuration-details/#required_headers)**   | array | every header in this array must be in the headers of request   |
+| **[`available_headers`](/acai-python-docs/apigateway/configuration-details/#available_headers)** | array | only headers in this array will be allowed in the request      |
+| **[`required_query`](/acai-python-docs/apigateway/configuration-details/#required_query)**       | array | every item in the array is a required query string parameter   |
+| **[`available_query`](/acai-python-docs/apigateway/configuration-details/#available_query)**     | array | only items in this array are allowed in the request            |
+| **[`required_route`](/acai-python-docs/apigateway/configuration-details/#required_route)**       | str   | when using parameters, this is the required parameters         |
+| **[`required_body`](/acai-python-docs/apigateway/configuration-details/#required_body)**         | str   | references a JSschema component in your `schema`               |
+| **[`required_auth`](/acai-python-docs/apigateway/configuration-details/#auth_required)**         | bool  | will trigger `with_auth` function defined in the router config |
+| **[`before`](/acai-python-docs/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function        |
+| **[`after`](/acai-python-docs/apigateway/configuration-details/#after)**                         | func  | a custom function to be ran after your method function         |
+| **[`data_class`](/acai-python-docs/apigateway/configuration-details/#data_class)**               | class | a custom class that will be passed instead of the request obj  |
+| **[`timeout`](/acai-python-docs/apigateway/configuration-details/#timeout)**                     | bool  | timeout set for that method, not including before/after calls  |
 | **[`custom-requirement`]**                                                                 | any   | see bottom of section                                          |
 
 #### `required_headers`
@@ -584,28 +584,28 @@ the properties of the `request`:
 
 | property                                                                            |  type  | mutable | description                                                   |
 |:------------------------------------------------------------------------------------|:------:|:-------:|:--------------------------------------------------------------|
-| [`method`]({{web.url}}/apigateway/configuration-details/#requestmethod)             |  str   |   no    | the http method of the request                                |
-| [`cookies`]({{web.url}}/apigateway/configuration-details/#requestcookies)           |  list  |   no    | the cookies of the request                                    |
-| [`protocol`]({{web.url}}/apigateway/configuration-details/#requestprotocol)         |  str   |   no    | the protocol of the request                                   |
-| [`content_type`]({{web.url}}/apigateway/configuration-details/#requestcontent_type) |  str   |   no    | the content_type of the request body                          |
-| [`host_url`]({{web.url}}/apigateway/configuration-details/#requesthost_url)         |  str   |   no    | the host_url of the request was sent to                       |
-| [`domain`]({{web.url}}/apigateway/configuration-details/#requestdomain)             |  str   |   no    | the domain of the request was sent to                         |
-| [`stage`]({{web.url}}/apigateway/configuration-details/#requeststage)               |  str   |   no    | the stage the lambda was deployed to                          |
-| [`resource`]({{web.url}}/apigateway/configuration-details/#requestresource)         |  str   |   no    | the AWS resource being invoked                                |
-| [`authorizer`]({{web.url}}/apigateway/configuration-details/#requestauthorizer)     | object |   no    | if using a customized authorizer, the authorizer object       |
-| [`headers`]({{web.url}}/apigateway/configuration-details/#requestheaders)           | object |   no    | the headers of the request                                    |
-| [`params`]({{web.url}}/apigateway/configuration-details/#requestparams)             | object |   no    | combination of query string and path params in one object     |
-| [`query_params`]({{web.url}}/apigateway/configuration-details/#requestquery_params) | object |   no    | query string parameters from the request                      |
-| [`path_params`]({{web.url}}/apigateway/configuration-details/#requestpath_params)   | object |   no    | the path parameters of the request                            |
-| [`route`]({{web.url}}/apigateway/configuration-details/#requestroute)               |  str   |   no    | the requested route with placeholders of params               |
-| [`path`]({{web.url}}/apigateway/configuration-details/#requestpath)                 |  str   |   no    | the raw requested path with actual param values               |
-| [`json`]({{web.url}}/apigateway/configuration-details/#requestjson)                 | object |   no    | the body of the request, converted from json string in object |
-| [`xml`]({{web.url}}/apigateway/configuration-details/#requestxml)                   | object |   no    | the body of the request, converted from xml string in object  |
-| [`graphql`]({{web.url}}/apigateway/configuration-details/#requestgraphql)           |  str   |   no    | the body of the graphql request as a string                   |
-| [`body`]({{web.url}}/apigateway/configuration-details/#requestbody)                 |  any   |   no    | the body of the request, converted to based on data type      |
-| [`raw`]({{web.url}}/apigateway/configuration-details/#requestraw)                   |  any   |   no    | the raw body of the request no conversion                     |
-| [`context`]({{web.url}}/apigateway/configuration-details/#requestcontext)           | object |   yes   | mutable request context to assigned and pass around           |
-| [`event`]({{web.url}}/apigateway/configuration-details/#requestevent)               | object |   no    | the full event originally coming from the lambda              |
+| [`method`](/acai-python-docs/apigateway/configuration-details/#requestmethod)             |  str   |   no    | the http method of the request                                |
+| [`cookies`](/acai-python-docs/apigateway/configuration-details/#requestcookies)           |  list  |   no    | the cookies of the request                                    |
+| [`protocol`](/acai-python-docs/apigateway/configuration-details/#requestprotocol)         |  str   |   no    | the protocol of the request                                   |
+| [`content_type`](/acai-python-docs/apigateway/configuration-details/#requestcontent_type) |  str   |   no    | the content_type of the request body                          |
+| [`host_url`](/acai-python-docs/apigateway/configuration-details/#requesthost_url)         |  str   |   no    | the host_url of the request was sent to                       |
+| [`domain`](/acai-python-docs/apigateway/configuration-details/#requestdomain)             |  str   |   no    | the domain of the request was sent to                         |
+| [`stage`](/acai-python-docs/apigateway/configuration-details/#requeststage)               |  str   |   no    | the stage the lambda was deployed to                          |
+| [`resource`](/acai-python-docs/apigateway/configuration-details/#requestresource)         |  str   |   no    | the AWS resource being invoked                                |
+| [`authorizer`](/acai-python-docs/apigateway/configuration-details/#requestauthorizer)     | object |   no    | if using a customized authorizer, the authorizer object       |
+| [`headers`](/acai-python-docs/apigateway/configuration-details/#requestheaders)           | object |   no    | the headers of the request                                    |
+| [`params`](/acai-python-docs/apigateway/configuration-details/#requestparams)             | object |   no    | combination of query string and path params in one object     |
+| [`query_params`](/acai-python-docs/apigateway/configuration-details/#requestquery_params) | object |   no    | query string parameters from the request                      |
+| [`path_params`](/acai-python-docs/apigateway/configuration-details/#requestpath_params)   | object |   no    | the path parameters of the request                            |
+| [`route`](/acai-python-docs/apigateway/configuration-details/#requestroute)               |  str   |   no    | the requested route with placeholders of params               |
+| [`path`](/acai-python-docs/apigateway/configuration-details/#requestpath)                 |  str   |   no    | the raw requested path with actual param values               |
+| [`json`](/acai-python-docs/apigateway/configuration-details/#requestjson)                 | object |   no    | the body of the request, converted from json string in object |
+| [`xml`](/acai-python-docs/apigateway/configuration-details/#requestxml)                   | object |   no    | the body of the request, converted from xml string in object  |
+| [`graphql`](/acai-python-docs/apigateway/configuration-details/#requestgraphql)           |  str   |   no    | the body of the graphql request as a string                   |
+| [`body`](/acai-python-docs/apigateway/configuration-details/#requestbody)                 |  any   |   no    | the body of the request, converted to based on data type      |
+| [`raw`](/acai-python-docs/apigateway/configuration-details/#requestraw)                   |  any   |   no    | the raw body of the request no conversion                     |
+| [`context`](/acai-python-docs/apigateway/configuration-details/#requestcontext)           | object |   yes   | mutable request context to assigned and pass around           |
+| [`event`](/acai-python-docs/apigateway/configuration-details/#requestevent)               | object |   no    | the full event originally coming from the lambda              |
 
 #### `request.cookies`
 
@@ -967,13 +967,13 @@ This response object is meant to provide consistency to HTTP response codes and 
 
 | property                                                                      | type    | description                                                   |
 |-------------------------------------------------------------------------------|---------|---------------------------------------------------------------|
-| [`headers`]({{web.url}}/apigateway/configuration-details/#responseheaders)    | tuple   | provide headers in tuple pairs to add new headers             |
-| [`code`]({{web.url}}/apigateway/configuration-details/#responsecode)          | int     | http response code to be returned the requester               |
-| [`body`]({{web.url}}/apigateway/configuration-details/#responsebody)          | any     | body of the response automatically converted to JSON string   |
-| [`raw`]({{web.url}}/apigateway/configuration-details/#responserawbody)        | any     | body of the response not converted to JSON string             |
-| [`compress`]({{web.url}}/apigateway/configuration-details/#responsecompress)  | bool    | will compress the body if set to true and add proper headers  |
-| [`set_error`]({{web.url}}/apigateway/configuration-details/#responseseterror) | func    | function to set an error with a key and value                 |
-| [`has_error`]({{web.url}}/apigateway/configuration-details/#responsehaserror) | boolean | simple property to check if response already has errors in it |
+| [`headers`](/acai-python-docs/apigateway/configuration-details/#responseheaders)    | tuple   | provide headers in tuple pairs to add new headers             |
+| [`code`](/acai-python-docs/apigateway/configuration-details/#responsecode)          | int     | http response code to be returned the requester               |
+| [`body`](/acai-python-docs/apigateway/configuration-details/#responsebody)          | any     | body of the response automatically converted to JSON string   |
+| [`raw`](/acai-python-docs/apigateway/configuration-details/#responserawbody)        | any     | body of the response not converted to JSON string             |
+| [`compress`](/acai-python-docs/apigateway/configuration-details/#responsecompress)  | bool    | will compress the body if set to true and add proper headers  |
+| [`set_error`](/acai-python-docs/apigateway/configuration-details/#responseseterror) | func    | function to set an error with a key and value                 |
+| [`has_error`](/acai-python-docs/apigateway/configuration-details/#responsehaserror) | boolean | simple property to check if response already has errors in it |
 
 
 #### `response.headers`

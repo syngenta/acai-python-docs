@@ -2669,7 +2669,7 @@ define every route, and it's a corresponding file. Below are the three ways conf
 </details>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>Even though you are matching your files to your routes, the handler files must have functions that match HTTP method (see endpoint examples <a href="{{web.url}}/apigateway/configuration-details/#endpoint-configuration-options">here</a>)</p>
+<p>Even though you are matching your files to your routes, the handler files must have functions that match HTTP method (see endpoint examples <a href="/acai-python-docs/apigateway/configuration-details/#endpoint-configuration-options">here</a>)</p>
 </details>
 <details class="danger" open="open">
 <summary>Danger</summary>
@@ -2735,12 +2735,12 @@ validation options.</p>
 <details class="info" open="open">
 <summary>Info</summary>
 <p>See the full configuration list, explanation and example of each setting in our 
-<a href="{{web.url}}/apigateway/endpoint/configurations/">Configurations Section</a>.</p>
+<a href="/acai-python-docs/apigateway/endpoint/configurations/">Configurations Section</a>.</p>
 </details>
 <details class="tip" open="open">
 <summary>Tip</summary>
 <p>If you are already using an <code>openapi.yml</code>, none of these requirements below are necessary. Ensure your <code>router</code> has 
-enabled <a href="{{web.url}}/apigateway/router/configurations/#example-router-config-with-directory-routing"><code>auto_validate</code></a> 
+enabled <a href="/acai-python-docs/apigateway/router/configurations/#example-router-config-with-directory-routing"><code>auto_validate</code></a> 
 with proper <code>schema</code> configured and the below requirements are not necessary for any basic structural validation 
 (headers, body, query, params will be checked via openapi.yml). You can still use <code>before</code>, <code>after</code> &amp; <code>data_class</code> with 
 other custom validations for more advanced use cases.</p>
@@ -2906,57 +2906,57 @@ other custom validations for more advanced use cases.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#required_headers"><code>required_headers</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#required_headers"><code>required_headers</code></a></strong></td>
 <td>array</td>
 <td>every header in this array must be in the headers of request</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#available_headers"><code>available_headers</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#available_headers"><code>available_headers</code></a></strong></td>
 <td>array</td>
 <td>only headers in this array will be allowed in the request</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#required_query"><code>required_query</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#required_query"><code>required_query</code></a></strong></td>
 <td>array</td>
 <td>every item in the array is a required query string parameter</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#available_query"><code>available_query</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#available_query"><code>available_query</code></a></strong></td>
 <td>array</td>
 <td>only items in this array are allowed in the request</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#required_route"><code>required_route</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#required_route"><code>required_route</code></a></strong></td>
 <td>str</td>
 <td>when using parameters, this is the required parameters</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#required_body"><code>required_body</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#required_body"><code>required_body</code></a></strong></td>
 <td>str</td>
 <td>references a JSschema component in your <code>schema</code></td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#auth_required"><code>required_auth</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#auth_required"><code>required_auth</code></a></strong></td>
 <td>bool</td>
 <td>will trigger <code>with_auth</code> function defined in the router config</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#before"><code>before</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#before"><code>before</code></a></strong></td>
 <td>func</td>
 <td>a custom function to be ran before your method function</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#after"><code>after</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#after"><code>after</code></a></strong></td>
 <td>func</td>
 <td>a custom function to be ran after your method function</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#data_class"><code>data_class</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#data_class"><code>data_class</code></a></strong></td>
 <td>class</td>
 <td>a custom class that will be passed instead of the request obj</td>
 </tr>
 <tr>
-<td><strong><a href="{{web.url}}/apigateway/configuration-details/#timeout"><code>timeout</code></a></strong></td>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#timeout"><code>timeout</code></a></strong></td>
 <td>bool</td>
 <td>timeout set for that method, not including before/after calls</td>
 </tr>
@@ -3234,133 +3234,133 @@ the properties of the <code>request</code>:</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestmethod"><code>method</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestmethod"><code>method</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the http method of the request</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestcookies"><code>cookies</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestcookies"><code>cookies</code></a></td>
 <td style="text-align: center;">list</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the cookies of the request</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestprotocol"><code>protocol</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestprotocol"><code>protocol</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the protocol of the request</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestcontent_type"><code>content_type</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestcontent_type"><code>content_type</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the content_type of the request body</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requesthost_url"><code>host_url</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requesthost_url"><code>host_url</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the host_url of the request was sent to</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestdomain"><code>domain</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestdomain"><code>domain</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the domain of the request was sent to</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requeststage"><code>stage</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requeststage"><code>stage</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the stage the lambda was deployed to</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestresource"><code>resource</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestresource"><code>resource</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the AWS resource being invoked</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestauthorizer"><code>authorizer</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestauthorizer"><code>authorizer</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">if using a customized authorizer, the authorizer object</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestheaders"><code>headers</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestheaders"><code>headers</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the headers of the request</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestparams"><code>params</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestparams"><code>params</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">combination of query string and path params in one object</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestquery_params"><code>query_params</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestquery_params"><code>query_params</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">query string parameters from the request</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestpath_params"><code>path_params</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestpath_params"><code>path_params</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the path parameters of the request</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestroute"><code>route</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestroute"><code>route</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the requested route with placeholders of params</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestpath"><code>path</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestpath"><code>path</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the raw requested path with actual param values</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestjson"><code>json</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestjson"><code>json</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the body of the request, converted from json string in object</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestxml"><code>xml</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestxml"><code>xml</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the body of the request, converted from xml string in object</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestgraphql"><code>graphql</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestgraphql"><code>graphql</code></a></td>
 <td style="text-align: center;">str</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the body of the graphql request as a string</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestbody"><code>body</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestbody"><code>body</code></a></td>
 <td style="text-align: center;">any</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the body of the request, converted to based on data type</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestraw"><code>raw</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestraw"><code>raw</code></a></td>
 <td style="text-align: center;">any</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the raw body of the request no conversion</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestcontext"><code>context</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestcontext"><code>context</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">mutable request context to assigned and pass around</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="{{web.url}}/apigateway/configuration-details/#requestevent"><code>event</code></a></td>
+<td style="text-align: left;"><a href="/acai-python-docs/apigateway/configuration-details/#requestevent"><code>event</code></a></td>
 <td style="text-align: center;">object</td>
 <td style="text-align: center;">no</td>
 <td style="text-align: left;">the full event originally coming from the lambda</td>
@@ -3833,37 +3833,37 @@ This response object is meant to provide consistency to HTTP response codes and 
 </thead>
 <tbody>
 <tr>
-<td><a href="{{web.url}}/apigateway/configuration-details/#responseheaders"><code>headers</code></a></td>
+<td><a href="/acai-python-docs/apigateway/configuration-details/#responseheaders"><code>headers</code></a></td>
 <td>tuple</td>
 <td>provide headers in tuple pairs to add new headers</td>
 </tr>
 <tr>
-<td><a href="{{web.url}}/apigateway/configuration-details/#responsecode"><code>code</code></a></td>
+<td><a href="/acai-python-docs/apigateway/configuration-details/#responsecode"><code>code</code></a></td>
 <td>int</td>
 <td>http response code to be returned the requester</td>
 </tr>
 <tr>
-<td><a href="{{web.url}}/apigateway/configuration-details/#responsebody"><code>body</code></a></td>
+<td><a href="/acai-python-docs/apigateway/configuration-details/#responsebody"><code>body</code></a></td>
 <td>any</td>
 <td>body of the response automatically converted to JSON string</td>
 </tr>
 <tr>
-<td><a href="{{web.url}}/apigateway/configuration-details/#responserawbody"><code>raw</code></a></td>
+<td><a href="/acai-python-docs/apigateway/configuration-details/#responserawbody"><code>raw</code></a></td>
 <td>any</td>
 <td>body of the response not converted to JSON string</td>
 </tr>
 <tr>
-<td><a href="{{web.url}}/apigateway/configuration-details/#responsecompress"><code>compress</code></a></td>
+<td><a href="/acai-python-docs/apigateway/configuration-details/#responsecompress"><code>compress</code></a></td>
 <td>bool</td>
 <td>will compress the body if set to true and add proper headers</td>
 </tr>
 <tr>
-<td><a href="{{web.url}}/apigateway/configuration-details/#responseseterror"><code>set_error</code></a></td>
+<td><a href="/acai-python-docs/apigateway/configuration-details/#responseseterror"><code>set_error</code></a></td>
 <td>func</td>
 <td>function to set an error with a key and value</td>
 </tr>
 <tr>
-<td><a href="{{web.url}}/apigateway/configuration-details/#responsehaserror"><code>has_error</code></a></td>
+<td><a href="/acai-python-docs/apigateway/configuration-details/#responsehaserror"><code>has_error</code></a></td>
 <td>boolean</td>
 <td>simple property to check if response already has errors in it</td>
 </tr>

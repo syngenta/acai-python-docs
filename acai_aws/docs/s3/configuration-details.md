@@ -86,24 +86,24 @@ functions:
 
 | property                                                         | type       | description                             |
 |------------------------------------------------------------------|------------|-----------------------------------------|
-| **[`name`]({{web.url}}/s3/#recordname)**                         | str        | the name of the event                   |
-| **[`source`]({{web.url}}/s3/#recordsource)**                     | str        | the source of the event                 |
-| **[`version`]({{web.url}}/s3/#recordversion)**                   | str        | the version of the event                |
-| **[`time`]({{web.url}}/s3/#recordtime)**                         | str        | the time of the event                   |
-| **[`region`]({{web.url}}/s3/#recordregion)**                     | str        | the region of the event                 |
-| **[`request`]({{web.url}}/s3/#recordrequest)**                   | dict       | the request parameters of the event     |
-| **[`response`]({{web.url}}/s3/#recordresponse)**                 | dict       | the response parameters of the event    |
-| **[`configuration_id`]({{web.url}}/s3/#recordconfiguration_id)** | str        | the configuration id                    |
-| **[`object`]({{web.url}}/s3/#recordobject)**                     | dict       | the object dict of the event            |
-| **[`bucket`]({{web.url}}/s3/#recordbucket)**                     | dict       | the bucket dict of the event            |
-| **[`bucket`]({{web.url}}/s3/#recordbucket)**                     | dict       | the bucket dict of the event            |
-| **[`bucket_arn`]({{web.url}}/s3/#recordbucket_arn)**             | str        | the arn of the bucket                   |
-| **[`bucket_owner`]({{web.url}}/s3/#recordbucket_owner)**         | str        | the owner of the bucket                 |
-| **[`key`]({{web.url}}/s3/#recordkey)**                           | str        | the key owner of the object             |
-| **[`schema_version`]({{web.url}}/s3/#recordschema_version)**     | str        | the schema version                      |
-| **[`user_identity`]({{web.url}}/s3/#recorduser_identity)**       | str        | the user identity                       |
-| **[`operation`]({{web.url}}/s3/#recordoperation)**               | enum (str) | enum of `created`, `deleted`, `updated` |
-| **[`body`]({{web.url}}/s3/#recordbody)**                         | dict,bytes | the body of file in the s3 bucket       |
+| **[`name`](/acai-python-docs/s3/configuration-details/#recordname)**                         | str        | the name of the event                   |
+| **[`source`](/acai-python-docs/s3/configuration-details/#recordsource)**                     | str        | the source of the event                 |
+| **[`version`](/acai-python-docs/s3/configuration-details/#recordversion)**                   | str        | the version of the event                |
+| **[`time`](/acai-python-docs/s3/configuration-details/#recordtime)**                         | str        | the time of the event                   |
+| **[`region`](/acai-python-docs/s3/configuration-details/#recordregion)**                     | str        | the region of the event                 |
+| **[`request`](/acai-python-docs/s3/configuration-details/#recordrequest)**                   | dict       | the request parameters of the event     |
+| **[`response`](/acai-python-docs/s3/configuration-details/#recordresponse)**                 | dict       | the response parameters of the event    |
+| **[`configuration_id`](/acai-python-docs/s3/configuration-details/#recordconfiguration_id)** | str        | the configuration id                    |
+| **[`object`](/acai-python-docs/s3/configuration-details/#recordobject)**                     | dict       | the object dict of the event            |
+| **[`bucket`](/acai-python-docs/s3/configuration-details/#recordbucket)**                     | dict       | the bucket dict of the event            |
+| **[`bucket`](/acai-python-docs/s3/configuration-details/#recordbucket)**                     | dict       | the bucket dict of the event            |
+| **[`bucket_arn`](/acai-python-docs/s3/configuration-details/#recordbucket_arn)**             | str        | the arn of the bucket                   |
+| **[`bucket_owner`](/acai-python-docs/s3/configuration-details/#recordbucket_owner)**         | str        | the owner of the bucket                 |
+| **[`key`](/acai-python-docs/s3/configuration-details/#recordkey)**                           | str        | the key owner of the object             |
+| **[`schema_version`](/acai-python-docs/s3/configuration-details/#recordschema_version)**     | str        | the schema version                      |
+| **[`user_identity`](/acai-python-docs/s3/configuration-details/#recorduser_identity)**       | str        | the user identity                       |
+| **[`operation`](/acai-python-docs/s3/configuration-details/#recordoperation)**               | enum (str) | enum of `created`, `deleted`, `updated` |
+| **[`body`](/acai-python-docs/s3/configuration-details/#recordbody)**                         | dict,bytes | the body of file in the s3 bucket       |
 
 #### `record.name`
 

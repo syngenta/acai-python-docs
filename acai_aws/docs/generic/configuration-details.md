@@ -75,7 +75,7 @@ Below is a full list of all the configurations available and examples of their u
 
 | property                                                                     | type   | description                                          |
 |------------------------------------------------------------------------------|--------|------------------------------------------------------|
-| **[`body`]({{web.url}}/firehose/#recordbody)**                               | any    | can be anything, automaticallyed b64 decoded objects |
+| **[`body`](/acai-python-docs/firehose/#recordbody)**                               | any    | can be anything, automaticallyed b64 decoded objects |
 
 
 #### `event.body`
