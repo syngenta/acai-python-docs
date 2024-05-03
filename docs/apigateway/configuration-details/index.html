@@ -3004,11 +3004,8 @@ other custom validations for more advanced use cases.</p>
 <h4 id="available_headers"><code>available_headers</code><a class="headerlink" href="#available_headers" title="Permanent link">&para;</a></h4>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>This is not recommended for frequent use as it raises errors for every header which does not conform to the array </p>
+<p>This is not recommended for frequent use as it raises errors for every header which does not conform to the array provided. Many browsers, http tools, and libraries will automatically add headers to request, unbeknownst to the user. By using this setting, you will force every user of the endpoint to take extra care with the headers provided and may result in poor API consumer experience.</p>
 </details>
-<p>provided. Many browsers, http tools, and libraries will automatically add headers to request, unbeknownst to the user. 
-By using this setting, you will force every user of the endpoint to take extra care with the headers provided and 
-may result in poor API consumer experience.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3033,9 +3030,8 @@ may result in poor API consumer experience.</p>
 <h4 id="available_query"><code>available_query</code><a class="headerlink" href="#available_query" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
 <summary>Info</summary>
-<p><code>available_query</code> entries do NOT need to include entries already defined in the <code>required_query</code>; what is required,</p>
+<p><code>available_query</code> entries do NOT need to include entries already defined in the <code>required_query</code>; what is required,is assumed to be available.</p>
 </details>
-<p>is assumed to be available.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3049,9 +3045,8 @@ may result in poor API consumer experience.</p>
 <h4 id="required_route"><code>required_route</code><a class="headerlink" href="#required_route" title="Permanent link">&para;</a></h4>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>This is required if you are using dynamic routing (ex. <code>_id.py</code>) with path parameters. </p>
+<p>This is required if you are using dynamic routing (ex. <code>_id.py</code>) with path parameters. The router will provide a path values in <code>request.path_params</code></p>
 </details>
-<p>The router will provide a path values in <code>request.path_params</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -3065,9 +3060,8 @@ may result in poor API consumer experience.</p>
 <h4 id="required_body"><code>required_body</code><a class="headerlink" href="#required_body" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>This is referencing a <code>components.schemas</code> section of your openapi.yml file defined in the <code>schema</code> value in your </p>
+<p>This is referencing a <code>components.schemas</code> section of your openapi.yml file defined in the <code>schema</code> value in your router config, but you can also pass in a <code>json schema</code> in the form of a <code>dict</code>.</p>
 </details>
-<p>router config, but you can also pass in a <code>json schema</code> in the form of a <code>dict</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3125,9 +3119,8 @@ may result in poor API consumer experience.</p>
 <h4 id="required_response"><code>required_response</code><a class="headerlink" href="#required_response" title="Permanent link">&para;</a></h4>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>This is referencing a <code>components.schemas</code> section of your openapi.yml file defined in the <code>schema</code> value in your </p>
+<p>This is referencing a <code>components.schemas</code> section of your openapi.yml file defined in the <code>schema</code> value in your router config, but you can also pass in a <code>json schema</code> in the form of a <code>dict</code>.</p>
 </details>
-<p>router config, but you can also pass in a <code>json schema</code> in the form of a <code>dict</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>

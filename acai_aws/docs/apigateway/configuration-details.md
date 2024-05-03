@@ -396,10 +396,7 @@ def post(request, response):
 #### `available_headers`
 
 ???+ warning
-    This is not recommended for frequent use as it raises errors for every header which does not conform to the array 
-provided. Many browsers, http tools, and libraries will automatically add headers to request, unbeknownst to the user. 
-By using this setting, you will force every user of the endpoint to take extra care with the headers provided and 
-may result in poor API consumer experience.
+    This is not recommended for frequent use as it raises errors for every header which does not conform to the array provided. Many browsers, http tools, and libraries will automatically add headers to request, unbeknownst to the user. By using this setting, you will force every user of the endpoint to take extra care with the headers provided and may result in poor API consumer experience.
 
 ```python
 @requirements(
@@ -421,8 +418,7 @@ def get(request, response):
 
 #### `available_query`
 ???+ info
-    `available_query` entries do NOT need to include entries already defined in the `required_query`; what is required,
-is assumed to be available.
+    `available_query` entries do NOT need to include entries already defined in the `required_query`; what is required,is assumed to be available.
 
 ```python
 @requirements(
@@ -435,8 +431,7 @@ def get(request, response):
 #### `required_route`
 
 ???+ warning
-    This is required if you are using dynamic routing (ex. `_id.py`) with path parameters. 
-The router will provide a path values in `request.path_params`
+    This is required if you are using dynamic routing (ex. `_id.py`) with path parameters. The router will provide a path values in `request.path_params`
 
 ```python
 @requirements(
@@ -449,8 +444,7 @@ def get(request, response):
 #### `required_body`
 
 ???+ info
-    This is referencing a `components.schemas` section of your openapi.yml file defined in the `schema` value in your 
-router config, but you can also pass in a `json schema` in the form of a `dict`.
+    This is referencing a `components.schemas` section of your openapi.yml file defined in the `schema` value in your router config, but you can also pass in a `json schema` in the form of a `dict`.
 
 ```python
 @requirements(
@@ -485,8 +479,7 @@ def patch(request, response):
 #### `required_response`
 
 ???+ info
-    This is referencing a `components.schemas` section of your openapi.yml file defined in the `schema` value in your 
-router config, but you can also pass in a `json schema` in the form of a `dict`.
+    This is referencing a `components.schemas` section of your openapi.yml file defined in the `schema` value in your router config, but you can also pass in a `json schema` in the form of a `dict`.
 
 ```python
 @requirements(
