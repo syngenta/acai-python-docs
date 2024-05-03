@@ -478,6 +478,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#required_response" class="md-nav__link">
+    required_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#auth_required" class="md-nav__link">
     auth_required
   </a>
@@ -1924,6 +1931,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#required_response" class="md-nav__link">
+    required_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#auth_required" class="md-nav__link">
     auth_required
   </a>
@@ -2936,6 +2950,11 @@ other custom validations for more advanced use cases.</p>
 <td>references a JSschema component in your <code>schema</code></td>
 </tr>
 <tr>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#required_response"><code>required_response</code></a></strong></td>
+<td>str</td>
+<td>references a JSschema component in your <code>schema</code> to validate response</td>
+</tr>
+<tr>
 <td><strong><a href="/acai-python-docs/apigateway/configuration-details/#auth_required"><code>required_auth</code></a></strong></td>
 <td>bool</td>
 <td>will trigger <code>with_auth</code> function defined in the router config</td>
@@ -3084,6 +3103,66 @@ may result in poor API consumer experience.</p>
 
 <span class="nd">@requirements</span><span class="p">(</span>
     <span class="n">required_body</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;grower_id&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;additionalProperties&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;grower_id&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;dict&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;boolean&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="required_response"><code>required_response</code><a class="headerlink" href="#required_response" title="Permanent link">&para;</a></h4>
+<details class="info" open="open">
+<summary>Info</summary>
+<p>This is referencing a <code>components.schemas</code> section of your openapi.yml file defined in the <code>schema</code> value in your </p>
+</details>
+<p>router config, but you can also pass in a <code>json schema</code> in the form of a <code>dict</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_response</span><span class="o">=</span><span class="s1">&#39;v1-grower-post-response&#39;</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="nd">@requirements</span><span class="p">(</span>
+    <span class="n">required_response</span><span class="o">=</span><span class="p">{</span>
         <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
         <span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;grower_id&#39;</span><span class="p">],</span>
         <span class="s1">&#39;additionalProperties&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>

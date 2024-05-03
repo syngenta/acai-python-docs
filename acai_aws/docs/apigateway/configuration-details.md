@@ -364,20 +364,21 @@ def delete(request, response):
 
 ### Full Requirements Configuration Options
 
-| requirement                                                                                | type  | description                                                    |
-|--------------------------------------------------------------------------------------------|-------|----------------------------------------------------------------|
-| **[`required_headers`](/acai-python-docs/apigateway/configuration-details/#required_headers)**   | array | every header in this array must be in the headers of request   |
-| **[`available_headers`](/acai-python-docs/apigateway/configuration-details/#available_headers)** | array | only headers in this array will be allowed in the request      |
-| **[`required_query`](/acai-python-docs/apigateway/configuration-details/#required_query)**       | array | every item in the array is a required query string parameter   |
-| **[`available_query`](/acai-python-docs/apigateway/configuration-details/#available_query)**     | array | only items in this array are allowed in the request            |
-| **[`required_route`](/acai-python-docs/apigateway/configuration-details/#required_route)**       | str   | when using parameters, this is the required parameters         |
-| **[`required_body`](/acai-python-docs/apigateway/configuration-details/#required_body)**         | str   | references a JSschema component in your `schema`               |
-| **[`required_auth`](/acai-python-docs/apigateway/configuration-details/#auth_required)**         | bool  | will trigger `with_auth` function defined in the router config |
-| **[`before`](/acai-python-docs/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function        |
-| **[`after`](/acai-python-docs/apigateway/configuration-details/#after)**                         | func  | a custom function to be ran after your method function         |
-| **[`data_class`](/acai-python-docs/apigateway/configuration-details/#data_class)**               | class | a custom class that will be passed instead of the request obj  |
-| **[`timeout`](/acai-python-docs/apigateway/configuration-details/#timeout)**                     | bool  | timeout set for that method, not including before/after calls  |
-| **[`custom-requirement`]**                                                                 | any   | see bottom of section                                          |
+| requirement                                                                                      | type  | description                                                           |
+|--------------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------|
+| **[`required_headers`](/acai-python-docs/apigateway/configuration-details/#required_headers)**   | array | every header in this array must be in the headers of request          |
+| **[`available_headers`](/acai-python-docs/apigateway/configuration-details/#available_headers)** | array | only headers in this array will be allowed in the request             |
+| **[`required_query`](/acai-python-docs/apigateway/configuration-details/#required_query)**       | array | every item in the array is a required query string parameter          |
+| **[`available_query`](/acai-python-docs/apigateway/configuration-details/#available_query)**     | array | only items in this array are allowed in the request                   |
+| **[`required_route`](/acai-python-docs/apigateway/configuration-details/#required_route)**       | str   | when using parameters, this is the required parameters                |
+| **[`required_body`](/acai-python-docs/apigateway/configuration-details/#required_body)**         | str   | references a JSschema component in your `schema`                      |
+| **[`required_response`](/acai-python-docs/apigateway/configuration-details/#required_response)**         | str   | references a JSschema component in your `schema` to validate response |
+| **[`required_auth`](/acai-python-docs/apigateway/configuration-details/#auth_required)**         | bool  | will trigger `with_auth` function defined in the router config        |
+| **[`before`](/acai-python-docs/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function               |
+| **[`after`](/acai-python-docs/apigateway/configuration-details/#after)**                         | func  | a custom function to be ran after your method function                |
+| **[`data_class`](/acai-python-docs/apigateway/configuration-details/#data_class)**               | class | a custom class that will be passed instead of the request obj         |
+| **[`timeout`](/acai-python-docs/apigateway/configuration-details/#timeout)**                     | bool  | timeout set for that method, not including before/after calls         |
+| **[`custom-requirement`]**                                                                       | any   | see bottom of section                                                 |
 
 #### `required_headers`
 
@@ -461,6 +462,42 @@ def post(request, response):
 
 @requirements(
     required_body={
+        'type': 'object',
+        'required': ['grower_id'],
+        'additionalProperties': False,
+        'properties': {
+            'grower_id': {
+                'type': 'string'
+            },
+            'body': {
+                'type': 'object'
+            },
+            'dict': {
+                'type': 'boolean'
+            }
+        }
+    }
+)
+def patch(request, response):
+    pass
+```
+
+#### `required_response`
+
+???+ info
+    This is referencing a `components.schemas` section of your openapi.yml file defined in the `schema` value in your 
+router config, but you can also pass in a `json schema` in the form of a `dict`.
+
+```python
+@requirements(
+    required_response='v1-grower-post-response'
+)
+def post(request, response):
+    pass
+
+
+@requirements(
+    required_response={
         'type': 'object',
         'required': ['grower_id'],
         'additionalProperties': False,
