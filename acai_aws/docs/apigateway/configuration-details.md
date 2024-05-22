@@ -372,12 +372,14 @@ def delete(request, response):
 | **[`available_query`](/acai-python-docs/apigateway/configuration-details/#available_query)**     | array | only items in this array are allowed in the request                   |
 | **[`required_route`](/acai-python-docs/apigateway/configuration-details/#required_route)**       | str   | when using parameters, this is the required parameters                |
 | **[`required_body`](/acai-python-docs/apigateway/configuration-details/#required_body)**         | str   | references a JSschema component in your `schema`                      |
-| **[`required_response`](/acai-python-docs/apigateway/configuration-details/#required_response)**         | str   | references a JSschema component in your `schema` to validate response |
+| **[`required_response`](/acai-python-docs/apigateway/configuration-details/#required_response)** | str   | references a JSschema component in your `schema` to validate response |
 | **[`required_auth`](/acai-python-docs/apigateway/configuration-details/#auth_required)**         | bool  | will trigger `with_auth` function defined in the router config        |
 | **[`before`](/acai-python-docs/apigateway/configuration-details/#before)**                       | func  | a custom function to be ran before your method function               |
 | **[`after`](/acai-python-docs/apigateway/configuration-details/#after)**                         | func  | a custom function to be ran after your method function                |
 | **[`data_class`](/acai-python-docs/apigateway/configuration-details/#data_class)**               | class | a custom class that will be passed instead of the request obj         |
 | **[`timeout`](/acai-python-docs/apigateway/configuration-details/#timeout)**                     | bool  | timeout set for that method, not including before/after calls         |
+| **[`summary`](/acai-python-docs/apigateway/configuration-details/#summary)**                     | str   | summary for use with openapi doc generation                           |
+| **[`deprecated`](/acai-python-docs/apigateway/configuration-details/#deprecated)**               | bool  | deprecated for use with openapi doc generation                        |
 | **[`custom-requirement`]**                                                                       | any   | see bottom of section                                                 |
 
 #### `required_headers`
@@ -599,6 +601,30 @@ def post(grower, response):
     your_custom_requirement={'whatever': ('you', 'want')}
 )
 def put(request, response):
+    pass
+```
+
+#### `summary`
+
+???+ info
+    This is ONLY useful with openapi doc generation
+
+```python
+
+@requirements(summary='some summary about what this endpoint does')
+def post(grower, response):
+    pass
+```
+
+#### `deprecated`
+
+???+ info
+    This is ONLY useful with openapi doc generation
+
+```python
+
+@requirements(deprecated=True)
+def post(grower, response):
     pass
 ```
 
@@ -1114,4 +1140,39 @@ print(response.has_error)
 
 # output:
 False
+```
+
+## Generate OpenAPI Docs from Codebase
+
+You can generate a openapi yaml and/or json doc from your existing codebase. This feature can also add to existing openapi docs and/or overwrite
+incorrect documentation.
+
+#### command
+
+```shell
+python -m acai_aws.apigateway generate-openapi --handlers=tests/mocks/apigateway/openapi/**/*.py --base=acai_aws/example --output=tests/outputs --format=json,yml --delete
+```
+
+#### output
+
+```shell
+STARTED
+generating openapi docs...
+validating arguments received...
+arguments validated...
+scanning handlers: tests/mocks/apigateway/openapi/**/*.py...
+importing handler endpoint modules...
+deleting paths and methods not found in code base
+writing openapi doc to requested directory: tests/outputs
+COMPLETED
+```
+
+#### options
+
+```shell
+--handlers (-l): directory or pattern location of your handlers
+--base (-b): (optional) base path of the api url; default='/'
+--output (-o): (optional) directory location to save openapi file; defaults handlers directory location
+--format (-f): (optional) comma deliminted format options (yml, json)
+--delete (-d): (optional) will delete routes and methods in existing openapi doc not found in code base
 ```

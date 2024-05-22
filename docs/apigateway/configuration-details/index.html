@@ -526,6 +526,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    deprecated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -783,6 +797,40 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-openapi-docs-from-codebase" class="md-nav__link">
+    Generate OpenAPI Docs from Codebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate OpenAPI Docs from Codebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    options
+  </a>
   
 </li>
         
@@ -1979,6 +2027,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    deprecated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2236,6 +2298,40 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-openapi-docs-from-codebase" class="md-nav__link">
+    Generate OpenAPI Docs from Codebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate OpenAPI Docs from Codebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    options
+  </a>
   
 </li>
         
@@ -2980,6 +3076,16 @@ other custom validations for more advanced use cases.</p>
 <td>timeout set for that method, not including before/after calls</td>
 </tr>
 <tr>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#summary"><code>summary</code></a></strong></td>
+<td>str</td>
+<td>summary for use with openapi doc generation</td>
+</tr>
+<tr>
+<td><strong><a href="/acai-python-docs/apigateway/configuration-details/#deprecated"><code>deprecated</code></a></strong></td>
+<td>bool</td>
+<td>deprecated for use with openapi doc generation</td>
+</tr>
+<tr>
 <td><strong>[<code>custom-requirement</code>]</strong></td>
 <td>any</td>
 <td>see bottom of section</td>
@@ -3287,6 +3393,28 @@ your <code>before_all</code>, <code>before</code>, <code>after_all</code>, <code
     <span class="n">your_custom_requirement</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;whatever&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;you&#39;</span><span class="p">,</span> <span class="s1">&#39;want&#39;</span><span class="p">)}</span>
 <span class="p">)</span>
 <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="summary"><code>summary</code><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h4>
+<details class="info" open="open">
+<summary>Info</summary>
+<p>This is ONLY useful with openapi doc generation</p>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@requirements</span><span class="p">(</span><span class="n">summary</span><span class="o">=</span><span class="s1">&#39;some summary about what this endpoint does&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">grower</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="deprecated"><code>deprecated</code><a class="headerlink" href="#deprecated" title="Permanent link">&para;</a></h4>
+<details class="info" open="open">
+<summary>Info</summary>
+<p>This is ONLY useful with openapi doc generation</p>
+</details>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@requirements</span><span class="p">(</span><span class="n">deprecated</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">grower</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
     <span class="k">pass</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="request-object">Request Object<a class="headerlink" href="#request-object" title="Permanent link">&para;</a></h2>
@@ -4091,6 +4219,42 @@ This response object is meant to provide consistency to HTTP response codes and 
 
 <span class="c1"># output:</span>
 <span class="kc">False</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="generate-openapi-docs-from-codebase">Generate OpenAPI Docs from Codebase<a class="headerlink" href="#generate-openapi-docs-from-codebase" title="Permanent link">&para;</a></h2>
+<p>You can generate a openapi yaml and/or json doc from your existing codebase. This feature can also add to existing openapi docs and/or overwrite
+incorrect documentation.</p>
+<h4 id="command">command<a class="headerlink" href="#command" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>acai_aws.apigateway<span class="w"> </span>generate-openapi<span class="w"> </span>--handlers<span class="o">=</span>tests/mocks/apigateway/openapi/**/*.py<span class="w"> </span>--base<span class="o">=</span>acai_aws/example<span class="w"> </span>--output<span class="o">=</span>tests/outputs<span class="w"> </span>--format<span class="o">=</span>json,yml<span class="w"> </span>--delete
+</code></pre></div></td></tr></table></div>
+<h4 id="output">output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>STARTED
+generating<span class="w"> </span>openapi<span class="w"> </span>docs...
+validating<span class="w"> </span>arguments<span class="w"> </span>received...
+arguments<span class="w"> </span>validated...
+scanning<span class="w"> </span>handlers:<span class="w"> </span>tests/mocks/apigateway/openapi/**/*.py...
+importing<span class="w"> </span>handler<span class="w"> </span>endpoint<span class="w"> </span>modules...
+deleting<span class="w"> </span>paths<span class="w"> </span>and<span class="w"> </span>methods<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>code<span class="w"> </span>base
+writing<span class="w"> </span>openapi<span class="w"> </span>doc<span class="w"> </span>to<span class="w"> </span>requested<span class="w"> </span>directory:<span class="w"> </span>tests/outputs
+COMPLETED
+</code></pre></div></td></tr></table></div>
+<h4 id="options">options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>--handlers<span class="w"> </span><span class="o">(</span>-l<span class="o">)</span>:<span class="w"> </span>directory<span class="w"> </span>or<span class="w"> </span>pattern<span class="w"> </span>location<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>handlers
+--base<span class="w"> </span><span class="o">(</span>-b<span class="o">)</span>:<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span><span class="w"> </span>base<span class="w"> </span>path<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>api<span class="w"> </span>url<span class="p">;</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>
+--output<span class="w"> </span><span class="o">(</span>-o<span class="o">)</span>:<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span><span class="w"> </span>directory<span class="w"> </span>location<span class="w"> </span>to<span class="w"> </span>save<span class="w"> </span>openapi<span class="w"> </span>file<span class="p">;</span><span class="w"> </span>defaults<span class="w"> </span>handlers<span class="w"> </span>directory<span class="w"> </span>location
+--format<span class="w"> </span><span class="o">(</span>-f<span class="o">)</span>:<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span><span class="w"> </span>comma<span class="w"> </span>deliminted<span class="w"> </span>format<span class="w"> </span>options<span class="w"> </span><span class="o">(</span>yml,<span class="w"> </span>json<span class="o">)</span>
+--delete<span class="w"> </span><span class="o">(</span>-d<span class="o">)</span>:<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span><span class="w"> </span>will<span class="w"> </span>delete<span class="w"> </span>routes<span class="w"> </span>and<span class="w"> </span>methods<span class="w"> </span><span class="k">in</span><span class="w"> </span>existing<span class="w"> </span>openapi<span class="w"> </span>doc<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>code<span class="w"> </span>base
 </code></pre></div></td></tr></table></div>
 
 
